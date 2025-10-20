@@ -7,31 +7,24 @@ layout: default
 
 <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
 
-  <!-- Project Card 1 -->
-  <div style="flex: 1 1 calc(33% - 1rem); background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <img src="cv/screenshot.png" alt="CV Website" style="width:100%; border-radius: 5px;">
-    <h3>My CV Website</h3>
-    <p>Responsive CV built with HTML, CSS, PHP, and Bootstrap.</p>
-    <a href="cv/index.html" target="_blank">View Project →</a>
+  <!-- Empty Card 1 -->
+  <div style="flex: 1 1 calc(33% - 1rem); background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align:center;">
+    <h3>Project Title</h3>
+    <p>Project description goes here.</p>
   </div>
 
-  <!-- Project Card 2 -->
-  <div style="flex: 1 1 calc(33% - 1rem); background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <img src="project/landing-page/screenshot.png" alt="Landing Page" style="width:100%; border-radius: 5px;">
-    <h3>Landing Page Demo</h3>
-    <p>Simple landing page using HTML & Bootstrap.</p>
-    <a href="project/landing-page/index.html" target="_blank">View Project →</a>
+  <!-- Empty Card 2 -->
+  <div style="flex: 1 1 calc(33% - 1rem); background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align:center;">
+    <h3>Project Title</h3>
+    <p>Project description goes here.</p>
   </div>
 
-  <!-- Project Card 3 -->
-  <div style="flex: 1 1 calc(33% - 1rem); background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <img src="project/another-project/screenshot.png" alt="Another Project" style="width:100%; border-radius: 5px;">
-    <h3>Another Web Project</h3>
-    <p>Built with HTML, CSS, PHP, and Bootstrap for school.</p>
-    <a href="project/another-project/index.html" target="_blank">View Project →</a>
+  <!-- Empty Card 3 -->
+  <div style="flex: 1 1 calc(33% - 1rem); background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align:center;">
+    <h3>Project Title</h3>
+    <p>Project description goes here.</p>
   </div>
 
 </div>
 
 <p><a href="index.html">⬅ Back to Home</a></p>
-
