@@ -1,65 +1,68 @@
-/*Header*/
-/*Header*/
-@font-face {
-  font-family: Moderne Sans;
-  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/moderne_sans.woff2);
-}
+/* Import font */
+    @font-face {
+      font-family: 'Moderne Sans';
+      src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/moderne_sans.woff2');
+    }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  background: #000;
-  background-size: cover;
-  font-family: sans-serif;
-}
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Moderne Sans', sans-serif;
+    }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  color: white;
-  transition: 0.4s;
-  padding: 1rem 2rem;
-  display: flex;
-  flex-direction: column; /* stack name and nav */
-  align-items: flex-start; /* left align */
-}
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-direction: column; /* stack name and nav */
+      align-items: flex-start; /* left align */
+      background: rgba(0,0,0,0.7);
+      transition: 0.4s;
+      z-index: 1000;
+    }
 
-header:hover {
-  background: rgba(255, 255, 255, 0.8);
-  color: #000;
-}
+    header:hover {
+      background: rgba(255,255,255,0.8);
+      color: #000;
+    }
 
-h1 {
-  font-family: Moderne Sans, sans-serif;
-  font-size: 2rem;
-  margin-bottom: 0.5rem; /* space below name */
-  letter-spacing: 0.5rem;
-  text-align: left; /* ensure left alignment */
-}
+    h1 {
+      font-size: 2rem;
+      letter-spacing: 0.3rem;
+      margin-bottom: 0.5rem;
+      text-align: left;
+    }
 
-nav {
-  display: flex;
-  gap: 1rem; /* horizontal spacing between links */
-}
+    nav {
+      display: flex;
+      gap: 1rem; /* space between links */
+    }
 
-nav a {
-  text-decoration: none;
-  color: inherit;
-}
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+    }
 
+    /* Just some content to test scrolling */
+    main {
+      margin-top: 120px; /* leave space below fixed header */
+      padding: 2rem;
+    }
 
-h2 {
-  font-family: Century Schoolbook, Century Schoolbook L, Georgia, serif;
-  font-size: 8vmin;
-  text-align: center;
-  margin: 2rem 3rem 0;
-  mix-blend-mode: overlay;
-  color: #fff;
-  font-weight: 100;
-}
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 3rem;
+      margin: 2rem 0;
+    }
