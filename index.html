@@ -1,30 +1,45 @@
----
-title: Erik Cerrada Plumed
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erik Cerrada Plumed</title>
 
-<h1>Welcome to My Portfolio</h1>
-<p>I’m a TVT student pursuing a Finnish double degree (Ammattikoulu and Lukio). I enjoy creating applications, experimenting with web technologies, and learning new tools.</p>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-<h2>Project Categories</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
 
-  <div style="flex: 1 1 calc(33% - 1rem); background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align:center;">
-    <h3>🌐 HTML Projects</h3>
-    <p>Web development projects using HTML, CSS, PHP & Bootstrap.</p>
-    <a href="html-projects.html">View Projects →</a>
-  </div>
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>👋 Welcome to My Portfolio</h1>
+    <p>I’m a TVT student pursuing a Finnish double degree. Explore my projects in web development, C#, and databases.</p>
+    <a href="#projects">See Projects →</a>
+  </header>
 
-  <div style="flex: 1 1 calc(33% - 1rem); background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align:center;">
-    <h3>💻 C# Projects</h3>
-    <p>Applications built in C# during my studies and free time.</p>
-    <a href="csharp-projects.html">View Projects →</a>
-  </div>
+  <!-- Project Cards -->
+  <section id="projects" class="project-cards">
+    <div class="project-card">
+      <h3>HTML Projects</h3>
+      <p>Web development projects using HTML, CSS, PHP & Bootstrap.</p>
+      <a href="html-projects.html">View Projects →</a>
+    </div>
 
-  <div style="flex: 1 1 calc(33% - 1rem); background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align:center;">
-    <h3>🗄️ SQL Projects</h3>
-    <p>SQL database projects combined with HTML, PHP & Bootstrap.</p>
-    <a href="sql-projects.html">View Projects →</a>
-  </div>
+    <div class="project-card">
+      <h3>C# Projects</h3>
+      <p>Applications built in C# during my studies and free time.</p>
+      <a href="csharp-projects.html">View Projects →</a>
+    </div>
 
-</div>
+    <div class="project-card">
+      <h3>SQL Projects</h3>
+      <p>SQL database projects combined with HTML, PHP & Bootstrap.</p>
+      <a href="sql-projects.html">View Projects →</a>
+    </div>
+  </section>
+
+</body>
+</html>
