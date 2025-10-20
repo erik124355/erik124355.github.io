@@ -46,6 +46,7 @@
     /* Links under header */
     .links {
       display: flex;
+      flex-direction: column;
       gap: 1rem;
       padding: 1rem 2rem;
       margin-top: 80px; /* leave space below fixed header */
