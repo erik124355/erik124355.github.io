@@ -44,12 +44,12 @@
       text-align: left;
     }
 
-    nav {
+   .links  {
       display: flex;
       gap: 1rem; /* space between links */
     }
 
-    nav a {
+    .links a {
       text-decoration: none;
       color: inherit;
       font-weight: bold;
