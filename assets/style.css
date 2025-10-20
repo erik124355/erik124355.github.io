@@ -16,25 +16,24 @@ body {
 
 header {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   color: white;
   transition: 0.4s;
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column; /* stack name and nav */
-  align-items: flex-start; /* left align */
-}
-
-header:hover {
-  background: rgba(255, 255, 255, 0.8);
-  color: #000;
+  align-items: flex-start; /* force left alignment */
+  justify-content: flex-start; /* force top alignment */
 }
 
 h1 {
   font-family: Moderne Sans, sans-serif;
   font-size: 2rem;
-  margin: 0 0 0.5rem 0; /* small gap below name */
+  margin: 0 0 0.5rem 0; /* space below name */
   letter-spacing: 0.5rem;
+  text-align: left; /* make sure text is left-aligned */
 }
 
 nav {
@@ -45,7 +44,7 @@ nav {
 nav a {
   text-decoration: none;
   color: inherit;
-  padding: 0.25rem 0; /* smaller vertical padding */
+  padding: 0.25rem 0;
 }
 
 h2 {
