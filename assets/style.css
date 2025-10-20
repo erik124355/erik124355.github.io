@@ -57,3 +57,14 @@
       margin-top: 20px;
       padding: 2rem;
     }
+
+    .toggle::after {
+      content: '▸';
+      margin-left: 0.5rem;
+      transition: transform 0.3s;
+    }
+    
+    .toggle.active::after {
+      transform: rotate(90deg);
+    }
+
