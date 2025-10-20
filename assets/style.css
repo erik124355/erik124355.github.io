@@ -57,3 +57,49 @@ body {
   display: inline-block;
   margin-top: 0.5rem;
 }
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.about-card {
+  flex: 1 1 calc(30% - 1rem);
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.about-card h2 {
+  margin-bottom: 0.5rem;
+  color: #2575fc;
+}
+
+.about-card p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .about-card {
+    flex: 1 1 calc(45% - 1rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .about-card {
+    flex: 1 1 100%;
+  }
+}
