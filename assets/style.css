@@ -7,37 +7,6 @@ body {
   padding: 0;
 }
 
-/* Hero section */
-header.hero {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: white;
-  padding: 4rem 2rem;
-  text-align: center;
-  border-radius: 0 0 30px 30px;
-}
-
-header.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-header.hero p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-header.hero a {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.8rem 2rem;
-  background: #fff;
-  color: #2575fc;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
 .project-cards {
   display: flex;
   flex-wrap: wrap;
