@@ -35,7 +35,7 @@
 
     /* Links below header */
     .links {
-      display: flex;
+      display: inline-flex; 
       flex-direction: column; /* stack vertically */
       gap: 0.5rem;            /* spacing between links */
       margin-top: 100px;        /* space for fixed header */
