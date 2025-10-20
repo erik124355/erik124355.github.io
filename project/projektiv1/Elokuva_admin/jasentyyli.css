@@ -1,0 +1,201 @@
+/* jasentyyli.css - modern and clean registration form styling KAIKKI TYYLIT TEHTY CHATGPT:LLÄ*/
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(135deg, #5c6bc0, #3949ab);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page-container {
+  background-color: #fff;
+  padding: 2.5rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 800px; /* increase max-width to fit the table */
+  animation: fadeIn 0.6s ease;
+}
+
+
+h2 {
+  text-align: center;
+  color: #3949ab;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-top: 0.3rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: #5c6bc0;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(92, 107, 192, 0.2);
+}
+
+input[type="submit"] {
+  background-color: #5c6bc0;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+input[type="submit"]:hover {
+  background-color: #3f51b5;
+  transform: scale(1.02);
+}
+
+p {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+a {
+  color: #5c6bc0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Viestit yläpuolella, keskitettynä */
+.message-container {
+    width: 100%;
+    max-width: 420px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.message.success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+}
+/* Style all select boxes */
+select {
+    width: 100%;          /* full width of the container */
+    padding: 10px;        /* space inside the box */
+    font-size: 16px;      /* text size */
+    border: 1px solid #ccc; /* border color */
+    border-radius: 5px;   /* rounded corners */
+    background-color: #f9f9f9; /* background color */
+    appearance: none;     /* remove default arrow on most browsers */
+    -webkit-appearance: none;  /* safari & chrome */
+    -moz-appearance: none;     /* firefox */
+}
+
+/* Optional: wrap select in a container to add a custom arrow */
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.select-wrapper::after {
+    content: '▼';            /* custom arrow */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #555;
+}
+/* Table container to add spacing and shadow */
+.vuokraus-table {
+    width: 100%;          /* table fills container */
+    max-width: 100%;      /* ensures it doesn’t exceed parent */
+    border-collapse: collapse;
+    margin: 20px 0 0 0;  /* space from top */
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Header row */
+.vuokraus-table th {
+    background-color: #2c3e50; /* dark blue/gray */
+    color: #ecf0f1;           /* light text */
+    padding: 14px 20px;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Data rows */
+.vuokraus-table td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alternate row colors */
+.vuokraus-table tr:nth-child(even) {
+    background-color: #f4f6f7; /* very light gray-blue */
+}
+
+/* Hover effect */
+.vuokraus-table tr:hover {
+    background-color: #e1e8ed;
+}
+
+/* Action link */
+.vuokraus-table a {
+    color: #e74c3c; /* red/orange for delete */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.vuokraus-table a:hover {
+    text-decoration: underline;
+}

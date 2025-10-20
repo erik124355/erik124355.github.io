@@ -1,0 +1,70 @@
+<html data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="cv.css">
+    </head>
+    <body>
+        <div id="header">Koodaaminen</div>
+        <nav class="navbar navbar-expand-sm bg-secondary justify-content-center">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="cv.html">CV</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="tyot.html">Koodaaminen</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tietoa.html">Tietoa</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="parallax"></div>  
+        <div style="font-size:36px; position: absolute; top: 450px; width: 100%;">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <h2>Erillaisia koodi kielieä joita osaan</h2>
+                <p>Aloitin koodaamaan ammattikoulussa ja yhteensä olemme käyneetä kaksi kurssia koodausta,<br>jotka ovat html ja c#. Tämä tarkoittaa, että olen koodannut yhteensä noin 2-3 kuukautta</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="parallax"><img src="koodi.jpg" alt="koodi kuva" style="width: 50%; position: absolute; top: 680px; right: 28%; z-index: -1;"></div>
+        <div style="font-size:36px; position: absolute; top: 650px; width: 100%;">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4 hover" onclick="location.href='csharp.html';">
+                <h3>C#</h3>
+                <img src="csharp.svg" alt="C# kuva" style="width: 100%;">
+              </div>
+              <div class="col-sm-4 hover" onclick="location.href='html.html';">
+                <h3>Html</h3>
+                <img src="htmlkuva.png" alt="C# kuva" style="width: 100%; padding-top: 20px;">
+                <p>Sisältää myös<br>php ja css</p>
+              </div>
+              <div class="col-sm-4 hover" onclick="location.href='#';">
+                <img>
+                <h3>Työ3</h3>        
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="parallax"></div>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("header").style.fontSize = "30px";
+              } else {
+                document.getElementById("header").style.fontSize = "90px";
+              }
+            }
+        </script>
+    </body>
+</html>
