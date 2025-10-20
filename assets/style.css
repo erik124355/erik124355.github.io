@@ -1,4 +1,5 @@
 /*Header*/
+/*Header*/
 @font-face {
   font-family: Moderne Sans;
   src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/moderne_sans.woff2);
@@ -6,12 +7,14 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   background: #000;
   background-size: cover;
+  font-family: sans-serif;
 }
 
 header {
@@ -24,28 +27,32 @@ header {
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column; /* stack name and nav */
-  align-items: flex-start; /* force left alignment */
-  justify-content: flex-start; /* force top alignment */
+  align-items: flex-start; /* left align */
+}
+
+header:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
 }
 
 h1 {
   font-family: Moderne Sans, sans-serif;
   font-size: 2rem;
-  margin: 0 0 0.5rem 0; /* space below name */
+  margin-bottom: 0.5rem; /* space below name */
   letter-spacing: 0.5rem;
-  text-align: left; /* make sure text is left-aligned */
+  text-align: left; /* ensure left alignment */
 }
 
 nav {
   display: flex;
-  gap: 1rem; /* space between links */
+  gap: 1rem; /* horizontal spacing between links */
 }
 
 nav a {
   text-decoration: none;
   color: inherit;
-  padding: 0.25rem 0;
 }
+
 
 h2 {
   font-family: Century Schoolbook, Century Schoolbook L, Georgia, serif;
