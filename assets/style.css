@@ -38,7 +38,6 @@ header.hero a {
   text-decoration: none;
 }
 
-/* Project cards */
 .project-cards {
   display: flex;
   flex-wrap: wrap;
@@ -48,14 +47,29 @@ header.hero a {
 }
 
 .project-card {
-  flex: 1 1 calc(33% - 1rem);
+  flex: 1 1 calc(33.333% - 1rem);
   background: #fff;
   padding: 1rem;
   border-radius: 15px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.2s;
   text-align: center;
+  box-sizing: border-box;
 }
+
+
+@media (max-width: 900px) {
+  .project-card {
+    flex: 1 1 calc(50% - 1rem); 
+  }
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    flex: 1 1 100%; 
+  }
+}
+
 
 .project-card img {
   width: 100%;
