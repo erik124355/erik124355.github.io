@@ -17,50 +17,57 @@
       font-family: 'Moderne Sans', sans-serif;
     }
 
-    /* Header */
+
+   /* Header */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       padding: 1rem 2rem;
-      display: flex;
-      flex-direction: column; /* stack name and nav */
-      align-items: flex-start; /* left align */
       background: rgba(0,0,0,0.7);
-      transition: 0.4s;
+      color: #fff;
       z-index: 1000;
     }
-
+    
     header:hover {
       background: rgba(255,255,255,0.8);
       color: #000;
     }
-
-    h1 {
+    
+    header h1 {
+      font-family: 'Moderne Sans', sans-serif;
       font-size: 2rem;
       letter-spacing: 0.3rem;
-      margin-bottom: 0.5rem;
       text-align: left;
+      margin: 0;
     }
-
-   .links  {
+    
+    /* Links under header */
+    .links {
       display: flex;
-      gap: 1rem; /* space between links */
+      gap: 1rem;
+      padding: 1rem 2rem;
+      margin-top: 80px; /* leave space below fixed header */
     }
-
+    
     .links a {
       text-decoration: none;
-      color: inherit;
+      color: #fff;
       font-weight: bold;
     }
-
-    /* Just some content to test scrolling */
+    
+    .links a:hover {
+      color: #ff0; /* optional hover effect */
+    }
+    
+    /* Main content */
     main {
-      margin-top: 120px; /* leave space below fixed header */
+      margin-top: 40px; /* optional spacing after links */
       padding: 2rem;
     }
-
+    
+    
     h2 {
       font-family: Georgia, serif;
       font-size: 3rem;
