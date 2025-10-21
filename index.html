@@ -47,65 +47,46 @@
     <p>Käyn tällä hetkellä Savon ammattiopistossa kaksoistutkintoa. Ammattikoulussa opiskelen tieto- ja viestintätekniikkaa, ja lukiossa keskityn pitkään matematiikkaan, joka on sujunut hyvin. Suoritan opintoni vuonna 2027.</p>
   </div>
 
-  <div id="htmlDIV" class="contentDivhtml">
-    <h4>HTML-töitä</h4>
-
-    <ul class="project-links" id="projectLinks">
-      <li><a href="#" onclick="showProject('1015', ['1015','1016','1018'], 'Työ1'); return false;">Työ1</a></li>
-      <li><a href="#" onclick="showProject('1016', ['1016','1018','1020'], 'Työ2'); return false;">Työ2</a></li>
-      <li><a href="#" onclick="showProject('1018', ['1018','1020','1015'], 'Työ3'); return false;">Työ3</a></li>
-      <li><a href="#" onclick="showProject('1020', ['1020','1015','1016'], 'Työ4'); return false;">Työ4</a></li>
-    </ul>
-
-
-    <div class="main-image" id="mainImageContainer">
-      <img id="mainHTMLImg" src="" alt="">
-      <div class="thumbs" id="thumbsContainer">
-
-      </div>
-      <a class="back" onclick="hideProject()">Takaisin</a>
-    </div>
+  <!-- HTML -->
+<div id="htmlDIV" class="contentDivhtml">
+  <h4>HTML-töitä</h4>
+  <ul class="project-links" id="projectLinks_html">
+    <li><a href="#" onclick="showProject('html', '1015', ['1015','1016','1018'], 'Työ1'); return false;">Työ1</a></li>
+    <li><a href="#" onclick="showProject('html', '1016', ['1016','1018','1020'], 'Työ2'); return false;">Työ2</a></li>
+  </ul>
+  <div class="main-image" id="mainImageContainer_html">
+    <img id="mainHTMLImg_html" src="" alt="">
+    <div class="thumbs" id="thumbsContainer_html"></div>
+    <a class="back" onclick="hideProject('html')">Takaisin</a>
   </div>
+</div>
 
-  <div id="htmlDIV" class="contentDivcsharp">
-    <h4>C#-töitä</h4>
-
-    <ul class="project-links" id="projectLinks">
-      <li><a href="#" onclick="showProject('1015', ['1015','1016','1018'], 'Työ1'); return false;">Työ1</a></li>
-      <li><a href="#" onclick="showProject('1016', ['1016','1018','1020'], 'Työ2'); return false;">Työ2</a></li>
-      <li><a href="#" onclick="showProject('1018', ['1018','1020','1015'], 'Työ3'); return false;">Työ3</a></li>
-      <li><a href="#" onclick="showProject('1020', ['1020','1015','1016'], 'Työ4'); return false;">Työ4</a></li>
-    </ul>
-
-
-    <div class="main-image" id="mainImageContainer">
-      <img id="mainHTMLImg" src="" alt="">
-      <div class="thumbs" id="thumbsContainer">
-
-      </div>
-      <a class="back" onclick="hideProject()">Takaisin</a>
-    </div>
+<!-- C# -->
+<div id="csharpDIV" class="contentDivcsharp">
+  <h4>C#-töitä</h4>
+  <ul class="project-links" id="projectLinks_csharp">
+    <li><a href="#" onclick="showProject('csharp', '2015', ['2015','2016','2018'], 'Työ1'); return false;">Työ1</a></li>
+  </ul>
+  <div class="main-image" id="mainImageContainer_csharp">
+    <img id="mainHTMLImg_csharp" src="" alt="">
+    <div class="thumbs" id="thumbsContainer_csharp"></div>
+    <a class="back" onclick="hideProject('csharp')">Takaisin</a>
   </div>
+</div>
 
-  <div id="htmlDIV" class="contentDivsql">
-    <h4>SQL-töitä</h4>
-
-    <ul class="project-links" id="projectLinks">
-      <li><a href="#" onclick="showProject('1015', ['1015','1016','1018'], 'Työ1'); return false;">Työ1</a></li>
-      <li><a href="#" onclick="showProject('1016', ['1016','1018','1020'], 'Työ2'); return false;">Työ2</a></li>
-      <li><a href="#" onclick="showProject('1018', ['1018','1020','1015'], 'Työ3'); return false;">Työ3</a></li>
-      <li><a href="#" onclick="showProject('1020', ['1020','1015','1016'], 'Työ4'); return false;">Työ4</a></li>
-    </ul>
-
-
-    <div class="main-image" id="mainImageContainer">
-      <img id="mainHTMLImg" src="" alt="">
-      <div class="thumbs" id="thumbsContainer">
-
-      </div>
-      <a class="back" onclick="hideProject()">Takaisin</a>
-    </div>
+<!-- SQL -->
+<div id="sqlDIV" class="contentDivsql">
+  <h4>SQL-töitä</h4>
+  <ul class="project-links" id="projectLinks_sql">
+    <li><a href="#" onclick="showProject('sql', '3015', ['3015','3016','3018'], 'Työ1'); return false;">Työ1</a></li>
+  </ul>
+  <div class="main-image" id="mainImageContainer_sql">
+    <img id="mainHTMLImg_sql" src="" alt="">
+    <div class="thumbs" id="thumbsContainer_sql"></div>
+    <a class="back" onclick="hideProject('sql')">Takaisin</a>
   </div>
+</div>
+
 
   <div id="contactDIV" class="contentDiv">
     <p>Ota yhteyttä: ...</p>
@@ -113,24 +94,22 @@
 
 
 <script>
-function showProject(mainId, thumbs, altText) {
-  const mainImg = document.getElementById('mainHTMLImg');
-  const mainContainer = document.getElementById('mainImageContainer');
-  const links = document.getElementById('projectLinks');
-  const thumbsContainer = document.getElementById('thumbsContainer');
+function showProject(type, mainId, thumbs, altText) {
+  const mainImg = document.getElementById(`mainHTMLImg_${type}`);
+  const mainContainer = document.getElementById(`mainImageContainer_${type}`);
+  const links = document.getElementById(`projectLinks_${type}`);
+  const thumbsContainer = document.getElementById(`thumbsContainer_${type}`);
 
-
+  // Hide project links, show main image container
   links.style.display = 'none';
   mainContainer.style.display = 'block';
 
-
+  // Set main image
   mainImg.src = `https://picsum.photos/id/${mainId}/600/400`;
   mainImg.alt = altText;
 
-
+  // Create thumbnails
   thumbsContainer.innerHTML = '';
-
-
   thumbs.forEach(id => {
     const img = document.createElement('img');
     img.src = `https://picsum.photos/id/${id}/100/70`;
@@ -140,11 +119,10 @@ function showProject(mainId, thumbs, altText) {
   });
 }
 
-function hideProject() {
-  const mainContainer = document.getElementById('mainImageContainer');
-  const links = document.getElementById('projectLinks');
+function hideProject(type) {
+  const mainContainer = document.getElementById(`mainImageContainer_${type}`);
+  const links = document.getElementById(`projectLinks_${type}`);
 
-  // Piilota pääkuva ja pikkukuvat
   mainContainer.style.display = 'none';
   links.style.display = 'block';
 }
@@ -170,8 +148,10 @@ function showDiv(idToShow) {
 window.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('fade-in');
 
-
-  document.getElementById('mainImageContainer').style.display = 'none';
+  // Hide all main image containers on load
+  ['html', 'csharp', 'sql'].forEach(type => {
+    document.getElementById(`mainImageContainer_${type}`).style.display = 'none';
+  });
 });
 </script>
 
