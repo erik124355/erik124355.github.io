@@ -46,17 +46,25 @@
 </div>
 
 <script>
-  function showDiv(idToShow) {
-    const divs = document.querySelectorAll('.contentDiv');
+function showDiv(idToShow) {
+  const divs = document.querySelectorAll('.contentDiv');
+  const links = document.querySelectorAll('.links a');
 
-    divs.forEach(div => {
-      if (div.id === idToShow) {
-        div.classList.add('active');
-      } else {
-        div.classList.remove('active');
-      }
-    });
-  }
+  // Toggle active class on content divs
+  divs.forEach(div => {
+    div.classList.toggle('active', div.id === idToShow);
+  });
+
+  // Toggle active class on links based on which link triggers showDiv for the idToShow
+  links.forEach(link => {
+    const onclickAttr = link.getAttribute('onclick');
+    if (onclickAttr && onclickAttr.includes(idToShow)) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
 </script>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
