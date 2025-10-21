@@ -112,8 +112,8 @@
 
 .contentDivinfo {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  top: 200px;
+  right: 100px;
   width: 270px;
   height: 600px;
   padding: 15px;
@@ -122,7 +122,6 @@
   border-radius: 8px;
   font-size: 16px;
   font-family: 'Courier New', monospace;
-  background: rgba(0,0,0,0.85); /* semi-transparent background */
   color: #fff;
   opacity: 0;
   pointer-events: none;
@@ -136,10 +135,10 @@
   transform: scale(1);
 }
 .contentDivinfo h4, .contentDivinfo i {
-  color: #FFD700; /* gold accent */
+  color: #ffd800; /* gold accent */
   font-weight: normal;
   margin-bottom: 8px;
-  border-bottom: 1px solid #FFD700; /* subtle underline */
+  border-bottom: 1px solid #9b8300; /* subtle underline */
   padding-bottom: 2px;
 }
 .contentDivinfo ul {
