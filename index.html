@@ -75,5 +75,24 @@ function showDiv(idToShow) {
   showDiv('homeDIV');  // <-- This will add .active to Home link and contentDiv properly
 });
 </script>
+  <script>
+	var piirtäjä = kangas.getContext("2d")
+	piirtäjä.strokeStyle = "red"
+	
+	piirtäjä.beginPath()
+	
+	piirtäjä.moveTo(10, 26)
+	piirtäjä.lineTo(110, 26)
+	
+	piirtäjä.moveTo(110, 26)
+	piirtäjä.lineTo(60, 52)
+	
+	piirtäjä.moveTo(10, 26)
+	piirtäjä.lineTo(60, 52)
+	
+
+	
+	piirtäjä.stroke()
+</script>
 </body>
 </html>
