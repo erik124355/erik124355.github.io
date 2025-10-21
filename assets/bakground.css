@@ -1,0 +1,31 @@
+/* background.css */
+
+/* Animated gold background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: conic-gradient(
+    from 180deg at 50% 70%,
+    #111 0deg,
+    #FFD700 90deg,
+    #FFD700 180deg,
+    #FFD700 270deg,
+    #111 360deg
+  );
+  mask:
+    radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / 20px 20px,
+    url("https://assets.codepen.io/605876/noise-mask.png") 256px 50% / 256px 256px;
+  mask-composite: intersect;
+  animation: flicker 25s infinite linear;
+  opacity: 0.5;
+  pointer-events: none; /* important: allows clicks on content */
+  z-index: 0;           /* keep behind content */
+}
+
+/* Flicker animation */
+@keyframes flicker {
+  to {
+    mask-position: 50% 50%, 0 50%;
+  }
+}
