@@ -97,6 +97,27 @@
   align-content: flex-end;
 }
 
+.contentDivinfo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 270px;
+  height: 600px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  overflow: hidden;
+  border-radius: 8px;
+  text-align: right;
+  font-size: 18px;
+  font-family: Courier, monospace;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  align-content: flex-end;
+}
+
 /* Active state: visible and interactable */
 .contentDiv.active {
   opacity: 1;
