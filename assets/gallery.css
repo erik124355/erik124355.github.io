@@ -25,23 +25,45 @@
 .html-gallery .thumbs img:hover {
   transform: scale(1.1);
 }
-.project-links {
-  display: block;       /* ensure it's visible */
-  list-style: none;     /* remove bullets */
-  margin-top: 10px;
-  padding-left: 0;
-}
+
 
 .project-links li {
   margin-bottom: 6px;   /* spacing between links */
 }
+ .project-links {
+      display: inline-flex; 
+      flex-direction: column; 
+      gap: 0.5rem;
+      padding: 0 2rem;
+    }
+    
+    .project-links a {
+      text-decoration: none;
+      cursor: pointer;
+      margin-right: 10px;
+      font-weight: bold;
+      font-family: Courier, monospace;
+      transition: all 0.2s ease;
+      padding: 5px 10px;
+      border-radius: 0; /* optional, no rounded box */
+      font-size: 16px;
+    }
+    
+    .project-links a:hover {
+      text-decoration: underline; 
+      color: #fff;       /* keep text white on hover */
+      background: none;  /* remove background box */
+    }
+    
+    .project-links a.active {
+      text-decoration: underline;
+      color: #fff;             
+      background: none;         
+      border: none;             
+      padding: 5px 0;            
+    }
 
-.project-links a {
-  color: #ffd800;
-  text-decoration: underline;
-  cursor: pointer;
-  font-family: 'Courier New', monospace;
-}
+
 /* Main image should fit neatly inside the box */
 .main-image img {
   width: 100%;
@@ -60,15 +82,6 @@
   gap: 6px;
   flex-wrap: wrap;
   margin-bottom: 10px;
-}
-
-/* Thumbnail images smaller */
-.main-image .thumbs img {
-  width: 50px;
-  height: auto;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: transform 0.2s;
 }
 
 .main-image .thumbs img:hover {
