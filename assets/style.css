@@ -68,9 +68,9 @@
     
     /* ACTIVE LINK STYLE (like a button) */
     .links a.active {
-      background-color: white;
-      color: #000000;
-      border: 2px solid white;
+      background-color: white !important;
+      color: black !important;
+      border: 2px solid white !important;
       padding: 5px 10px;
       border-radius: 5px;
     }
