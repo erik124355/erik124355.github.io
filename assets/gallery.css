@@ -42,4 +42,36 @@
   cursor: pointer;
   font-family: 'Courier New', monospace;
 }
+/* Main image should fit neatly inside the box */
+.main-image img {
+  width: 100%;
+  max-width: 240px;     /* limit size so it fits the side panel */
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Thumbnail container */
+.main-image .thumbs {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+/* Thumbnail images smaller */
+.main-image .thumbs img {
+  width: 50px;
+  height: auto;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.main-image .thumbs img:hover {
+  transform: scale(1.1);
+}
 
