@@ -12,12 +12,12 @@
     <h6>Double degree student (TVT and Lukio) – Savon ammattioopisto</h6>
   </header>
   <div class="links">
-    <a href="#" onclick="Visibility()">Home</a>
-    <a href="#" onclick="Visibility()">HTML</a>
-    <a href="#" onclick="Visibility()">C#</a>
-    <a href="#" onclick="Visibility()">SQL</a>
-    <a href="#" onclick="Visibility()">Info</a>
-    <a href="#" onclick="Visibility()">Contact</a>
+    <a href="#" onclick="showDiv('homeDIV'))">Home</a>
+    <a href="#" onclick="showDiv('htmlDIV')">HTML</a>
+    <a href="#" onclick="showDiv('csharpDIV')">C#</a>
+    <a href="#" onclick="showDiv('sqlDIV')">SQL</a>
+    <a href="#" onclick="showDiv('infoDIV')">Info</a>
+    <a href="#" onclick="showDiv('contactDIV')">Contact</a>
   </div>
 <div id="homeText">
   <div id="homeDIV" class="contentDiv" style="display: block;">
@@ -46,18 +46,13 @@
 </div>
 
 <script>
-  // Select all divs that contain content
-  const divs = document.querySelectorAll('.contentDiv');
+  function showDiv(idToShow) {
+    const divs = document.querySelectorAll('.contentDiv');
 
-  divs.forEach(div => {
-    div.addEventListener('click', () => {
-      // Hide all divs
-      divs.forEach(d => d.style.display = 'none');
-
-      // Show only the clicked div
-      div.style.display = 'block';
+    divs.forEach(div => {
+      div.style.display = (div.id === idToShow) ? 'block' : 'none';
     });
-  });
+  }
 </script>
 
 </body>
