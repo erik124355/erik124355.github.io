@@ -25,3 +25,21 @@
 .html-gallery .thumbs img:hover {
   transform: scale(1.1);
 }
+.project-links {
+  display: block;       /* ensure it's visible */
+  list-style: none;     /* remove bullets */
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.project-links li {
+  margin-bottom: 6px;   /* spacing between links */
+}
+
+.project-links a {
+  color: #ffd800;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+}
+
