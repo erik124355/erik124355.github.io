@@ -74,36 +74,37 @@
       border-radius: 5px;
     }
 
+/* Base hidden state for all contentDivs */
+.contentDiv {
+  text-align: right;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 750px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  overflow: hidden;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  align-content: flex-end;
+}
 
-    contentDiv {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 300px;
-      max-height: 80vh;         
-      padding: 20px;
-      overflow-y: auto;      
-      border-radius: 8px;
-      font-family: Arial, sans-serif;
-      background-color: rgba(0,0,0,0.6);
-      color: white;
-      
-      opacity: 0;
-      pointer-events: none;
-      transform: translate(-50%, -50%) scale(0.95);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      z-index: 1000;
+/* Active state: visible and interactable */
+.contentDiv.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
 
-    }
-    
-    .contentDiv.active {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translate(-50%, -50%) scale(1); 
-    }
-    
-        
-    .contentDiv p {
-      margin-bottom: 1rem;   
-      line-height: 1.5;     
-    }
+/* Optional: Make paragraph scrollable if too long */
+.contentDiv p {
+  margin: 0;
+  overflow-y: auto;
+  max-height: 100%;
+}
