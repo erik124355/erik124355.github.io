@@ -67,22 +67,24 @@ header h1 {
   bottom: 20px;         /* distance from bottom */
   right: 20px;          /* distance from right */
   width: 200px;
-  max-height: 80vh;     /* optional: prevent overflow */
+  height: 120px;        /* fixed height for all */
   padding: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   border-radius: 8px;
   font-family: Arial, sans-serif;
-  opacity: 0;
-  pointer-events: none;
+  background: rgba(0,0,0,0.85);  /* optional: makes text readable */
+  opacity: 0;            /* hidden by default */
+  pointer-events: none;  /* prevents clicks on hidden divs */
   transform: scale(0.95);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1;
-  display: flex;        /* align content properly */
+  z-index: 10;           /* on top of background */
+  display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* push <p> to bottom of div */
+  justify-content: center; /* vertical centering of text */
+  align-items: flex-end;   /* right align text */
 }
 
-/* Active state: visible and interactable */
+/* Active state */
 .contentDiv.active {
   opacity: 1;
   pointer-events: auto;
