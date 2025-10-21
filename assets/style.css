@@ -63,26 +63,25 @@ header h1 {
 
 /* Base hidden state for all contentDivs */
 .contentDiv {
-  position: fixed;      /* anchor to viewport */
-  bottom: 20px;         /* distance from bottom */
-  right: 20px;          /* distance from right */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
   width: 200px;
-  height: 750px;        /* keep your preferred height */
+  height: 750px;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  overflow: hidden;
   border-radius: 8px;
   font-family: Arial, sans-serif;
-  background: rgba(0,0,0,0.85);  /* optional: makes text readable */
-  opacity: 0;            /* hidden by default */
-  pointer-events: none;  /* prevents clicks on hidden divs */
+  opacity: 0;
+  pointer-events: none;
   transform: scale(0.95);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 10;           /* on top of background */
-  display: flex;         /* ensures content alignment */
-  flex-direction: column;
-  justify-content: flex-end; /* text pushed to bottom */
-  align-items: flex-end;     /* right-align text */
+  z-index: 1000;
+  align-content: flex-end;
 }
+
+/* Active state: visible and interactable */
 .contentDiv.active {
   opacity: 1;
   pointer-events: auto;
@@ -118,7 +117,6 @@ body.fade-in {
   opacity: 1;
 }
 
-/* Animated background layer */
 body::before {
   content: "";
   position: fixed;
@@ -138,8 +136,9 @@ body::before {
   animation: flicker 25s infinite linear;
   z-index: 0;
   opacity: 0.5; /* stronger gold effect */
-}
 
+  pointer-events: none; /* <- important so it doesn’t block your divs */
+}
 /* Content stays above background */
 header,
 .links,
