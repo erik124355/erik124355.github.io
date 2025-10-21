@@ -51,19 +51,26 @@
       color: grey;
     }
 
-    #homelDIV {
-      position: fixed;
+    .contentDiv {
+      position: fixed;        
       bottom: 20px;
-      right: 5px;
+      right: 20px;
       width: 300px;
-      max-height: 200px;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 1rem;
+      height: 200px;
+      background: #f0f0f0;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      overflow: hidden;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-      overflow-y: auto;/
+      font-family: Arial, sans-serif;
+      display: none;
       z-index: 1000;
+    }
+    
+    .contentDiv p {
+      margin: 0;
+      overflow-y: auto;
+      max-height: 100%;
     }
 
 
