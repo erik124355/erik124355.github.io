@@ -153,9 +153,9 @@
 .contentDivhtml {
   position: fixed;
   bottom: 20px; /* bring into view */
-  right: 20px;
+  right: 0px;
   width: 270px;
-  height: 600px;
+  height: 450px;
   padding: 15px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   overflow-y: auto;
