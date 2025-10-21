@@ -12,25 +12,88 @@
     <h6>Double degree student (TVT and Lukio) – Savon ammattioopisto</h6>
   </header>
   <div class="links">
-    <a href="#" onclick="homeVisibility()">Home</a>
-    <a href="#">HTML</a>
-    <a href="#">C#</a>
-    <a href="#">SQL</a>
-    <a href="#">Info</a>
-    <a href="#">Contact</a>
+    <a href="Home" onclick="Visibility()">Home</a>
+    <a href="HTML-Projects" onclick="Visibility()">HTML</a>
+    <a href="CSHARP-Projects" onclick="Visibility()">C#</a>
+    <a href="SQL-Projects" onclick="Visibility()">SQL</a>
+    <a href="INFO" onclick="Visibility()">Info</a>
+    <a href="CONTACT" onclick="Visibility()">Contact</a>
   </div>
-  <div id="homelDIV">
-    <p>Thing about me</p>
+  <div id="content">
+    <div id="homeDIV">
+      <p>Thing about me</p>
+    </div>
+    
+    <div id="htmlDIV">
+      <p>  me</p>
+    </div>
+    
+    <div id="csharpDIV">
+      <p>Thing  </p>
+    </div>
+    
+    <div id="sqlDIV">
+      <p>Thing about </p>
+    </div>
+
+    <div id="infoDIV">
+      <p> about me</p>
+    </div>
+    
+    <div id="contactDIV">
+      <p>Thing  me</p>
+    </div>
+    
   </div>
   <script>
-    function homeVisibility() {
-    var x = document.getElementById("homelDIV");
-      if (x.style.display === "none") {
-      x.style.display = "block";
+    function Visibility() {
+    var a = document.getElementById("homeDIV");
+      if (a.style.display === "none") {
+      a.style.display = "block";
       } else {
-        x.style.display = "none";
+        a.style.display = "none";
       }
-    }  
+    }
+
+    var b = document.getElementById("htmlDIV");
+      if (b.style.display === "block") {
+      b.style.display = "none";
+      } else {
+        b.style.display = "block";
+      }
+    }
+
+    var c = document.getElementById("csharpDIV");
+      if (c.style.display === "block") {
+      c.style.display = "none";
+      } else {
+        c.style.display = "block";
+      }
+    }
+
+    var d = document.getElementById("sqlDIV");
+      if (d.style.display === "block") {
+      d.style.display = "none";
+      } else {
+        d.style.display = "block";
+      }
+    }
+
+    var e = document.getElementById("infoDIV");
+      if (e.style.display === "block") {
+      e.style.display = "none";
+      } else {
+        e.style.display = "block";
+      }
+    }
+
+    var f = document.getElementById("contactDIV");
+      if (f.style.display === "block") {
+      f.style.display = "none";
+      } else {
+        f.style.display = "block";
+      }
+    }
   </script>
 </body>
 </html>
