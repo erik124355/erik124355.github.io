@@ -63,10 +63,9 @@ header h1 {
 
 /* Base hidden state for all contentDivs */
 .contentDiv {
-  text-align: right;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  position: fixed;  
+  bottom: 20px;      
+  right: 20px;        
   width: 200px;
   height: 500px;
   padding: 10px;
@@ -78,7 +77,7 @@ header h1 {
   pointer-events: none;
   transform: scale(0.95);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1000;
+  z-index: 1;           /* above background */
   align-content: flex-end;
 }
 
@@ -155,7 +154,7 @@ header,
     mask-position: 50% 50%, 0 50%;
   }
 }
-#home {
+#homeDIV {
   position: absolute;
   top: 50%;
   left: 50%;
