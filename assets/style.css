@@ -53,19 +53,26 @@
     }
 
     .contentDiv {
-      position: fixed;        
+      position: fixed;
       bottom: 20px;
       right: 20px;
-      width: 200px;
-      height: 1000px;
+      width: 300px;
+      height: 200px;
+      background: #f0f0f0;
       padding: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       overflow: hidden;
       border-radius: 8px;
-      font-family: 'Moderne Sans', sans-serif;
-      display: none;
-      align-content: flex-end;
+      font-family: Arial, sans-serif;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
       z-index: 1000;
+    }
+    
+    .contentDiv.active {
+      opacity: 1;
+      pointer-events: auto;
     }
     
     .contentDiv p {
@@ -73,6 +80,5 @@
       overflow-y: auto;
       max-height: 100%;
     }
-
 
 
