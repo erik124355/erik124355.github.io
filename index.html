@@ -20,27 +20,27 @@
     <a onclick="showDiv('contactDIV'); event.preventDefault();">Contact</a>
   </div>
 <div id="homeText">
-  <div id="homeDIV" class="contentDiv" style="display: block;">
+  <div id="homeDIV" class="contentDiv">
     <p>Thing about me</p>
   </div>
 
-  <div id="htmlDIV" class="contentDiv" style="display:none;">
+  <div id="htmlDIV" class="contentDiv">
     <p>me</p>
   </div>
 
-  <div id="csharpDIV" class="contentDiv" style="display:none;">
+  <div id="csharpDIV" class="contentDiv">
     <p>Thing</p>
   </div>
 
-  <div id="sqlDIV" class="contentDiv" style="display:none;">
+  <div id="sqlDIV" class="contentDiv">
     <p>Thing about</p>
   </div>
 
-  <div id="infoDIV" class="contentDiv" style="display:none;">
+  <div id="infoDIV" class="contentDiv">
     <p>about me</p>
   </div>
 
-  <div id="contactDIV" class="contentDiv" style="display:none;">
+  <div id="contactDIV" class="contentDiv">
     <p>Thing me</p>
   </div>
 </div>
@@ -50,7 +50,11 @@
     const divs = document.querySelectorAll('.contentDiv');
 
     divs.forEach(div => {
-      div.style.display = (div.id === idToShow) ? 'block' : 'none';
+      if (div.id === idToShow) {
+        div.classList.add('active');
+      } else {
+        div.classList.remove('active');
+      }
     });
   }
 </script>
