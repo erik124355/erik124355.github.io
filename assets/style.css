@@ -86,7 +86,6 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   overflow: hidden;
   border-radius: 8px;
-  text-align: right;
   font-size: 18px;
   font-family: Courier, monospace;
   opacity: 0;
@@ -107,7 +106,6 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   overflow: hidden;
   border-radius: 8px;
-  text-align: right;
   font-size: 18px;
   font-family: Courier, monospace;
   opacity: 0;
