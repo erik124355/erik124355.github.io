@@ -65,14 +65,15 @@
       color: #000;
     }
     
-    /* ACTIVE LINK STYLE (like a button) */
-    .links a.active {
-  color: #FFD700;
-  font-weight: bold;
-  border-bottom: 2px solid #FFD700;
-  padding-bottom: 2px; 
-  border-radius: 0; 
-}
+   .links a.active {
+      color: white;               /* keep text white */
+      font-weight: bold;           /* emphasize the active link */
+      border-bottom: 2px solid white; /* underline just the text */
+      padding-bottom: 2px;         /* spacing between text and underline */
+      background: none;            /* remove any box background */
+      border-radius: 0;            /* remove any corner rounding */
+    }
+
 
 /* Base hidden state for all contentDivs */
 .contentDiv {
