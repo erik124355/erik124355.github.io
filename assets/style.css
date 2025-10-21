@@ -74,18 +74,18 @@
       border-radius: 5px;
     }
 
-/* Base hidden state for all contentDivs */
+
     contentDiv {
       position: fixed;
       top: 50%;
       left: 50%;
-      width: 300px;               /* wider so text has more space */
-      max-height: 80vh;           /* max 80% viewport height */
+      width: 300px;
+      max-height: 80vh;         
       padding: 20px;
-      overflow-y: auto;           /* scroll if content too tall */
+      overflow-y: auto;      
       border-radius: 8px;
       font-family: Arial, sans-serif;
-      background-color: rgba(0,0,0,0.6);  /* add a subtle background for readability */
+      background-color: rgba(0,0,0,0.6);
       color: white;
       
       opacity: 0;
@@ -93,13 +93,13 @@
       transform: translate(-50%, -50%) scale(0.95);
       transition: opacity 0.3s ease, transform 0.3s ease;
       z-index: 1000;
-      /* Remove text-align: right */
+
     }
     
     .contentDiv.active {
       opacity: 1;
       pointer-events: auto;
-      transform: translate(-50%, -50%) scale(1); /* important to keep centering */
+      transform: translate(-50%, -50%) scale(1); 
     }
     
         
