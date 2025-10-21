@@ -39,8 +39,8 @@
 
 .project-links a {
   position: relative;
-  color: #ffd800;
-  text-decoration: none;
+  color: white;
+  text-decoration: underline;
   font-family: 'Courier New', monospace;
   cursor: pointer;
   transition: color 0.3s ease;
