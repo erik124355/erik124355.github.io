@@ -50,12 +50,12 @@ function showDiv(idToShow) {
   const divs = document.querySelectorAll('.contentDiv');
   const links = document.querySelectorAll('.links a');
 
-  // Toggle active class on content divs
+
   divs.forEach(div => {
     div.classList.toggle('active', div.id === idToShow);
   });
 
-  // Toggle active class on links based on which link triggers showDiv for the idToShow
+
   links.forEach(link => {
     const onclickAttr = link.getAttribute('onclick');
     if (onclickAttr && onclickAttr.includes(idToShow)) {
@@ -72,7 +72,7 @@ function showDiv(idToShow) {
   });
   window.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('fade-in');
-  showDiv('homeDIV');  // <-- This will add .active to Home link and contentDiv properly
+  showDiv('homeDIV');
 });
 </script>
   <script>
