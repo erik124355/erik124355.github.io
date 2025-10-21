@@ -191,20 +191,4 @@
 .contentDivhtml ul li {
   margin-bottom: 4px;
 }
-.project-links {
-  list-style: none;
-  margin-top: 15px;
-  padding-left: 0;
-}
-
-.project-links li {
-  margin-bottom: 6px;
-}
-
-.project-links a {
-  color: #ffd800;
-  text-decoration: underline;
-  cursor: pointer;
-  font-family: 'Courier New', monospace;
-}
 
