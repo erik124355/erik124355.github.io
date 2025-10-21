@@ -11,63 +11,57 @@
     <h1>Erik Cerrada Plumed</h1>
     <h4>Double degree student (TVT and Lukio) – Savon ammattioopisto</h4>
   </header>
-
   <div class="links">
-    <a href="#" data-target="homeDIV" class="active">Home</a>
-    <a href="#" data-target="htmlDIV">HTML</a>
-    <a href="#" data-target="csharpDIV">C#</a>
-    <a href="#" data-target="sqlDIV">SQL</a>
-    <a href="#" data-target="infoDIV">Info</a>
-    <a href="#" data-target="contactDIV">Contact</a>
+    <a onclick="showDiv('homeDIV'); event.preventDefault();">Home</a>
+    <a onclick="showDiv('htmlDIV'); event.preventDefault();">HTML</a>
+    <a onclick="showDiv('csharpDIV'); event.preventDefault();">C#</a>
+    <a onclick="showDiv('sqlDIV'); event.preventDefault();">SQL</a>
+    <a onclick="showDiv('infoDIV'); event.preventDefault();">Info</a>
+    <a onclick="showDiv('contactDIV'); event.preventDefault();">Contact</a>
+  </div>
+<div id="homeText">
+  <div id="homeDIV" class="contentDiv active">
+    <p>Thing about me</p>
   </div>
 
-  <div id="homeText">
-    <div id="homeDIV" class="contentDiv active">
-      <p>Thing about me</p>
-    </div>
-
-    <div id="htmlDIV" class="contentDiv">
-      <p>me</p>
-    </div>
-
-    <div id="csharpDIV" class="contentDiv">
-      <p>Thing</p>
-    </div>
-
-    <div id="sqlDIV" class="contentDiv">
-      <p>Thing about</p>
-    </div>
-
-    <div id="infoDIV" class="contentDiv">
-      <p>about me</p>
-    </div>
-
-    <div id="contactDIV" class="contentDiv">
-      <p>Thing me</p>
-    </div>
+  <div id="htmlDIV" class="contentDiv">
+    <p>me</p>
   </div>
 
-  <script>
-    const links = document.querySelectorAll('.links a');
+  <div id="csharpDIV" class="contentDiv">
+    <p>Thing</p>
+  </div>
+
+  <div id="sqlDIV" class="contentDiv">
+    <p>Thing about</p>
+  </div>
+
+  <div id="infoDIV" class="contentDiv">
+    <p>about me</p>
+  </div>
+
+  <div id="contactDIV" class="contentDiv">
+    <p>Thing me</p>
+  </div>
+</div>
+
+<script>
+  function showDiv(idToShow) {
     const divs = document.querySelectorAll('.contentDiv');
 
-    links.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-
-        const idToShow = link.getAttribute('data-target');
-
-        // Toggle active class on content divs
-        divs.forEach(div => {
-          div.classList.toggle('active', div.id === idToShow);
-        });
-
-        // Toggle active class on links
-        links.forEach(l => {
-          l.classList.toggle('active', l === link);
-        });
-      });
+    divs.forEach(div => {
+      if (div.id === idToShow) {
+        div.classList.add('active');
+      } else {
+        div.classList.remove('active');
+      }
     });
-  </script>
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('fade-in');
+  });
+</script>
 </body>
 </html>
