@@ -80,13 +80,13 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 200px;
+  width: 225px;
   height: 600px;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   overflow: hidden;
   border-radius: 8px;
-  font-size: 17px;
+  font-size: 19px;
   font-family: Courier, monospace;
   opacity: 0;
   pointer-events: none;
