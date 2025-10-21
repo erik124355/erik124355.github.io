@@ -45,6 +45,9 @@
   cursor: pointer;
   transition: color 0.3s ease;
 }
+.back {
+  text-decoration: underline;
+}
 
 
 /* Main image */
