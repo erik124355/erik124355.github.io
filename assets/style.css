@@ -75,37 +75,35 @@
     }
 
 /* Base hidden state for all contentDivs */
-.contentDiv {
-  text-align: right;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 200px;
-  height: 750px;
-  padding: 10px;
-  overflow: hidden;
-  border-radius: 8px;
-  font-family: Arial, sans-serif;
-  opacity: 0;
-  pointer-events: none;
-  /* translate centers the div, scale does zoom */
-  transform: translate(-50%, -50%) scale(0.95);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1000;
-  align-content: flex-end;
-}
-
-
-/* Active state: visible and interactable */
-.contentDiv.active {
-  opacity: 1;
-  pointer-events: auto;
-  transform: scale(1);
-}
-
-/* Optional: Make paragraph scrollable if too long */
-.contentDiv p {
-  margin: 0;
-  overflow-y: auto;
-  max-height: 100%;
-}
+    contentDiv {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 300px;               /* wider so text has more space */
+      max-height: 80vh;           /* max 80% viewport height */
+      padding: 20px;
+      overflow-y: auto;           /* scroll if content too tall */
+      border-radius: 8px;
+      font-family: Arial, sans-serif;
+      background-color: rgba(0,0,0,0.6);  /* add a subtle background for readability */
+      color: white;
+      
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scale(0.95);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
+      /* Remove text-align: right */
+    }
+    
+    .contentDiv.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1); /* important to keep centering */
+    }
+    
+        
+    .contentDiv p {
+      margin-bottom: 1rem;   
+      line-height: 1.5;     
+    }
