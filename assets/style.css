@@ -152,13 +152,13 @@
 
 .contentDivhtml {
   position: fixed;
-  bottom: -80px;
-  right: 0px;
+  bottom: 20px; /* bring into view */
+  right: 20px;
   width: 270px;
   height: 600px;
   padding: 15px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  overflow-y: auto; /* allow scroll if content overflows */
+  overflow-y: auto;
   border-radius: 8px;
   font-size: 16px;
   font-family: 'Courier New', monospace;
@@ -169,11 +169,13 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 1000;
 }
+
 .contentDivhtml.active {
   opacity: 1;
   pointer-events: auto;
   transform: scale(1);
 }
+
 .contentDivhtml h4, .contentDivhtml i {
   color: #ffd800; /* gold accent */
   font-weight: normal;
@@ -189,3 +191,20 @@
 .contentDivhtml ul li {
   margin-bottom: 4px;
 }
+.project-links {
+  list-style: none;
+  margin-top: 15px;
+  padding-left: 0;
+}
+
+.project-links li {
+  margin-bottom: 6px;
+}
+
+.project-links a {
+  color: #ffd800;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+}
+
