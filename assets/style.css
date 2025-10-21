@@ -43,6 +43,7 @@
     }
 
     .links a {
+      font-size: 12px;
       text-decoration: none;
       cursor: pointer;
       margin-right: 10px;
