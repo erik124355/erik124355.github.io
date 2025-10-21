@@ -14,6 +14,7 @@
       background: #000;
       color: #fff;
       font-family: 'Moderne Sans', sans-serif;
+      padding-top: 80px;
     }
 
     /* Header */
@@ -36,9 +37,8 @@
     /* Links below header */
     .links {
       display: inline-flex; 
-      flex-direction: column; /* stack vertically */
-      gap: 0.5rem;            /* spacing between links */
-      margin-top: 80px;        /* space for fixed header */
+      flex-direction: column; 
+      gap: 0.5rem;
       padding: 0 2rem;
     }
 
