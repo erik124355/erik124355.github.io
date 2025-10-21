@@ -3,11 +3,56 @@
   src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/moderne_sans.woff2');
 }
 
+@font-face {
+  font-family: "Geist";
+  src: url("https://assets.codepen.io/605876/GeistVF.ttf") format("truetype");
+}
+
 /* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* Body */
+body {
+  position: relative;
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  font-family: 'Moderne Sans', sans-serif;
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  overflow: hidden;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+
+/* Animated gold background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: conic-gradient(
+    from 180deg at 50% 70%,
+    #111 0deg,
+    #FFD700 90deg,
+    #FFD700 180deg,
+    #FFD700 270deg,
+    #111 360deg
+  );
+  mask:
+    radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / 20px 20px,
+    url("https://assets.codepen.io/605876/noise-mask.png") 256px 50% / 256px 256px;
+  mask-composite: intersect;
+  animation: flicker 25s infinite linear;
+  opacity: 0.5;
+  pointer-events: none; /* important: allows clicks on content */
+  z-index: 0;
 }
 
 /* Header */
@@ -19,7 +64,7 @@ header {
   width: 100%;
   padding: 1rem 2rem;
   background: rgba(0,0,0,0.7);
-  z-index: 1000;
+  z-index: 10;
 }
 
 header h1 {
@@ -28,10 +73,10 @@ header h1 {
   text-align: left;
 }
 
-/* Links below header */
+/* Links */
 .links {
-  display: inline-flex; 
-  flex-direction: column; 
+  display: inline-flex;
+  flex-direction: column;
   gap: 0.5rem;
   padding: 0 2rem;
 }
@@ -52,7 +97,6 @@ header h1 {
   color: #000;
 }
 
-/* ACTIVE LINK STYLE (like a button) */
 .links a.active {
   background-color: white !important;
   color: black !important;
@@ -61,7 +105,7 @@ header h1 {
   border-radius: 5px;
 }
 
-/* Base hidden state for all contentDivs */
+/* Content Divs (old layout preserved) */
 .contentDiv {
   position: fixed;
   bottom: 20px;
@@ -77,7 +121,7 @@ header h1 {
   pointer-events: none;
   transform: scale(0.95);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1000;
+  z-index: 10;
   align-content: flex-end;
 }
 
@@ -87,64 +131,20 @@ header h1 {
   pointer-events: auto;
   transform: scale(1);
 }
-/* Optional: Make paragraph scrollable if too long */
+
+/* Optional scrollable paragraph */
 .contentDiv p {
   margin: 0;
   overflow-y: auto;
   max-height: 100%;
 }
 
-/* --- Modern black & gold animated background --- */
-@font-face {
-  font-family: "Geist";
-  src: url("https://assets.codepen.io/605876/GeistVF.ttf") format("truetype");
-}
-
-/* Background element */
-body {
-  position: relative;
-  min-height: 100vh;
-  background: #000;
-  color: #fff;
-  font-family: 'Moderne Sans', sans-serif;
-  font-size: 18px;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-  overflow: hidden;
-}
-
-body.fade-in {
-  opacity: 1;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: conic-gradient(
-    from 180deg at 50% 70%,
-    #111 0deg,
-    #FFD700 90deg,   
-    #FFD700 180deg,  
-    #FFD700 270deg, 
-    #111 360deg
-  );
-  mask:
-    radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / 20px 20px,
-    url("https://assets.codepen.io/605876/noise-mask.png") 256px 50% / 256px 256px;
-  mask-composite: intersect;
-  animation: flicker 25s infinite linear;
-  z-index: 0;
-  opacity: 0.5; /* stronger gold effect */
-
-  pointer-events: none; /* <- important so it doesn’t block your divs */
-}
-/* Content stays above background */
+/* Keep content above background */
 header,
 .links,
 .contentDiv {
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* Flicker animation */
@@ -153,6 +153,3 @@ header,
     mask-position: 50% 50%, 0 50%;
   }
 }
-
-
-
