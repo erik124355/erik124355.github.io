@@ -150,7 +150,7 @@
   margin-bottom: 4px;
 }
 
-.tyot {
+.contentDivhtml {
   position: fixed;
   bottom: 20px; /* bring into view */
   right: 0px;
@@ -170,40 +170,108 @@
   z-index: 1000;
 }
 
-.tyot.active {
+.contentDivhtml.active {
   opacity: 1;
   pointer-events: auto;
   transform: scale(1);
 }
 
-.tyot h4, .tyot i {
+.contentDivhtml h4, .contentDivhtml i {
   color: #ffd800; /* gold accent */
   font-weight: normal;
   margin-bottom: 8px;
   border-bottom: 1px solid #9b8300; /* subtle underline */
   padding-bottom: 2px;
 }
-.tyot ul {
+.contentDivhtml ul {
   list-style: none;
   padding-left: 0;
   margin-bottom: 10px;
 }
-.tyot ul li {
+.contentDivhtml ul li {
   margin-bottom: 4px;
 }
-.contentDiv, .contentDivinfo, .contentDivhtml, .contentDivcsharp, .contentDivsql {
-  display: none;
+
+.contentDivcsharp {
+  position: fixed;
+  bottom: 20px; /* bring into view */
+  right: 0px;
+  width: 270px;
+  height: auto;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  overflow-y: auto;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Courier New', monospace;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
 }
-.contentDiv.active,
-.contentDivinfo.active,
-.contentDivhtml.active,
-.contentDivcsharp.active,
+
+.contentDivcsharp.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.contentDivcsharp h4, .contentDivcsharp i {
+  color: #ffd800; /* gold accent */
+  font-weight: normal;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #9b8300; /* subtle underline */
+  padding-bottom: 2px;
+}
+.contentDivcsharp ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 10px;
+}
+.contentDivcsharp ul li {
+  margin-bottom: 4px;
+}
+
+.contentDivsql {
+  position: fixed;
+  bottom: 20px; /* bring into view */
+  right: 0px;
+  width: 270px;
+  height: auto;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  overflow-y: auto;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Courier New', monospace;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
 .contentDivsql.active {
-  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
 }
-.tyot {
-  display: none;
+
+.contentDivsql h4, .contentDivsql i {
+  color: #ffd800; /* gold accent */
+  font-weight: normal;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #9b8300; /* subtle underline */
+  padding-bottom: 2px;
 }
-#htmlDIV.active, #csharpDIV.active, #sqlDIV.active {
-  display: block;
+.contentDivsql ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 10px;
+}
+.contentDivsql ul li {
+  margin-bottom: 4px;
 }
