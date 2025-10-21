@@ -127,9 +127,9 @@ body::before {
   background: conic-gradient(
     from 180deg at 50% 70%,
     #111 0deg,
-    #c9a227 90deg,
-    #ffd700 180deg,
-    #c9a227 270deg,
+    #FFD700 90deg,   
+    #FFD700 180deg,  
+    #FFD700 270deg, 
     #111 360deg
   );
   mask:
@@ -138,7 +138,7 @@ body::before {
   mask-composite: intersect;
   animation: flicker 25s infinite linear;
   z-index: 0;
-  opacity: 0.25; /* subtle behind your content */
+  opacity: 0.5; /* stronger gold effect */
 }
 
 /* Content stays above background */
