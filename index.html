@@ -47,11 +47,9 @@
     <p>Käyn tällä hetkellä Savon ammattiopistossa kaksoistutkintoa...</p>
   </div>
 
-  <!-- ✅ Give this div the correct id (so it toggles on link click) -->
   <div id="htmlDIV" class="contentDivhtml">
     <h4>HTML-töitä</h4>
 
-    <!-- Project links -->
     <ul class="project-links" id="projectLinks">
       <li><a href="#" onclick="showProject('1015', ['1015','1016','1018'], 'Työ1'); return false;">Työ1</a></li>
       <li><a href="#" onclick="showProject('1016', ['1016','1018','1020'], 'Työ2'); return false;">Työ2</a></li>
@@ -59,11 +57,11 @@
       <li><a href="#" onclick="showProject('1020', ['1020','1015','1016'], 'Työ4'); return false;">Työ4</a></li>
     </ul>
 
-    <!-- Main image container -->
+
     <div class="main-image" id="mainImageContainer">
       <img id="mainHTMLImg" src="" alt="">
       <div class="thumbs" id="thumbsContainer">
-        <!-- thumbnails added by JS -->
+
       </div>
       <a class="back" onclick="hideProject()">Takaisin</a>
     </div>
@@ -81,7 +79,7 @@
     <p>Ota yhteyttä: ...</p>
   </div>
 
-  <!-- ✅ Scripts -->
+
 <script>
 function showProject(mainId, thumbs, altText) {
   const mainImg = document.getElementById('mainHTMLImg');
@@ -89,18 +87,18 @@ function showProject(mainId, thumbs, altText) {
   const links = document.getElementById('projectLinks');
   const thumbsContainer = document.getElementById('thumbsContainer');
 
-  // Piilota linkkilista ja näytä kuvagalleria
+
   links.style.display = 'none';
   mainContainer.style.display = 'block';
 
-  // Aseta pääkuva
+
   mainImg.src = `https://picsum.photos/id/${mainId}/600/400`;
   mainImg.alt = altText;
 
-  // Tyhjennä aiemmat pienet kuvat
+
   thumbsContainer.innerHTML = '';
 
-  // Lisää pikkukuvat
+
   thumbs.forEach(id => {
     const img = document.createElement('img');
     img.src = `https://picsum.photos/id/${id}/100/70`;
@@ -137,11 +135,10 @@ function showDiv(idToShow) {
   });
 }
 
-// Fade-in efekti
 window.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('fade-in');
 
-  // ✅ Piilota galleria alkuun
+
   document.getElementById('mainImageContainer').style.display = 'none';
 });
 </script>
