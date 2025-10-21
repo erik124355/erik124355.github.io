@@ -63,22 +63,23 @@ header h1 {
 
 /* Base hidden state for all contentDivs */
 .contentDiv {
-  position: fixed;  
-  bottom: 20px;      
-  right: 20px;        
+  position: fixed;      /* anchor to viewport */
+  bottom: 20px;         /* distance from bottom */
+  right: 20px;          /* distance from right */
   width: 200px;
-  height: 500px;
+  max-height: 80vh;     /* optional: prevent overflow */
   padding: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  overflow: hidden;
   border-radius: 8px;
   font-family: Arial, sans-serif;
   opacity: 0;
   pointer-events: none;
   transform: scale(0.95);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1;           /* above background */
-  align-content: flex-end;
+  z-index: 1;
+  display: flex;        /* align content properly */
+  flex-direction: column;
+  justify-content: flex-end; /* push <p> to bottom of div */
 }
 
 /* Active state: visible and interactable */
@@ -154,12 +155,6 @@ header,
     mask-position: 50% 50%, 0 50%;
   }
 }
-#homeDIV {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
+
 
 
