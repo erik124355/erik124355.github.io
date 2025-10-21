@@ -155,7 +155,7 @@
   bottom: 20px; /* bring into view */
   right: 0px;
   width: 270px;
-  height: 450px;
+  height: auto;
   padding: 15px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   overflow-y: auto;
