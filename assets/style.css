@@ -150,7 +150,7 @@
   margin-bottom: 4px;
 }
 
-.contentDivhtml {
+.tyot {
   position: fixed;
   bottom: 20px; /* bring into view */
   right: 0px;
@@ -170,25 +170,25 @@
   z-index: 1000;
 }
 
-.contentDivhtml.active {
+.tyot.active {
   opacity: 1;
   pointer-events: auto;
   transform: scale(1);
 }
 
-.contentDivhtml h4, .contentDivhtml i {
+.tyot h4, .tyot i {
   color: #ffd800; /* gold accent */
   font-weight: normal;
   margin-bottom: 8px;
   border-bottom: 1px solid #9b8300; /* subtle underline */
   padding-bottom: 2px;
 }
-.contentDivhtml ul {
+.tyot ul {
   list-style: none;
   padding-left: 0;
   margin-bottom: 10px;
 }
-.contentDivhtml ul li {
+.tyot ul li {
   margin-bottom: 4px;
 }
 
