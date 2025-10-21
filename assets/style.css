@@ -191,4 +191,19 @@
 .tyot ul li {
   margin-bottom: 4px;
 }
-
+.contentDiv, .contentDivinfo, .contentDivhtml, .contentDivcsharp, .contentDivsql {
+  display: none;
+}
+.contentDiv.active,
+.contentDivinfo.active,
+.contentDivhtml.active,
+.contentDivcsharp.active,
+.contentDivsql.active {
+  display: block;
+}
+.tyot {
+  display: none;
+}
+#htmlDIV.active, #csharpDIV.active, #sqlDIV.active {
+  display: block;
+}
