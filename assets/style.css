@@ -78,7 +78,7 @@
 /* Base hidden state for all contentDivs */
 .contentDiv {
   position: fixed;
-  bottom: 20px;
+  bottom: 15px;
   right: 20px;
   width: 225px;
   height: 600px;
@@ -112,7 +112,7 @@
 
 .contentDivinfo {
   position: fixed;
-  bottom: -80px;
+  bottom: -115px;
   right: 0px;
   width: 270px;
   height: 600px;
