@@ -37,7 +37,6 @@
   margin-bottom: 6px;
 }
 
-/* ✅ Animated underline for yellow project links */
 .project-links a {
   position: relative;
   color: #ffd800;
@@ -47,24 +46,6 @@
   transition: color 0.3s ease;
 }
 
-.project-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0%;
-  height: 2px;
-  background-color: #ffd800;
-  transition: width 0.3s ease;
-}
-
-.project-links a:hover {
-  color: #fff;
-}
-
-.project-links a:hover::after {
-  width: 100%;
-}
 
 /* Main image */
 .main-image img {
