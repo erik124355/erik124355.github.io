@@ -12,12 +12,25 @@
     <h6>Double degree student (TVT and Lukio) – Savon ammattioopisto</h6>
   </header>
   <div class="links">
-    <a href="#html-projects">Home</a>
-    <a href="#html-projects">HTML</a>
-    <a href="#csharp-projects">C#</a>
-    <a href="#sql-projects">SQL</a>
-    <a href="#contact">Info</a>
-    <a href="#contact">Contact</a>
+    <a href="#" onclick="homeVisibility()">Home</a>
+    <a href="#">HTML</a>
+    <a href="#">C#</a>
+    <a href="#">SQL</a>
+    <a href="#">Info</a>
+    <a href="#">Contact</a>
   </div>
+  <div id="homelDIV">
+    <p>Thing about me</p>
+  </div>
+  <script>
+    function htmlVisibility() {
+    var x = document.getElementById("homelDIV");
+      if (x.style.display === "none") {
+      x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }  
+  </script>
 </body>
 </html>
