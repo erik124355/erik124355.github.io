@@ -52,22 +52,25 @@
 <div id="htmlDIV" class="contentDivhtml">
   <h4>HTML-töitä:</h4>
   <div class="html-gallery">
-    <!-- Main image container -->
+
+    <!-- Main image container (hidden by default) -->
     <div class="main-image" id="mainImageContainer" style="display:none;">
       <img id="mainHTMLImg" src="" alt="">
       <br>
       <a href="#" onclick="hideProject(); return false;">Takaisin</a>
     </div>
 
-    <!-- Project links -->
+    <!-- Project links (shown by default) -->
     <ul class="project-links" id="projectLinks">
       <li><a href="#" onclick="showProject('1015', 'Työ1'); return false;">Työ1</a></li>
       <li><a href="#" onclick="showProject('1016', 'Työ2'); return false;">Työ2</a></li>
       <li><a href="#" onclick="showProject('1018', 'Työ3'); return false;">Työ3</a></li>
       <li><a href="#" onclick="showProject('1020', 'Työ4'); return false;">Työ4</a></li>
     </ul>
+
   </div>
 </div>
+
 
 <script>
 function showProject(id, altText) {
@@ -96,6 +99,7 @@ function hideProject() {
   // Show project links
   links.style.display = 'block';
 }
+
 </script>
 
 
