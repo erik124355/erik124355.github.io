@@ -51,7 +51,20 @@
       color: grey;
     }
 
-    /* Main content */
+    #homelDIV {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      max-height: 200px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      overflow-y: auto;/
+      z-index: 1000;
+    }
 
 
 
