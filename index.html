@@ -19,81 +19,46 @@
     <a href="#" onclick="Visibility()">Info</a>
     <a href="#" onclick="Visibility()">Contact</a>
   </div>
-  <div id="homeText">
-    <div id="homeDIV">
-      <p id="Text">Thing about me</p>
-    </div>
-    
-    <div id="htmlDIV">
-      <p id="Text">  me</p>
-    </div>
-    
-    <div id="csharpDIV">
-      <p id="Text">Thing  </p>
-    </div>
-    
-    <div id="sqlDIV">
-      <p id="Text">Thing about </p>
-    </div>
-
-    <div id="infoDIV">
-      <p id="Text"> about me</p>
-    </div>
-    
-    <div id="contactDIV">
-      <p id="Text">Thing  me</p>
-    </div>
-    
+<div id="homeText">
+  <div id="homeDIV" class="contentDiv" style="display: block;">
+    <p>Thing about me</p>
   </div>
-  <script>
-    function Visibility() {
-    var a = document.getElementById("homeDIV");
-      if (a.style.display === "none") {
-      a.style.display = "block";
-      } else {
-        a.style.display = "none";
-      }
-    }
 
-    var b = document.getElementById("htmlDIV");
-      if (b.style.display === "block") {
-      b.style.display = "none";
-      } else {
-        b.style.display = "block";
-      }
-    }
+  <div id="htmlDIV" class="contentDiv" style="display:none;">
+    <p>me</p>
+  </div>
 
-    var c = document.getElementById("csharpDIV");
-      if (c.style.display === "block") {
-      c.style.display = "none";
-      } else {
-        c.style.display = "block";
-      }
-    }
+  <div id="csharpDIV" class="contentDiv" style="display:none;">
+    <p>Thing</p>
+  </div>
 
-    var d = document.getElementById("sqlDIV");
-      if (d.style.display === "block") {
-      d.style.display = "none";
-      } else {
-        d.style.display = "block";
-      }
-    }
+  <div id="sqlDIV" class="contentDiv" style="display:none;">
+    <p>Thing about</p>
+  </div>
 
-    var e = document.getElementById("infoDIV");
-      if (e.style.display === "block") {
-      e.style.display = "none";
-      } else {
-        e.style.display = "block";
-      }
-    }
+  <div id="infoDIV" class="contentDiv" style="display:none;">
+    <p>about me</p>
+  </div>
 
-    var f = document.getElementById("contactDIV");
-      if (f.style.display === "block") {
-      f.style.display = "none";
-      } else {
-        f.style.display = "block";
-      }
-    }
-  </script>
+  <div id="contactDIV" class="contentDiv" style="display:none;">
+    <p>Thing me</p>
+  </div>
+</div>
+
+<script>
+  // Select all divs that contain content
+  const divs = document.querySelectorAll('.contentDiv');
+
+  divs.forEach(div => {
+    div.addEventListener('click', () => {
+      // Hide all divs
+      divs.forEach(d => d.style.display = 'none');
+
+      // Show only the clicked div
+      div.style.display = 'block';
+    });
+  });
+</script>
+
 </body>
 </html>
