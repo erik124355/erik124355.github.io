@@ -82,60 +82,69 @@
   </div>
 
   <!-- ✅ Scripts -->
-  <script>
-    function showProject(mainId, thumbs, altText) {
-      const mainImg = document.getElementById('mainHTMLImg');
-      const mainContainer = document.getElementById('mainImageContainer');
-      const links = document.getElementById('projectLinks');
-      const thumbsContainer = document.getElementById('thumbsContainer');
+<script>
+function showProject(mainId, thumbs, altText) {
+  const mainImg = document.getElementById('mainHTMLImg');
+  const mainContainer = document.getElementById('mainImageContainer');
+  const links = document.getElementById('projectLinks');
+  const thumbsContainer = document.getElementById('thumbsContainer');
 
-      // Hide links, show main image container
-      links.style.display = 'none';
-      mainContainer.style.display = 'block';
+  // Piilota linkkilista ja näytä kuvagalleria
+  links.style.display = 'none';
+  mainContainer.style.display = 'block';
 
-      // Set main image
-      mainImg.src = `https://picsum.photos/id/${mainId}/600/400`;
-      mainImg.alt = altText;
+  // Aseta pääkuva
+  mainImg.src = `https://picsum.photos/id/${mainId}/600/400`;
+  mainImg.alt = altText;
 
-      // Clear previous thumbnails
-      thumbsContainer.innerHTML = '';
+  // Tyhjennä aiemmat pienet kuvat
+  thumbsContainer.innerHTML = '';
 
-      // Add thumbnails
-      thumbs.forEach(id => {
-        const img = document.createElement('img');
-        img.src = `https://picsum.photos/id/${id}/100/70`;
-        img.alt = `Thumb ${id}`;
-        img.onclick = () => { mainImg.src = `https://picsum.photos/id/${id}/600/400`; };
-        thumbsContainer.appendChild(img);
-      });
+  // Lisää pikkukuvat
+  thumbs.forEach(id => {
+    const img = document.createElement('img');
+    img.src = `https://picsum.photos/id/${id}/100/70`;
+    img.alt = `Thumb ${id}`;
+    img.onclick = () => { mainImg.src = `https://picsum.photos/id/${id}/600/400`; };
+    thumbsContainer.appendChild(img);
+  });
+}
+
+function hideProject() {
+  const mainContainer = document.getElementById('mainImageContainer');
+  const links = document.getElementById('projectLinks');
+
+  // Piilota pääkuva ja pikkukuvat
+  mainContainer.style.display = 'none';
+  links.style.display = 'block';
+}
+
+function showDiv(idToShow) {
+  const divs = document.querySelectorAll('.contentDiv, .contentDivinfo, .contentDivhtml');
+  const links = document.querySelectorAll('.links a');
+
+  divs.forEach(div => {
+    div.classList.toggle('active', div.id === idToShow);
+  });
+
+  links.forEach(link => {
+    const onclickAttr = link.getAttribute('onclick');
+    if (onclickAttr && onclickAttr.includes(idToShow)) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
     }
+  });
+}
 
-    function hideProject() {
-      document.getElementById('mainImageContainer').style.display = 'none';
-      document.getElementById('projectLinks').style.display = 'block';
-    }
+// Fade-in efekti
+window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('fade-in');
 
-    function showDiv(idToShow) {
-      const divs = document.querySelectorAll('.contentDiv, .contentDivinfo, .contentDivhtml');
-      const links = document.querySelectorAll('.links a');
+  // ✅ Piilota galleria alkuun
+  document.getElementById('mainImageContainer').style.display = 'none';
+});
+</script>
 
-      divs.forEach(div => {
-        div.classList.toggle('active', div.id === idToShow);
-      });
-
-      links.forEach(link => {
-        const onclickAttr = link.getAttribute('onclick');
-        if (onclickAttr && onclickAttr.includes(idToShow)) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      document.body.classList.add('fade-in');
-    });
-  </script>
 </body>
 </html>
