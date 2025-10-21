@@ -31,7 +31,7 @@
       left: 0;
       width: 100%;
       padding: 1rem 2rem;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0,0,0,0.7);
       z-index: 1000;
     }
 
@@ -49,24 +49,29 @@
       padding: 0 2rem;
     }
 
-   .links a {
-      cursor: pointer;
-      padding: 5px 10px;
+    .links a {
       text-decoration: none;
-      color: #333; /* Normal link color (dark grey) */
-      transition: color 0.3s, background-color 0.3s;
+      cursor: pointer;
+      margin-right: 10px;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      transition: all 0.2s ease;
+      padding: 5px 10px;
+      border-radius: 5px;
     }
     
     .links a:hover {
-      color: grey; /* Hover color */
+      background-color: #f0f0f0;
+      color: #000;
     }
     
+    /* ACTIVE LINK STYLE (like a button) */
     .links a.active {
-      background-color: white; /* Highlight background */
-      color: black;            /* Highlight text */
-      border: 2px solid white;
-      border-radius: 5px;
+      background-color: white !important;
+      color: black !important;
+      border: 2px solid white !important;
       padding: 5px 10px;
+      border-radius: 5px;
     }
 
 /* Base hidden state for all contentDivs */
@@ -102,5 +107,3 @@
   overflow-y: auto;
   max-height: 100%;
 }
-
-
