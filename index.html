@@ -52,25 +52,26 @@
 <div id="htmlDIV" class="contentDivhtml">
   <h4>HTML-töitä:</h4>
   <div class="html-gallery">
+    <!-- Main image -->
     <div class="main-image">
-      <img id="mainHTMLImg" src="https://picsum.photos/id/1015/600/400" alt="Työ1">
+      <img id="mainHTMLImg" src="" alt="">
     </div>
-    <div class="thumbs">
-      <img src="https://picsum.photos/id/1015/150/100" onclick="changeHTMLImage(this)" alt="Työ1">
-      <img src="https://picsum.photos/id/1016/150/100" onclick="changeHTMLImage(this)" alt="Työ2">
-      <img src="https://picsum.photos/id/1018/150/100" onclick="changeHTMLImage(this)" alt="Työ3">
-      <img src="https://picsum.photos/id/1020/150/100" onclick="changeHTMLImage(this)" alt="Työ4">
-    </div>
+
+    <!-- Project links -->
+    <ul class="project-links">
+      <li><a href="#" onclick="showProject('1015', 'Työ1'); return false;">Työ1</a></li>
+      <li><a href="#" onclick="showProject('1016', 'Työ2'); return false;">Työ2</a></li>
+      <li><a href="#" onclick="showProject('1018', 'Työ3'); return false;">Työ3</a></li>
+      <li><a href="#" onclick="showProject('1020', 'Työ4'); return false;">Työ4</a></li>
+    </ul>
   </div>
 </div>
 
-
-
 <script>
-  function changeHTMLImage(thumbnail) {
+  function showProject(id, altText) {
     const mainImg = document.getElementById("mainHTMLImg");
-    mainImg.src = thumbnail.src.replace('/150/100', '/600/400'); // bigger version
-    mainImg.alt = thumbnail.alt;
+    mainImg.src = `https://picsum.photos/id/${id}/600/400`;
+    mainImg.alt = altText;
   }
 </script>
 
