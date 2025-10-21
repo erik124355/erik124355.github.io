@@ -49,29 +49,24 @@
       padding: 0 2rem;
     }
 
-    .links a {
-      text-decoration: none;
+   .links a {
       cursor: pointer;
-      margin-right: 10px;
-      font-weight: bold;
-      font-family: Arial, sans-serif;
-      transition: all 0.2s ease;
       padding: 5px 10px;
-      border-radius: 5px;
+      text-decoration: none;
+      color: #333; /* Normal link color (dark grey) */
+      transition: color 0.3s, background-color 0.3s;
     }
     
     .links a:hover {
-      background-color: #f0f0f0;
-      color: #000;
+      color: grey; /* Hover color */
     }
     
-    /* ACTIVE LINK STYLE (like a button) */
     .links a.active {
-      background-color: white !important;
-      color: black !important;
-      border: 2px solid white !important;
-      padding: 5px 10px;
+      background-color: white; /* Highlight background */
+      color: black;            /* Highlight text */
+      border: 2px solid white;
       border-radius: 5px;
+      padding: 5px 10px;
     }
 
 /* Base hidden state for all contentDivs */
