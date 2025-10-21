@@ -63,25 +63,26 @@ header h1 {
 
 /* Base hidden state for all contentDivs */
 .contentDiv {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  position: fixed;      /* anchor to viewport */
+  bottom: 20px;         /* distance from bottom */
+  right: 20px;          /* distance from right */
   width: 200px;
-  height: 750px;
+  height: 750px;        /* keep your preferred height */
   padding: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  overflow: hidden;
   border-radius: 8px;
   font-family: Arial, sans-serif;
-  opacity: 0;
-  pointer-events: none;
+  background: rgba(0,0,0,0.85);  /* optional: makes text readable */
+  opacity: 0;            /* hidden by default */
+  pointer-events: none;  /* prevents clicks on hidden divs */
   transform: scale(0.95);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1000;
-  align-content: flex-end;
+  z-index: 10;           /* on top of background */
+  display: flex;         /* ensures content alignment */
+  flex-direction: column;
+  justify-content: flex-end; /* text pushed to bottom */
+  align-items: flex-end;     /* right-align text */
 }
-
-/* Active state: visible and interactable */
 .contentDiv.active {
   opacity: 1;
   pointer-events: auto;
