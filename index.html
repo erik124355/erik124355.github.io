@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +11,9 @@
 <body>
   <header id="main-header">
     <h1>Erik Cerrada Plumed</h1>
-    <h5>Kaksoistutkinnon opiskelija – Savon ammattioopisto</h5>
+    <h5>Kaksoistutkinnon opiskelija – Savon ammattiopisto</h5>
   </header>
+
   <div class="links">
     <a onclick="showDiv('homeDIV'); event.preventDefault();">Etusivu</a>
     <a onclick="showDiv('infoDIV'); event.preventDefault();">Info</a>
@@ -21,126 +22,120 @@
     <a onclick="showDiv('sqlDIV'); event.preventDefault();">SQL</a>
     <a onclick="showDiv('contactDIV'); event.preventDefault();">Yhteystiedot</a>
   </div>
-<div id="homeText">
+
   <div id="homeDIV" class="contentDiv active">
-    <p>Olen TVT-opiskelija, joka on kiinnostunut tekoälystä jo pitkään. Vaikka minulla ei ole aiempaa kokemusta tekoälyn parissa, minulla on suuri oppimishalu. Olen suunnitellut jatkavani opintojani yliopistossa tekoälyn parissa, ja uskon, että kaikki mahdollinen kokemus auttaa minua kehittymään.</p>
+    <p>Olen TVT-opiskelija, joka on kiinnostunut tekoälystä jo pitkään...</p>
   </div>
 
-<div id="infoDIV" class="contentDivinfo">
-  <h4>Minusta:</h4>
-  <ul>
-    <li><b>Syntynyt:</b> 19.05.2008</li>
-    <li><b>Ikä:</b> 17</li>
-    <li><b>Kaupunki:</b> Kuopio, Suomi</li>
-    <li><b>Kielet:</b>
-      <ul>
-        <li>Suomi (Sujuva)</li>
-        <li>Espanja (Sujuva)</li>
-        <li>Katalaani (Sujuva)</li>
-        <li>Englanti (Sujuva)</li>
-      </ul>
-    </li>
-  </ul>
-
-  <h4>Koulutus</h4>
-  <p>
-    Käyn tällä hetkellä Savon ammattiopistossa kaksoistutkintoa. 
-    Ammattikoulussa opiskelen tieto- ja viestintätekniikkaa, ja lukiossa keskityn pitkään matematiikkaan, joka on sujunut hyvin. 
-    Suoritan opintoni vuonna 2027.
-  </p>
-</div>
-<div id="htmlDIV" class="contentDivhtml active">
-  <h4>HTML-töitä:</h4>
-  <div class="html-gallery">
-
-    <!-- Main image container (hidden by default) -->
-    <div class="main-image" id="mainImageContainer" style="display:none;">
-      <img id="mainHTMLImg" src="" alt="">
-      <br>
-      <a href="#" onclick="hideProject(); return false;">Takaisin</a>
-    </div>
-
-    <!-- Project links (shown by default) -->
-    <ul class="project-links" id="projectLinks">
-      <li><a href="#" onclick="showProject('1015', 'Työ1'); return false;">Työ1</a></li>
-      <li><a href="#" onclick="showProject('1016', 'Työ2'); return false;">Työ2</a></li>
-      <li><a href="#" onclick="showProject('1018', 'Työ3'); return false;">Työ3</a></li>
-      <li><a href="#" onclick="showProject('1020', 'Työ4'); return false;">Työ4</a></li>
+  <div id="infoDIV" class="contentDivinfo">
+    <h4>Minusta:</h4>
+    <ul>
+      <li><b>Syntynyt:</b> 19.05.2008</li>
+      <li><b>Ikä:</b> 17</li>
+      <li><b>Kaupunki:</b> Kuopio, Suomi</li>
+      <li><b>Kielet:</b>
+        <ul>
+          <li>Suomi (Sujuva)</li>
+          <li>Espanja (Sujuva)</li>
+          <li>Katalaani (Sujuva)</li>
+          <li>Englanti (Sujuva)</li>
+        </ul>
+      </li>
     </ul>
 
+    <h4>Koulutus</h4>
+    <p>Käyn tällä hetkellä Savon ammattiopistossa kaksoistutkintoa...</p>
   </div>
-</div>
 
+  <!-- ✅ Give this div the correct id (so it toggles on link click) -->
+  <div id="htmlDIV" class="contentDivhtml">
+    <h4>HTML-töitä</h4>
 
-<script>
-function showProject(id, altText) {
-  const mainImg = document.getElementById("mainHTMLImg");
-  const mainContainer = document.getElementById("mainImageContainer");
-  const links = document.getElementById("projectLinks");
+    <!-- Project links -->
+    <ul class="project-links" id="projectLinks">
+      <li><a href="#" onclick="showProject('1015', ['1015','1016','1018'], 'Työ1'); return false;">Työ1</a></li>
+      <li><a href="#" onclick="showProject('1016', ['1016','1018','1020'], 'Työ2'); return false;">Työ2</a></li>
+      <li><a href="#" onclick="showProject('1018', ['1018','1020','1015'], 'Työ3'); return false;">Työ3</a></li>
+      <li><a href="#" onclick="showProject('1020', ['1020','1015','1016'], 'Työ4'); return false;">Työ4</a></li>
+    </ul>
 
-  // Set image
-  mainImg.src = `https://picsum.photos/id/${id}/600/400`;
-  mainImg.alt = altText;
-
-  // Show main image container
-  mainContainer.style.display = 'block';
-
-  // Hide project links
-  links.style.display = 'none';
-}
-
-function hideProject() {
-  const mainContainer = document.getElementById("mainImageContainer");
-  const links = document.getElementById("projectLinks");
-
-  // Hide main image
-  mainContainer.style.display = 'none';
-
-  // Show project links
-  links.style.display = 'block';
-}
-
-</script>
-
+    <!-- Main image container -->
+    <div class="main-image" id="mainImageContainer">
+      <img id="mainHTMLImg" src="" alt="">
+      <div class="thumbs" id="thumbsContainer">
+        <!-- thumbnails added by JS -->
+      </div>
+      <a class="back" onclick="hideProject()">Takaisin</a>
+    </div>
+  </div>
 
   <div id="csharpDIV" class="contentDiv">
-    <p>Thing</p>
+    <p>C# -osio tulossa...</p>
   </div>
 
   <div id="sqlDIV" class="contentDiv">
-    <p>Thing about</p>
+    <p>SQL -osio tulossa...</p>
   </div>
 
   <div id="contactDIV" class="contentDiv">
-    <p>Thing me</p>
+    <p>Ota yhteyttä: ...</p>
   </div>
-</div>
 
-<script>
-function showDiv(idToShow) {
-  const divs = document.querySelectorAll('.contentDiv, .contentDivinfo, .contentDivhtml');
-  const links = document.querySelectorAll('.links a');
+  <!-- ✅ Scripts -->
+  <script>
+    function showProject(mainId, thumbs, altText) {
+      const mainImg = document.getElementById('mainHTMLImg');
+      const mainContainer = document.getElementById('mainImageContainer');
+      const links = document.getElementById('projectLinks');
+      const thumbsContainer = document.getElementById('thumbsContainer');
 
+      // Hide links, show main image container
+      links.style.display = 'none';
+      mainContainer.style.display = 'block';
 
-  divs.forEach(div => {
-    div.classList.toggle('active', div.id === idToShow);
-  });
+      // Set main image
+      mainImg.src = `https://picsum.photos/id/${mainId}/600/400`;
+      mainImg.alt = altText;
 
+      // Clear previous thumbnails
+      thumbsContainer.innerHTML = '';
 
-  links.forEach(link => {
-    const onclickAttr = link.getAttribute('onclick');
-    if (onclickAttr && onclickAttr.includes(idToShow)) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
+      // Add thumbnails
+      thumbs.forEach(id => {
+        const img = document.createElement('img');
+        img.src = `https://picsum.photos/id/${id}/100/70`;
+        img.alt = `Thumb ${id}`;
+        img.onclick = () => { mainImg.src = `https://picsum.photos/id/${id}/600/400`; };
+        thumbsContainer.appendChild(img);
+      });
     }
-  });
-}
-</script>
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('fade-in');
-  });
-</script>
+
+    function hideProject() {
+      document.getElementById('mainImageContainer').style.display = 'none';
+      document.getElementById('projectLinks').style.display = 'block';
+    }
+
+    function showDiv(idToShow) {
+      const divs = document.querySelectorAll('.contentDiv, .contentDivinfo, .contentDivhtml');
+      const links = document.querySelectorAll('.links a');
+
+      divs.forEach(div => {
+        div.classList.toggle('active', div.id === idToShow);
+      });
+
+      links.forEach(link => {
+        const onclickAttr = link.getAttribute('onclick');
+        if (onclickAttr && onclickAttr.includes(idToShow)) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
+  </script>
 </body>
 </html>
