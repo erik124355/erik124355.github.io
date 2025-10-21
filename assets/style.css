@@ -47,7 +47,7 @@
       gap: 0.5rem;
       padding: 0 2rem;
     }
-
+    
     .links a {
       text-decoration: none;
       cursor: pointer;
@@ -56,22 +56,22 @@
       font-family: Arial, sans-serif;
       transition: all 0.2s ease;
       padding: 5px 10px;
-      border-radius: 5px;
+      border-radius: 0; /* optional, no rounded box */
       font-size: 16px;
     }
     
     .links a:hover {
-      background-color: #f0f0f0;
-      color: #000;
+      text-decoration: underline; 
+      color: #fff;       /* keep text white on hover */
+      background: none;  /* remove background box */
     }
     
-   .links a.active {
-      color: white;               /* keep text white */
-      font-weight: bold;           /* emphasize the active link */
-      border-bottom: 2px solid white; /* underline just the text */
-      padding-bottom: 2px;         /* spacing between text and underline */
-      background: none;            /* remove any box background */
-      border-radius: 0;            /* remove any corner rounding */
+    .links a.active {
+      text-decoration: underline;
+      color: #fff;             
+      background: none;         
+      border: none;             
+      padding: 5px 0;            
     }
 
 
