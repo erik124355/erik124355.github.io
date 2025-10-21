@@ -1,111 +1,80 @@
-@font-face {
-  font-family: 'Moderne Sans';
-  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/moderne_sans.woff2');
-}
+    @font-face {
+      font-family: 'Moderne Sans';
+      src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/moderne_sans.woff2');
+    }
 
-@font-face {
-  font-family: "Geist";
-  src: url("https://assets.codepen.io/605876/GeistVF.ttf") format("truetype");
-}
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Moderne Sans', sans-serif;
+      font-size: 24px;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
 
-/* Body */
-body {
-  position: relative;
-  min-height: 100vh;
-  background: #000;
-  color: #fff;
-  font-family: 'Moderne Sans', sans-serif;
-  font-size: 24px;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-  overflow: hidden;
-}
+    body.fade-in {
+      opacity: 1;
+    }
 
-body.fade-in {
-  opacity: 1;
-}
+    /* Header */
+    header {
+      font-family: monospace;
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+    }
 
-/* Animated gold background */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: conic-gradient(
-    from 180deg at 50% 70%,
-    #111 0deg,
-    #FFD700 90deg,
-    #FFD700 180deg,
-    #FFD700 270deg,
-    #111 360deg
-  );
-  mask:
-    radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / 20px 20px,
-    url("https://assets.codepen.io/605876/noise-mask.png") 256px 50% / 256px 256px;
-  mask-composite: intersect;
-  animation: flicker 25s infinite linear;
-  opacity: 0.5;
-  pointer-events: none; /* important: allows clicks on content */
-  z-index: 0;
-}
+    header h1 {
+      font-size: 2rem;
+      letter-spacing: 0.3rem;
+      text-align: left;
+    }
 
-/* Header */
-header {
-  font-family: monospace;
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem 2rem;
-  background: rgba(0,0,0,0.7);
-  z-index: 10;
-}
+    /* Links below header */
+    .links {
+      display: inline-flex; 
+      flex-direction: column; 
+      gap: 0.5rem;
+      padding: 0 2rem;
+    }
 
-header h1 {
-  font-size: 2rem;
-  letter-spacing: 0.3rem;
-  text-align: left;
-}
+    .links a {
+      text-decoration: none;
+      cursor: pointer;
+      margin-right: 10px;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      transition: all 0.2s ease;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    
+    .links a:hover {
+      background-color: #f0f0f0;
+      color: #000;
+    }
+    
+    /* ACTIVE LINK STYLE (like a button) */
+    .links a.active {
+      background-color: white !important;
+      color: black !important;
+      border: 2px solid white !important;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
 
-/* Links */
-.links {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 0 2rem;
-}
-
-.links a {
-  text-decoration: none;
-  cursor: pointer;
-  margin-right: 10px;
-  font-weight: bold;
-  font-family: Arial, sans-serif;
-  transition: all 0.2s ease;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.links a:hover {
-  background-color: #f0f0f0;
-  color: #000;
-}
-
-.links a.active {
-  background-color: white !important;
-  color: black !important;
-  border: 2px solid white !important;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-/* Content Divs (old layout preserved) */
+/* Base hidden state for all contentDivs */
 .contentDiv {
   position: fixed;
   bottom: 20px;
@@ -121,7 +90,7 @@ header h1 {
   pointer-events: none;
   transform: scale(0.95);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 10;
+  z-index: 1000;
   align-content: flex-end;
 }
 
@@ -132,24 +101,9 @@ header h1 {
   transform: scale(1);
 }
 
-/* Optional scrollable paragraph */
+/* Optional: Make paragraph scrollable if too long */
 .contentDiv p {
   margin: 0;
   overflow-y: auto;
   max-height: 100%;
-}
-
-/* Keep content above background */
-header,
-.links,
-.contentDiv {
-  position: relative;
-  z-index: 10;
-}
-
-/* Flicker animation */
-@keyframes flicker {
-  to {
-    mask-position: 50% 50%, 0 50%;
-  }
 }
