@@ -70,6 +70,10 @@ function showDiv(idToShow) {
   window.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('fade-in');
   });
+  window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('fade-in');
+  showDiv('homeDIV');  // <-- This will add .active to Home link and contentDiv properly
+});
 </script>
 </body>
 </html>
