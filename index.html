@@ -48,18 +48,32 @@
     Suoritan opintoni vuonna 2027.
   </p>
 </div>
-  <div id="htmlDIV" class="contentDivinfo">
-    <ul>
-    <li><h4>HTML-töitä:</h4>
-      <ul>
-        <li><a href="#">Työ1</a></li>
-        <li><a href="#">Työ2</a></li>
-        <li><a href="#">Työ3</a></li>
-        <li><a href="#">Työ4</a></li>
-      </ul>
-    </li>
-  </ul>
+  <li>
+  <h4>HTML-töitä:</h4>
+  <div class="html-gallery">
+    <!-- Main image -->
+    <div class="main-image">
+      <img id="mainHTMLImg" src="https://picsum.photos/id/1015/600/400" alt="Työ1">
+    </div>
+
+    <!-- Thumbnails -->
+    <div class="thumbs">
+      <img src="https://picsum.photos/id/1015/150/100" onclick="changeHTMLImage(this)" alt="Työ1">
+      <img src="https://picsum.photos/id/1016/150/100" onclick="changeHTMLImage(this)" alt="Työ2">
+      <img src="https://picsum.photos/id/1018/150/100" onclick="changeHTMLImage(this)" alt="Työ3">
+      <img src="https://picsum.photos/id/1020/150/100" onclick="changeHTMLImage(this)" alt="Työ4">
+    </div>
   </div>
+</li>
+
+<script>
+  function changeHTMLImage(thumbnail) {
+    const mainImg = document.getElementById("mainHTMLImg");
+    mainImg.src = thumbnail.src.replace('/150/100', '/600/400'); // bigger version
+    mainImg.alt = thumbnail.alt;
+  }
+</script>
+
 
   <div id="csharpDIV" class="contentDiv">
     <p>Thing</p>
