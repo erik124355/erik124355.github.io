@@ -13,11 +13,7 @@
     <h1>Erik Cerrada Plumed</h1>
     <h5>Kaksoistutkinnon opiskelija – Savon ammattiopisto</h5>
   </header>
-  
-  <div id="fullscreenOverlay" onclick="closeFullscreen()">
-    <img id="fullscreenImg" src="" alt="">
-  </div>
-  
+ 
   <div class="links">
     <a onclick="showDiv('homeDIV'); event.preventDefault();">Etusivu</a>
     <a onclick="showDiv('infoDIV'); event.preventDefault();">Info</a>
@@ -220,6 +216,9 @@ function closeFullscreen() {
   document.getElementById('fullscreenOverlay').style.display = 'none';
 }
 </script>
-  
+</div>
+  <div id="fullscreenOverlay" onclick="closeFullscreen()">
+    <img id="fullscreenImg" src="" alt="">
+  </div>
 </body>
 </html>
