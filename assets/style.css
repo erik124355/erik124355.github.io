@@ -318,3 +318,30 @@ html {
 .contentDivinfo::-webkit-scrollbar {
   display: none;
 }
+
+.minimalist-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 2rem auto;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+}
+
+.minimalist-contact h4 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.minimalist-contact a {
+  color: #1a73e8; /* subtle blue */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.minimalist-contact a:hover {
+  color: #0c47b7;
+}
+
