@@ -82,3 +82,17 @@
 .main-image .thumbs img:hover {
   transform: scale(1.1);
 }
+
+.main-image h3 {
+  text-align: center;
+  color: #ffd800;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 4px;
+}
+
+.main-image p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 10px;
+}
