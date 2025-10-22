@@ -1,0 +1,21 @@
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="lomaketyyli.css">
+    <title>Yhteydenottolomake</title>
+</head>
+<body>
+    <div class="kontti">
+    <h1>Ota yhteyttä</h1>
+        <form action="vastaanotto.php" method="post">
+            <input type="text" id="nimi" name="nimi" placeholder="Nimi" required>
+
+            <input type="email" id="email" name="email" placeholder="Sähköposti" required>
+
+            <textarea id="viesti" name="viesti" rows="5"  placeholder="Viesti" required></textarea>
+
+            <button type="submit">Lähetä</button>
+        </form>
+    </div>
+</body>
+</html>
