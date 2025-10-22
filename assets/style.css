@@ -291,8 +291,9 @@
 }
 
 #fullscreenOverlay img {
-  max-width: 90%;
-  max-height: 90%;
-  box-shadow: 0 0 20px #000;
+  max-width: 95vw;   /* almost full width */
+  max-height: 95vh;  /* almost full height */
+  object-fit: contain; /* keep aspect ratio */
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
 }
 
