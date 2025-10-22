@@ -205,7 +205,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-ffunction openFullscreen(src) {
+function openFullscreen(src) {
   const overlay = document.getElementById('fullscreenOverlay');
   const fullscreenImg = document.getElementById('fullscreenImg');
   fullscreenImg.src = src;
@@ -213,8 +213,7 @@ ffunction openFullscreen(src) {
 }
 
 function closeFullscreen() {
-  const overlay = document.getElementById('fullscreenOverlay');
-  overlay.style.display = 'none';
+  document.getElementById('fullscreenOverlay').style.display = 'none';
 }
 </script>
 
