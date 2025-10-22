@@ -1,0 +1,32 @@
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\bin\Debug\net8.0-windows\pinta-alat olio.exe
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\bin\Debug\net8.0-windows\pinta-alat olio.deps.json
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\bin\Debug\net8.0-windows\pinta-alat olio.runtimeconfig.json
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\bin\Debug\net8.0-windows\pinta-alat olio.dll
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\bin\Debug\net8.0-windows\pinta-alat olio.pdb
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\obj\Debug\net8.0-windows\pinta_alat_olio.Form1.resources
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.csproj.GenerateResource.cache
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.AssemblyInfoInputs.cache
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.AssemblyInfo.cs
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.csproj.CoreCompileInputs.cache
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.dll
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\obj\Debug\net8.0-windows\refint\pinta-alat olio.dll
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.pdb
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.genruntimeconfig.cache
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\pinta-alat olio\pinta-alat olio\obj\Debug\net8.0-windows\ref\pinta-alat olio.dll
+C:\Users\erikc\Desktop\Github\pinta-alat olio\bin\Debug\net8.0-windows\pinta-alat olio.exe
+C:\Users\erikc\Desktop\Github\pinta-alat olio\bin\Debug\net8.0-windows\pinta-alat olio.deps.json
+C:\Users\erikc\Desktop\Github\pinta-alat olio\bin\Debug\net8.0-windows\pinta-alat olio.runtimeconfig.json
+C:\Users\erikc\Desktop\Github\pinta-alat olio\bin\Debug\net8.0-windows\pinta-alat olio.dll
+C:\Users\erikc\Desktop\Github\pinta-alat olio\bin\Debug\net8.0-windows\pinta-alat olio.pdb
+C:\Users\erikc\Desktop\Github\pinta-alat olio\obj\Debug\net8.0-windows\pinta_alat_olio.Form1.resources
+C:\Users\erikc\Desktop\Github\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.csproj.GenerateResource.cache
+C:\Users\erikc\Desktop\Github\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikc\Desktop\Github\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.AssemblyInfoInputs.cache
+C:\Users\erikc\Desktop\Github\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.AssemblyInfo.cs
+C:\Users\erikc\Desktop\Github\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.csproj.CoreCompileInputs.cache
+C:\Users\erikc\Desktop\Github\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.dll
+C:\Users\erikc\Desktop\Github\pinta-alat olio\obj\Debug\net8.0-windows\refint\pinta-alat olio.dll
+C:\Users\erikc\Desktop\Github\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.pdb
+C:\Users\erikc\Desktop\Github\pinta-alat olio\obj\Debug\net8.0-windows\pinta-alat olio.genruntimeconfig.cache
+C:\Users\erikc\Desktop\Github\pinta-alat olio\obj\Debug\net8.0-windows\ref\pinta-alat olio.dll

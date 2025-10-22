@@ -1,0 +1,48 @@
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\bin\Debug\net8.0-windows\Pizzat.exe
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\bin\Debug\net8.0-windows\Pizzat.deps.json
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\bin\Debug\net8.0-windows\Pizzat.runtimeconfig.json
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\bin\Debug\net8.0-windows\Pizzat.dll
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\bin\Debug\net8.0-windows\Pizzat.pdb
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\obj\Debug\net8.0-windows\Pizzat.Form1.resources
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\obj\Debug\net8.0-windows\Pizzat.csproj.GenerateResource.cache
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\obj\Debug\net8.0-windows\Pizzat.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\obj\Debug\net8.0-windows\Pizzat.AssemblyInfoInputs.cache
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\obj\Debug\net8.0-windows\Pizzat.AssemblyInfo.cs
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\obj\Debug\net8.0-windows\Pizzat.csproj.CoreCompileInputs.cache
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\obj\Debug\net8.0-windows\Pizzat.dll
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\obj\Debug\net8.0-windows\refint\Pizzat.dll
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\obj\Debug\net8.0-windows\Pizzat.pdb
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\obj\Debug\net8.0-windows\Pizzat.genruntimeconfig.cache
+C:\Users\erikc\Desktop\C#\Pizzat\Pizzat\obj\Debug\net8.0-windows\ref\Pizzat.dll
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\bin\Debug\net8.0-windows\Pizzat.exe
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\bin\Debug\net8.0-windows\Pizzat.deps.json
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\bin\Debug\net8.0-windows\Pizzat.runtimeconfig.json
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\bin\Debug\net8.0-windows\Pizzat.dll
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\bin\Debug\net8.0-windows\Pizzat.pdb
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\obj\Debug\net8.0-windows\Pizzat.Form1.resources
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\obj\Debug\net8.0-windows\Pizzat.csproj.GenerateResource.cache
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\obj\Debug\net8.0-windows\Pizzat.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\obj\Debug\net8.0-windows\Pizzat.AssemblyInfoInputs.cache
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\obj\Debug\net8.0-windows\Pizzat.AssemblyInfo.cs
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\obj\Debug\net8.0-windows\Pizzat.csproj.CoreCompileInputs.cache
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\obj\Debug\net8.0-windows\Pizzat.dll
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\obj\Debug\net8.0-windows\refint\Pizzat.dll
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\obj\Debug\net8.0-windows\Pizzat.pdb
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\obj\Debug\net8.0-windows\Pizzat.genruntimeconfig.cache
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Pizza\Pizzat\obj\Debug\net8.0-windows\ref\Pizzat.dll
+C:\Users\erikc\Desktop\Github\Pizzat\bin\Debug\net8.0-windows\Pizzat.exe
+C:\Users\erikc\Desktop\Github\Pizzat\bin\Debug\net8.0-windows\Pizzat.deps.json
+C:\Users\erikc\Desktop\Github\Pizzat\bin\Debug\net8.0-windows\Pizzat.runtimeconfig.json
+C:\Users\erikc\Desktop\Github\Pizzat\bin\Debug\net8.0-windows\Pizzat.dll
+C:\Users\erikc\Desktop\Github\Pizzat\bin\Debug\net8.0-windows\Pizzat.pdb
+C:\Users\erikc\Desktop\Github\Pizzat\obj\Debug\net8.0-windows\Pizzat.Form1.resources
+C:\Users\erikc\Desktop\Github\Pizzat\obj\Debug\net8.0-windows\Pizzat.csproj.GenerateResource.cache
+C:\Users\erikc\Desktop\Github\Pizzat\obj\Debug\net8.0-windows\Pizzat.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikc\Desktop\Github\Pizzat\obj\Debug\net8.0-windows\Pizzat.AssemblyInfoInputs.cache
+C:\Users\erikc\Desktop\Github\Pizzat\obj\Debug\net8.0-windows\Pizzat.AssemblyInfo.cs
+C:\Users\erikc\Desktop\Github\Pizzat\obj\Debug\net8.0-windows\Pizzat.csproj.CoreCompileInputs.cache
+C:\Users\erikc\Desktop\Github\Pizzat\obj\Debug\net8.0-windows\Pizzat.dll
+C:\Users\erikc\Desktop\Github\Pizzat\obj\Debug\net8.0-windows\refint\Pizzat.dll
+C:\Users\erikc\Desktop\Github\Pizzat\obj\Debug\net8.0-windows\Pizzat.pdb
+C:\Users\erikc\Desktop\Github\Pizzat\obj\Debug\net8.0-windows\Pizzat.genruntimeconfig.cache
+C:\Users\erikc\Desktop\Github\Pizzat\obj\Debug\net8.0-windows\ref\Pizzat.dll

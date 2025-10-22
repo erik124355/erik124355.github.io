@@ -1,0 +1,32 @@
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\bin\Debug\net8.0-windows\Promillet.exe
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\bin\Debug\net8.0-windows\Promillet.deps.json
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\bin\Debug\net8.0-windows\Promillet.runtimeconfig.json
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\bin\Debug\net8.0-windows\Promillet.dll
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\bin\Debug\net8.0-windows\Promillet.pdb
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\obj\Debug\net8.0-windows\Promillet.Form1.resources
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\obj\Debug\net8.0-windows\Promillet.csproj.GenerateResource.cache
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\obj\Debug\net8.0-windows\Promillet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\obj\Debug\net8.0-windows\Promillet.AssemblyInfoInputs.cache
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\obj\Debug\net8.0-windows\Promillet.AssemblyInfo.cs
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\obj\Debug\net8.0-windows\Promillet.csproj.CoreCompileInputs.cache
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\obj\Debug\net8.0-windows\Promillet.dll
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\obj\Debug\net8.0-windows\refint\Promillet.dll
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\obj\Debug\net8.0-windows\Promillet.pdb
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\obj\Debug\net8.0-windows\Promillet.genruntimeconfig.cache
+C:\Users\213601\OneDrive - Savon koulutuskuntayhtymä\C# kurssi\C#\Promillet\Promillet\obj\Debug\net8.0-windows\ref\Promillet.dll
+C:\Users\erikc\Desktop\Github\Promillet\bin\Debug\net8.0-windows\Promillet.exe
+C:\Users\erikc\Desktop\Github\Promillet\bin\Debug\net8.0-windows\Promillet.deps.json
+C:\Users\erikc\Desktop\Github\Promillet\bin\Debug\net8.0-windows\Promillet.runtimeconfig.json
+C:\Users\erikc\Desktop\Github\Promillet\bin\Debug\net8.0-windows\Promillet.dll
+C:\Users\erikc\Desktop\Github\Promillet\bin\Debug\net8.0-windows\Promillet.pdb
+C:\Users\erikc\Desktop\Github\Promillet\obj\Debug\net8.0-windows\Promillet.Form1.resources
+C:\Users\erikc\Desktop\Github\Promillet\obj\Debug\net8.0-windows\Promillet.csproj.GenerateResource.cache
+C:\Users\erikc\Desktop\Github\Promillet\obj\Debug\net8.0-windows\Promillet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikc\Desktop\Github\Promillet\obj\Debug\net8.0-windows\Promillet.AssemblyInfoInputs.cache
+C:\Users\erikc\Desktop\Github\Promillet\obj\Debug\net8.0-windows\Promillet.AssemblyInfo.cs
+C:\Users\erikc\Desktop\Github\Promillet\obj\Debug\net8.0-windows\Promillet.csproj.CoreCompileInputs.cache
+C:\Users\erikc\Desktop\Github\Promillet\obj\Debug\net8.0-windows\Promillet.dll
+C:\Users\erikc\Desktop\Github\Promillet\obj\Debug\net8.0-windows\refint\Promillet.dll
+C:\Users\erikc\Desktop\Github\Promillet\obj\Debug\net8.0-windows\Promillet.pdb
+C:\Users\erikc\Desktop\Github\Promillet\obj\Debug\net8.0-windows\Promillet.genruntimeconfig.cache
+C:\Users\erikc\Desktop\Github\Promillet\obj\Debug\net8.0-windows\ref\Promillet.dll
