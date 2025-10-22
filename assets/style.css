@@ -79,9 +79,9 @@
 .contentDiv {
   position: fixed;
   bottom: 15px;
-  right: 20px;
+  right: 0px;
   width: 360px;
-  height: 600px;
+  height: 250px;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   overflow: hidden;
