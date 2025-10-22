@@ -80,7 +80,7 @@
   position: fixed;
   bottom: 15px;
   right: 20px;
-  width: 225px;
+  width: 360px;
   height: 600px;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -109,6 +109,13 @@
   overflow-y: auto;
   max-height: 100%;
 }
+.contentDiv h4{
+  color: #ffd800; /* gold accent */
+  font-weight: normal;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #9b8300; /* subtle underline */
+  padding-bottom: 2px;
+}
 
 .contentDivinfo {
   position: fixed;
@@ -134,7 +141,7 @@
   pointer-events: auto;
   transform: scale(1);
 }
-.contentDivinfo h4, .contentDivinfo i {
+.contentDivinfo h4{
   color: #ffd800; /* gold accent */
   font-weight: normal;
   margin-bottom: 8px;
