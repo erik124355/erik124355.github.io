@@ -327,7 +327,7 @@ html {
   margin: 2rem auto;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
-  color: #333; /* subtle dark text */
+  color: #fff; /* subtle dark text */
 }
 
 .minimalist-contact h4 {
