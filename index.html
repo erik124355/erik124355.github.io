@@ -222,14 +222,23 @@ function closeFullscreen() {
   document.getElementById('fullscreenOverlay').style.display = 'none';
 }
 
-  const scrollDiv = document.querySelector('.contentDivinfo');
+window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('fade-in');
 
-scrollDiv.addEventListener('wheel', (e) => {
-  e.preventDefault(); // stop default jump
-  scrollDiv.scrollBy({
-    top: e.deltaY,
-    left: 0,
-    behavior: 'smooth'
+  // Hide all main image containers on load
+  ['html', 'csharp', 'sql'].forEach(type => {
+    document.getElementById(`mainImageContainer_${type}`).style.display = 'none';
+  });
+
+  // Smooth scroll for info panel
+  const scrollDiv = document.querySelector('.contentDivinfo');
+  scrollDiv.addEventListener('wheel', (e) => {
+    e.preventDefault(); // stop default jump
+    scrollDiv.scrollBy({
+      top: e.deltaY,
+      left: 0,
+      behavior: 'smooth'
+    });
   });
 });
 </script>
