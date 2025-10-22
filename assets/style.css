@@ -277,17 +277,17 @@
 }
 
 #fullscreenOverlay {
-  display: none;
+  display: none; /* Must start hidden */
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.9); /* Dark background only shows when visible */
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 9999; /* On top of everything */
   cursor: pointer;
-  display: flex; /* needed for centering */
 }
 
 #fullscreenOverlay img {
