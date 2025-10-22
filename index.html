@@ -163,9 +163,12 @@ function showProject(category, mainImg, thumbs, title, description) {
   thumbs.forEach(src => {
     const img = document.createElement("img");
     img.src = src;
-    img.onclick = () => { mainImage.src = src; };
+    img.onclick = () => { openFullscreen(src); }; // open fullscreen
     thumbsContainer.appendChild(img);
   });
+
+  // Main image click to fullscreen
+  mainImage.onclick = () => { openFullscreen(mainImg); };
 }
 
 function hideProject(category) {
@@ -202,7 +205,22 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById(`mainImageContainer_${type}`).style.display = 'none';
   });
 });
+
+function openFullscreen(src) {
+  const overlay = document.getElementById('fullscreenOverlay');
+  const fullscreenImg = document.getElementById('fullscreenImg');
+  fullscreenImg.src = src;
+  overlay.style.display = 'flex';
+}
+
+function closeFullscreen() {
+  document.getElementById('fullscreenOverlay').style.display = 'none';
+}
 </script>
 
+<div id="fullscreenOverlay" onclick="closeFullscreen()">
+  <img id="fullscreenImg" src="" alt="">
+</div>
+  
 </body>
 </html>
