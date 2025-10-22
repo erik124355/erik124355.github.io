@@ -64,7 +64,7 @@
   <!-- HTML -->
 <div id="htmlDIV" class="contentDivhtml">
   <h4>HTML-töitä</h4>
-  <p>
+  <p id="htmlIntro">
     Työt sisältävät myös PHP:tä ja CSS:ää
   </p>
 <ul class="project-links" id="projectLinks_html">
@@ -78,7 +78,8 @@
         'assets/images/html/cv4.png'
       ],
       'Vanha Portfolio',                       
-      'Tämä oli ensimmäinen tekemäni HTML-projekti, jossa esittelin omaa osaamistani.'
+      'Tämä oli ensimmäinen tekemäni HTML-projekti, jossa esittelin omaa osaamistani.',
+      'htmlIntro'
     ); return false;">
       Vanha Portfolio
     </a>
@@ -92,7 +93,8 @@
         'assets/images/html/kahvila3.png'
       ],
       'Kahvila',                       
-      'Kahvilan sivusto jossa on yhteydenottolomake, joka tehtiin tehtävänä.'
+      'Kahvilan sivusto jossa on yhteydenottolomake, joka tehtiin tehtävänä.',
+      'htmlIntro'
     ); return false;">
       Kahvila
     </a>
@@ -106,7 +108,8 @@
         'assets/images/html/koira3.png'
       ],
       'Koira kuvat',                       
-      'Tässä työssä hyödynsin koirakuva-API:a, joka hakee ja tulostaa käyttäjän määrittämän määrän satunnaisia koirakuvia.'
+      'Tässä työssä hyödynsin koirakuva-API:a, joka hakee ja tulostaa käyttäjän määrittämän määrän satunnaisia koirakuvia.',
+      'htmlIntro'
     ); return false;">
       Koira kuvat
     </a>
@@ -118,7 +121,7 @@
     <img id="mainHTMLImg_html" src="" alt="">
     <div class="thumbs" id="thumbsContainer_html"></div>
     <p id="projectDesc_html"></p>
-    <a class="back" onclick="hideProject('html')">Takaisin</a>
+    <a class="back" onclick="hideProject('html', 'htmlIntro')">Takaisin</a>
   </div>
 </div>
   
@@ -167,9 +170,9 @@
 <!-- SQL -->
 <div id="sqlDIV" class="contentDivsql">
   <h4>SQL-töitä</h4>
-    <p>
-      Työt sisältävät myös HTML:ää, PHP:tä ja CSS:ää
-    </p>
+  <p id="sqlIntro">
+    Työt sisältävät myös HTML:ää, PHP:tä ja CSS:ää
+  </p>
   <ul class="project-links" id="projectLinks_sql">
     <li>
       <a href="#" onclick="showProject(
@@ -181,7 +184,8 @@
           'assets/images/sql/sql4.png'
         ],
         'Ilmavoimien Rekrytointi',                       
-        'Tietokanta ilmavoimien rekrytointijärjestelmää varten. Kuvat näyttävät tietokannan suunnittelun, luomisen ja tietojen käsittelyn.'
+        'Tietokanta ilmavoimien rekrytointijärjestelmää varten. Kuvat näyttävät tietokannan suunnittelun, luomisen ja tietojen käsittelyn.',
+        'sqlIntro'
       ); return false;">
         Ilmavoimien Rekrytointi
       </a>
@@ -190,24 +194,22 @@
       <a href="#" onclick="showProject(
         'sql',                                
         'assets/images/sql/sql1.1.png',      
-        [    
-
-        ],
+        [],                                
         'Autokaupan palvelut',                       
-        'Tässä työssä on suunniteltu hieman monimutkaisempi tietokanta autokaupalle ja sen palveluille. Alhaalla on myös selitys tietokannan relaatiosta ja rakenteesta.'
+        'Tässä työssä on suunniteltu hieman monimutkaisempi tietokanta autokaupalle ja sen palveluille. Alhaalla on myös selitys tietokannan relaatiosta ja rakenteesta.',
+        'sqlIntro'
       ); return false;">
         Autokaupan palvelut
       </a>
     </li>
   </ul>
 
-
   <div class="main-image" id="mainImageContainer_sql">
     <h3 id="projectTitle_sql"></h3>
     <img id="mainHTMLImg_sql" src="" alt="">
     <div class="thumbs" id="thumbsContainer_sql"></div>
     <p id="projectDesc_sql"></p>
-    <a class="back" onclick="hideProject('sql')">Takaisin</a>
+    <a class="back" onclick="hideProject('sql', 'sqlIntro')">Takaisin</a>
   </div>
 </div>
 
@@ -215,18 +217,21 @@
   <div id="contactDIV" class="contentDiv">
     <p>Ota yhteyttä: ...</p>
   </div>
+  
 <script>
-function showProject(category, mainImg, thumbs, title, description) {
+function showProject(category, mainImg, thumbs, title, description, introId) {
   const container = document.getElementById(`mainImageContainer_${category}`);
   const mainImage = document.getElementById(`mainHTMLImg_${category}`);
   const thumbsContainer = document.getElementById(`thumbsContainer_${category}`);
   const titleElement = document.getElementById(`projectTitle_${category}`);
   const descElement = document.getElementById(`projectDesc_${category}`);
   const linksList = document.getElementById(`projectLinks_${category}`);
+  const introText = introId ? document.getElementById(introId) : null;
 
-  // Show gallery, hide links
+  // Show gallery, hide links and intro
   container.style.display = "block";
   linksList.style.display = "none";
+  if (introText) introText.style.display = "none";
 
   // Set main image, title, and description
   mainImage.src = mainImg;
@@ -247,11 +252,14 @@ function showProject(category, mainImg, thumbs, title, description) {
   mainImage.onclick = () => openFullscreen(mainImg);
 }
 
-function hideProject(category) {
+function hideProject(category, introId) {
   const container = document.getElementById(`mainImageContainer_${category}`);
   const linksList = document.getElementById(`projectLinks_${category}`);
+  const introText = introId ? document.getElementById(introId) : null;
+
   container.style.display = "none";
   linksList.style.display = "block";
+  if (introText) introText.style.display = "block";
 }
 
 function showDiv(idToShow) {
@@ -294,6 +302,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+
 
   <div id="fullscreenOverlay" onclick="closeFullscreen()">
     <img id="fullscreenImg" src="" alt="">
