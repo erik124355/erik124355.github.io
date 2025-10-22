@@ -337,13 +337,14 @@ html {
 }
 
 .minimalist-contact a {
-  color: #333; /* same as text for minimalism */
+  color: #FFD700; /* gold/yellow links */
   text-decoration: underline; /* always underline to indicate link */
   transition: color 0.2s ease;
 }
 
 .minimalist-contact a:hover {
-  color: #000; /* slightly darker on hover */
+  color: #FFC107; /* slightly brighter gold on hover */
 }
+
 
 
