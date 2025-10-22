@@ -277,23 +277,21 @@
 }
 
 #fullscreenOverlay {
-  display: none; /* Must start hidden */
+  display: none; /* hide by default */
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.9); /* Dark background only shows when visible */
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8); /* darkened background */
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* On top of everything */
-  cursor: pointer;
+  z-index: 2000; /* above other content */
 }
 
 #fullscreenOverlay img {
-  max-width: 95vw;   /* almost full width */
-  max-height: 95vh;  /* almost full height */
-  object-fit: contain; /* keep aspect ratio */
-  box-shadow: 0 0 20px rgba(0,0,0,0.7);
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
 }
 
