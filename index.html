@@ -53,7 +53,9 @@
     <p>Käyn tällä hetkellä Savon ammattiopistossa kaksoistutkintoa. Ammattikoulussa opiskelen tieto- ja viestintätekniikkaa, ja lukiossa keskityn pitkään matematiikkaan, joka on sujunut hyvin. Suoritan opintoni vuonna 2027.</p>
      
    <h4>Taidot</h4>
-    <p></p>
+    <p>Olen opiskellut TVT-asioita hieman jo ennen ammattikoulua, mutta koodausta opin ensimmäistä kertaa ammattikoulussa.<br>
+      Perusteet ovat tähän mennessä sujuneet hyvin, ja olen saanut täydet pisteet kaikista ammattikoulun TVT-kursseista,<br>
+      joten perusteet hallitsen erinomaisesti.</p>
   </div>
 
   <!-- HTML -->
@@ -148,16 +150,35 @@
   <ul class="project-links" id="projectLinks_sql">
     <li>
       <a href="#" onclick="showProject(
-        'sql',
-        'assets/images/sql/proj1-1.jpg',
-        ['assets/images/sql/proj1-2.jpg','assets/images/sql/proj1-3.jpg'],
-        'SQL Harjoitus',
-        'Tässä projektissa loin tietokannan opiskelijoiden tietojen hallintaan.'
+        'sql',                                
+        'assets/images/sql/pitsakuva1.png',      
+        [    
+          'assets/images/sql/pizza2.png',
+          'assets/images/sql/pizza3.png',
+          'assets/images/sql/pizza4.png'
+        ],
+        'Pizza kauppa',                       
+        'Sovellus, jonka avulla voi tilata pizzan, valita lisätäytteet ja juomat sekä nähdä lopullisen summan'
       ); return false;">
-        SQL Harjoitus
+        Pizza kauppa
+      </a>
+    </li>
+    <li>
+      <a href="#" onclick="showProject(
+        'sql',                                
+        'assets/images/sql/matikka1.png',      
+        [    
+          'assets/images/sql/maths2.png',
+          'assets/images/sql/other1.png'
+        ],
+        'Muita',                       
+        'Tässä on muita sovelluksia, kuten laskimia pinta-aloille ja tilavuudelle, korttipakan järjestäjä ja promillelaskuri.'
+      ); return false;">
+        Muita
       </a>
     </li>
   </ul>
+
   <div class="main-image" id="mainImageContainer_sql">
     <h3 id="projectTitle_sql"></h3>
     <img id="mainHTMLImg_sql" src="" alt="">
@@ -180,36 +201,32 @@ function showProject(category, mainImg, thumbs, title, description) {
   const descElement = document.getElementById(`projectDesc_${category}`);
   const linksList = document.getElementById(`projectLinks_${category}`);
 
-  // Hide project links and show gallery
-  linksList.style.display = "none";
+  // Show gallery, hide links
   container.style.display = "block";
+  linksList.style.display = "none";
 
-  // Set main image
+  // Set main image, title, and description
   mainImage.src = mainImg;
-
-  // Set title and description
   titleElement.textContent = title;
   descElement.textContent = description;
 
-  // Clear old thumbnails
+  // Clear old thumbnails and add new ones
   thumbsContainer.innerHTML = "";
-
-  // Add new thumbnails
   thumbs.forEach(src => {
     const img = document.createElement("img");
     img.src = src;
-    img.onclick = () => { openFullscreen(src); }; // open fullscreen
+    img.alt = `${title} thumbnail`;
+    img.onclick = () => openFullscreen(src);
     thumbsContainer.appendChild(img);
   });
 
-  // Main image click to fullscreen
-  mainImage.onclick = () => { openFullscreen(mainImg); };
+  // Click main image to fullscreen
+  mainImage.onclick = () => openFullscreen(mainImg);
 }
 
 function hideProject(category) {
   const container = document.getElementById(`mainImageContainer_${category}`);
   const linksList = document.getElementById(`projectLinks_${category}`);
-
   container.style.display = "none";
   linksList.style.display = "block";
 }
@@ -218,60 +235,43 @@ function showDiv(idToShow) {
   const divs = document.querySelectorAll('.contentDiv, .contentDivinfo, .contentDivhtml, .contentDivcsharp, .contentDivsql');
   const links = document.querySelectorAll('.links a');
 
-  divs.forEach(div => {
-    div.classList.toggle('active', div.id === idToShow);
-  });
-
+  divs.forEach(div => div.classList.toggle('active', div.id === idToShow));
   links.forEach(link => {
-    const onclickAttr = link.getAttribute('onclick');
-    if (onclickAttr && onclickAttr.includes(idToShow)) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
+    const onclickAttr = link.getAttribute('onclick') || '';
+    link.classList.toggle('active', onclickAttr.includes(idToShow));
   });
 }
-
-window.addEventListener('DOMContentLoaded', () => {
-  document.body.classList.add('fade-in');
-
-  // Hide all main image containers on load
-  ['html', 'csharp', 'sql'].forEach(type => {
-    document.getElementById(`mainImageContainer_${type}`).style.display = 'none';
-  });
-});
 
 function openFullscreen(src) {
   const overlay = document.getElementById('fullscreenOverlay');
   const fullscreenImg = document.getElementById('fullscreenImg');
   fullscreenImg.src = src;
-  overlay.style.display = 'flex'; // show only when needed
+  overlay.style.display = 'flex';
 }
 
 function closeFullscreen() {
   document.getElementById('fullscreenOverlay').style.display = 'none';
 }
 
+// Initialize on page load
 window.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('fade-in');
 
-  // Hide all main image containers on load
   ['html', 'csharp', 'sql'].forEach(type => {
-    document.getElementById(`mainImageContainer_${type}`).style.display = 'none';
+    const container = document.getElementById(`mainImageContainer_${type}`);
+    if (container) container.style.display = 'none';
   });
 
-  // Smooth scroll for info panel
   const scrollDiv = document.querySelector('.contentDivinfo');
-  scrollDiv.addEventListener('wheel', (e) => {
-    e.preventDefault(); // stop default jump
-    scrollDiv.scrollBy({
-      top: e.deltaY,
-      left: 0,
-      behavior: 'smooth'
+  if (scrollDiv) {
+    scrollDiv.addEventListener('wheel', e => {
+      e.preventDefault();
+      scrollDiv.scrollBy({ top: e.deltaY, left: 0, behavior: 'smooth' });
     });
-  });
+  }
 });
 </script>
+
   <div id="fullscreenOverlay" onclick="closeFullscreen()">
     <img id="fullscreenImg" src="" alt="">
   </div>
