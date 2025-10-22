@@ -308,3 +308,13 @@
 html {
   scroll-behavior: smooth;
 }
+.contentDivinfo {
+  overflow-y: auto;        /* enable vertical scrolling */
+  scrollbar-width: none;   /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari, Opera) */
+.contentDivinfo::-webkit-scrollbar {
+  display: none;
+}
