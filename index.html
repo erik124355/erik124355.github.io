@@ -45,8 +45,7 @@
 
     <h4>Koulutus</h4>
     <p>Käyn tällä hetkellä Savon ammattiopistossa kaksoistutkintoa. Ammattikoulussa opiskelen tieto- ja viestintätekniikkaa, ja lukiossa keskityn pitkään matematiikkaan, joka on sujunut hyvin. Suoritan opintoni vuonna 2027.</p>
-  </div>
-  
+     
    <h4>Taidot</h4>
     <p></p>
   </div>
@@ -55,36 +54,75 @@
 <div id="htmlDIV" class="contentDivhtml">
   <h4>HTML-töitä</h4>
   <ul class="project-links" id="projectLinks_html">
-    <li><a href="#" onclick="showProject('html', 'assets/images/html/1015.jpg', ['assets/images/html/cv1-thumb.jpg','assets/images/html/cv2-thumb.jpg'','assets/images/html/cv3-thumb.jpg'','assets/images/html/cv4-thumb.jpg'], 'Työ1'); return false;">Työ1</a></li>
-    <li><a href="#" onclick="showProject('html', 'assets/images/html/1015.jpg', ['assets/images/html/1015-thumb.jpg','assets/images/html/1016-thumb.jpg'], 'Työ1'); return false;">Työ2</a></li>
+    <li>
+      <a href="#" onclick="showProject(
+        'html',                                  // category
+        'assets/images/html/cv1-thumb.jpg',      // main image
+        [                                        // thumbnails
+          'assets/images/html/cv2-thumb.jpg',
+          'assets/images/html/cv3-thumb.jpg',
+          'assets/images/html/cv4-thumb.jpg'
+        ],
+        'Vanha Portfolio',                       // title
+        'Tämä oli ensimmäinen tekemäni HTML-projekti, jossa esittelin omaa osaamistani.' // description
+      ); return false;">
+        Vanha Portfolio
+      </a>
+    </li>
   </ul>
+  
   <div class="main-image" id="mainImageContainer_html">
+    <h3 id="projectTitle_html"></h3>
+    <p id="projectDesc_html"></p>
     <img id="mainHTMLImg_html" src="" alt="">
     <div class="thumbs" id="thumbsContainer_html"></div>
     <a class="back" onclick="hideProject('html')">Takaisin</a>
   </div>
-</div>
 
 <!-- C# -->
 <div id="csharpDIV" class="contentDivcsharp">
   <h4>C#-töitä</h4>
   <ul class="project-links" id="projectLinks_csharp">
-    <li><a href="#" onclick="showProject('csharp', '2015', ['2015','2016','2018'], 'Työ1'); return false;">Työ1</a></li>
+    <li>
+      <a href="#" onclick="showProject(
+        'csharp',
+        'assets/images/csharp/proj1-1.jpg',
+        ['assets/images/csharp/proj1-2.jpg','assets/images/csharp/proj1-3.jpg'],
+        'Ensimmäinen C#-projekti',
+        'Tämä ohjelma laski käyttäjän syöttämien numeroiden keskiarvon.'
+      ); return false;">
+        Ensimmäinen C#-projekti
+      </a>
+    </li>
   </ul>
-  <div class="main-image" id="mainImageContainer_csharp">
-    <img id="mainHTMLImg_csharp" src="" alt="">
-    <div class="thumbs" id="thumbsContainer_csharp"></div>
-    <a class="back" onclick="hideProject('csharp')">Takaisin</a>
-  </div>
+ <div class="main-image" id="mainImageContainer_csharp">
+  <h3 id="projectTitle_csharp"></h3>
+  <p id="projectDesc_csharp"></p>
+  <img id="mainHTMLImg_csharp" src="" alt="">
+  <div class="thumbs" id="thumbsContainer_csharp"></div>
+  <a class="back" onclick="hideProject('csharp')">Takaisin</a>
+</div>
 </div>
 
 <!-- SQL -->
 <div id="sqlDIV" class="contentDivsql">
   <h4>SQL-töitä</h4>
   <ul class="project-links" id="projectLinks_sql">
-    <li><a href="#" onclick="showProject('sql', '3015', ['3015','3016','3018'], 'Työ1'); return false;">Työ1</a></li>
+    <li>
+      <a href="#" onclick="showProject(
+        'sql',
+        'assets/images/sql/proj1-1.jpg',
+        ['assets/images/sql/proj1-2.jpg','assets/images/sql/proj1-3.jpg'],
+        'SQL Harjoitus',
+        'Tässä projektissa loin tietokannan opiskelijoiden tietojen hallintaan.'
+      ); return false;">
+        SQL Harjoitus
+      </a>
+    </li>
   </ul>
   <div class="main-image" id="mainImageContainer_sql">
+    <h3 id="projectTitle_sql"></h3>
+    <p id="projectDesc_sql"></p>
     <img id="mainHTMLImg_sql" src="" alt="">
     <div class="thumbs" id="thumbsContainer_sql"></div>
     <a class="back" onclick="hideProject('sql')">Takaisin</a>
@@ -98,37 +136,43 @@
 
 
 <script>
-function showProject(type, mainId, thumbs, altText) {
-  const mainImg = document.getElementById(`mainHTMLImg_${type}`);
-  const mainContainer = document.getElementById(`mainImageContainer_${type}`);
-  const links = document.getElementById(`projectLinks_${type}`);
-  const thumbsContainer = document.getElementById(`thumbsContainer_${type}`);
+function showProject(category, mainImg, thumbs, title, description) {
+  const container = document.getElementById(`mainImageContainer_${category}`);
+  const mainImage = document.getElementById(`mainHTMLImg_${category}`);
+  const thumbsContainer = document.getElementById(`thumbsContainer_${category}`);
+  const titleElement = document.getElementById(`projectTitle_${category}`);
+  const descElement = document.getElementById(`projectDesc_${category}`);
+  const linksList = document.getElementById(`projectLinks_${category}`);
 
-  // Hide project links, show main image container
-  links.style.display = 'none';
-  mainContainer.style.display = 'block';
+  // Hide project links and show gallery
+  linksList.style.display = "none";
+  container.style.display = "block";
 
   // Set main image
-  mainImg.src = `https://picsum.photos/id/${mainId}/600/400`;
-  mainImg.alt = altText;
+  mainImage.src = mainImg;
 
-  // Create thumbnails
-  thumbsContainer.innerHTML = '';
-  thumbs.forEach(id => {
-    const img = document.createElement('img');
-    img.src = `https://picsum.photos/id/${id}/100/70`;
-    img.alt = `Thumb ${id}`;
-    img.onclick = () => { mainImg.src = `https://picsum.photos/id/${id}/600/400`; };
+  // Set title and description
+  titleElement.textContent = title;
+  descElement.textContent = description;
+
+  // Clear old thumbnails
+  thumbsContainer.innerHTML = "";
+
+  // Add new thumbnails
+  thumbs.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.onclick = () => { mainImage.src = src; };
     thumbsContainer.appendChild(img);
   });
 }
 
-function hideProject(type) {
-  const mainContainer = document.getElementById(`mainImageContainer_${type}`);
-  const links = document.getElementById(`projectLinks_${type}`);
+function hideProject(category) {
+  const container = document.getElementById(`mainImageContainer_${category}`);
+  const linksList = document.getElementById(`projectLinks_${category}`);
 
-  mainContainer.style.display = 'none';
-  links.style.display = 'block';
+  container.style.display = "none";
+  linksList.style.display = "block";
 }
 
 function showDiv(idToShow) {
