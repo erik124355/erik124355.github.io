@@ -276,22 +276,28 @@
   margin-bottom: 4px;
 }
 
+/* Fullscreen overlay */
 #fullscreenOverlay {
-  display: none; /* hide by default */
+  display: none; /* hidden by default */
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.8); /* darkened background */
+  background-color: rgba(0,0,0,0.8); /* dark background */
   justify-content: center;
   align-items: center;
-  z-index: 2000; /* above other content */
+  z-index: 2000;
+  overflow: hidden; /* no scroll */
 }
 
+/* Fullscreen image */
 #fullscreenOverlay img {
   max-width: 95vw;
   max-height: 95vh;
   object-fit: contain;
+  border-radius: 16px; /* keep rounded corners */
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  cursor: pointer;
 }
 
