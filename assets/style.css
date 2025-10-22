@@ -327,6 +327,7 @@ html {
   margin: 2rem auto;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
+  color: #333; /* subtle dark text */
 }
 
 .minimalist-contact h4 {
@@ -336,12 +337,13 @@ html {
 }
 
 .minimalist-contact a {
-  color: #1a73e8; /* subtle blue */
-  text-decoration: none;
+  color: #333; /* same as text for minimalism */
+  text-decoration: underline; /* always underline to indicate link */
   transition: color 0.2s ease;
 }
 
 .minimalist-contact a:hover {
-  color: #0c47b7;
+  color: #000; /* slightly darker on hover */
 }
+
 
