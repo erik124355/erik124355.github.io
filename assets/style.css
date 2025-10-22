@@ -30,7 +30,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 1rem 2rem;
+      padding: 1rem 1rem;
       z-index: 1000;
     }
 
@@ -45,7 +45,7 @@
       display: inline-flex; 
       flex-direction: column; 
       gap: 0.5rem;
-      padding: 0 2rem;
+      padding: 0 1rem;
     }
     
     .links a {
