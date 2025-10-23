@@ -306,7 +306,7 @@ header h1 {
     color: #ffd800;
   }
 
-  #projectDesc_html,
+#projectDesc_html,
 #projectDesc_csharp,
 #projectDesc_sql {
   color: yellow;
