@@ -305,4 +305,9 @@ header h1 {
   #contactDIV a {
     color: #ffd800;
   }
+
+  #projectDesc_html,
+#projectDesc_csharp,
+#projectDesc_sql {
+  color: yellow;
 }
