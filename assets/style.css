@@ -46,8 +46,8 @@ header h1 {
 
 /* Links below header */
 .links {
-  display: inline-flex; 
-  flex-direction: column; 
+  display: inline-flex;
+  flex-direction: column;
   gap: 0.5rem;
   padding: 0 1rem;
 }
@@ -65,7 +65,7 @@ header h1 {
 }
 
 .links a:hover {
-  text-decoration: underline; 
+  text-decoration: underline;
   color: #fff;
   background: none;
 }
@@ -114,6 +114,7 @@ header h1 {
   align-content: flex-end;
 }
 
+/* Active state */
 .contentDiv.active,
 .contentDivinfo.active,
 .contentDivhtml.active,
@@ -162,7 +163,7 @@ header h1 {
   margin-bottom: 4px;
 }
 
-/* Fullscreen overlay for images */
+/* Fullscreen overlay */
 #fullscreenOverlay {
   display: none;
   position: fixed;
@@ -186,8 +187,12 @@ header h1 {
   cursor: pointer;
 }
 
-/* Hide scrollbars for contentDivinfo */
+/* Scrollbar hidden for contentDivinfo */
 .contentDivinfo {
+  bottom: -5px; /* restored position to make it scrollable */
+  right: 0;
+  width: 240px;
+  height: 300px;
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -198,9 +203,38 @@ header h1 {
 }
 
 /* ============================= */
+/* Contact div styling */
+/* ============================= */
+#contactDIV {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: #fff;
+  background: transparent;
+  padding: 10px;
+}
+
+#contactDIV a {
+  color: #ffd800;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+#contactDIV a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+#contactDIV h4 {
+  color: #ffd800;
+  font-weight: normal;
+  border-bottom: 1px solid #9b8300;
+  padding-bottom: 2px;
+  margin-bottom: 8px;
+}
+
+/* ============================= */
 /* Bigger Screens (Desktop) */
 /* ============================= */
-
 @media (min-width: 1024px) {
   body {
     font-size: 28px;
@@ -221,9 +255,8 @@ header h1 {
     padding: 10px 20px;
   }
 
-  /* Make all content boxes bigger and more readable */
+  /* Make content boxes larger on desktop */
   .contentDiv,
-  .contentDivinfo,
   .contentDivhtml,
   .contentDivcsharp,
   .contentDivsql {
@@ -236,6 +269,17 @@ header h1 {
   .contentDiv {
     width: 520px;
     height: 350px;
+  }
+
+  /* Keep info box scrollable and slightly bigger */
+  .contentDivinfo {
+    width: 300px;
+    height: 380px;
+    bottom: -10px;
+    right: 0;
+    padding: 20px;
+    font-size: 18px;
+    overflow-y: auto;
   }
 
   .contentDiv h4,
@@ -254,37 +298,11 @@ header h1 {
     font-size: 1.2rem;
   }
 
+  #contactDIV {
+    font-size: 14px; /* slightly larger on big screens */
+  }
 
-/* Contact div styling */
-#contactDIV {
-  font-family: 'Courier New', monospace;
-  font-size: 12px;
-  color: #fff;
-  background: transparent; /* keeps minimalist style */
-  padding: 10px;
+  #contactDIV a {
+    color: #ffd800;
+  }
 }
-
-/* Yellow links */
-#contactDIV a {
-  color: #ffd800;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-/* Optional hover effect */
-#contactDIV a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* Contact heading */
-#contactDIV h4 {
-  color: #ffd800;
-  font-weight: normal;
-  border-bottom: 1px solid #9b8300;
-  padding-bottom: 2px;
-  margin-bottom: 8px;
-}
-
-
-  
