@@ -306,8 +306,10 @@ header h1 {
     color: #ffd800;
   }
 
-#projectDesc_html,
-#projectDesc_csharp,
-#projectDesc_sql {
-  color: #ffd800;
+
+#projectDesc_csharp p,
+#projectDesc_sql p {
+  color: #ffd800; 
+  font-weight: 500;
+  margin-top: 8px;
 }
