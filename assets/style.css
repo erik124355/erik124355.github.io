@@ -105,8 +105,8 @@ header h1 {
 
 .contentDiv {
   bottom: 15px;
-  right: 5px;
-  width: 360px;
+  right: 0px;
+  width: 395px;
   height: 250px;
   padding: 10px;
   overflow: hidden;
@@ -215,7 +215,7 @@ header h1 {
 
 #contactDIV a {
   color: #ffd800;
-  text-decoration: none;
+  text-decoration: underline;
   transition: color 0.2s ease;
 }
 
