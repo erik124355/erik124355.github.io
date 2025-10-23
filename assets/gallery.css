@@ -45,10 +45,10 @@
   cursor: pointer;
   transition: color 0.3s ease;
 }
+
 .back {
   text-decoration: underline;
 }
-
 
 /* Main image */
 .main-image img {
@@ -69,7 +69,6 @@
   gap: 6px;
   flex-wrap: wrap;
   margin-bottom: 10px;
-  
 }
 
 /* Thumbnail images smaller */
@@ -97,4 +96,23 @@
   font-size: 0.9rem;
   color: #ccc;
   margin-bottom: 10px;
+}
+
+/* ----------- Bigger screens (desktop) ----------- */
+@media (min-width: 1024px) {
+  .main-image img {
+    max-width: 480px; /* 2x the original 240px */
+  }
+
+  .main-image .thumbs img {
+    width: 100px; /* 2x the original 50px */
+  }
+
+  .main-image h3 {
+    font-size: 1.4rem;
+  }
+
+  .main-image p {
+    font-size: 1.1rem;
+  }
 }
