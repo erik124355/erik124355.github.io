@@ -232,6 +232,15 @@ header h1 {
   margin-bottom: 8px;
 }
 
+/* Paragraph styling for project descriptions - applied globally */
+#projectDesc_html p,
+#projectDesc_csharp p,
+#projectDesc_sql p {
+  color: #ffd800;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
 /* ============================= */
 /* Bigger Screens (Desktop) */
 /* ============================= */
@@ -305,11 +314,4 @@ header h1 {
   #contactDIV a {
     color: #ffd800;
   }
-
-#projectDesc_html p,
-#projectDesc_csharp p,
-#projectDesc_sql p {
-  color: #ffd800; 
-  font-weight: 500;
-  margin-top: 8px;
 }
