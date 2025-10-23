@@ -79,8 +79,8 @@
 .contentDiv {
   position: fixed;
   bottom: 15px;
-  left: 5px;
-  width: 360px;
+  left: 0px;
+  width: 395px;
   height: auto;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -325,7 +325,7 @@ html {
   gap: 0.5rem;
   max-width: 400px;
   margin: 2rem auto;
-  font-family: 'Inter', sans-serif;
+  font-family: Courier, monospace;
   font-size: 1rem;
   color: #fff; /* subtle dark text */
 }
