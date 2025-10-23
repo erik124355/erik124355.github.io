@@ -1,251 +1,93 @@
-    @font-face {
-      font-family: 'Moderne Sans';
-      src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/moderne_sans.woff2');
-    }
-
-    /* Reset */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background: #000;
-      color: #fff;
-      font-family: 'Moderne Sans', sans-serif;
-      font-size: 24px;
-      opacity: 0;
-      transition: opacity 0.8s ease;
-    }
-
-    body.fade-in {
-      opacity: 1;
-    }
-
-    /* Header */
-    header {
-      font-family: monospace;
-      position: sticky;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 1rem 1rem;
-      z-index: 1000;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      letter-spacing: 0.3rem;
-      text-align: left;
-    }
-
-    /* Links below header */
-    .links {
-      display: inline-flex; 
-      flex-direction: column; 
-      gap: 0.5rem;
-      padding: 0 1rem;
-    }
-    
-    .links a {
-      text-decoration: none;
-      cursor: pointer;
-      margin-right: 10px;
-      font-weight: bold;
-      font-family: Courier, monospace;
-      transition: all 0.2s ease;
-      padding: 5px 10px;
-      border-radius: 0; /* optional, no rounded box */
-      font-size: 16px;
-    }
-    
-    .links a:hover {
-      text-decoration: underline; 
-      color: #fff;       /* keep text white on hover */
-      background: none;  /* remove background box */
-    }
-    
-    .links a.active {
-      text-decoration: underline;
-      color: #fff;             
-      background: none;         
-      border: none;             
-      padding: 5px 0;            
-    }
-
-
-/* Base hidden state for all contentDivs */
-.contentDiv {
-  position: fixed;
-  bottom: 15px;
-  right: 0px;
-  width: 395px;
-  height: auto;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  overflow: hidden;
-  border-radius: 8px;
-  font-size: 16px;
-  font-family: Courier, monospace;
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.95);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1000;
-  align-content: flex-end;
+@font-face {
+  font-family: 'Moderne Sans';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/moderne_sans.woff2');
 }
 
-/* Active state: visible and interactable */
-.contentDiv.active {
-  opacity: 1;
-  pointer-events: auto;
-  transform: scale(1);
-}
-
-/* Optional: Make paragraph scrollable if too long */
-.contentDiv p {
+/* Reset */
+* {
+  box-sizing: border-box;
   margin: 0;
-  overflow-y: auto;
-  max-height: 100%;
-}
-.contentDiv h4{
-  color: #ffd800; /* gold accent */
-  font-weight: normal;
-  margin-bottom: 8px;
-  border-bottom: 1px solid #9b8300; /* subtle underline */
-  padding-bottom: 2px;
+  padding: 0;
 }
 
-.contentDivinfo {
-  position: fixed;
-  bottom: 0px;
-  right: 0px;
-  width: 240px;
-  height: 300px;
-  padding: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  overflow-y: auto; /* allow scroll if content overflows */
-  border-radius: 8px;
-  font-size: 16px;
-  font-family: 'Courier New', monospace;
-  color: #fff;
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.95);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1000;
+html {
+  scroll-behavior: smooth;
 }
-.contentDivinfo.active {
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Moderne Sans', sans-serif;
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+body.fade-in {
   opacity: 1;
-  pointer-events: auto;
-  transform: scale(1);
-}
-.contentDivinfo h4{
-  color: #ffd800; /* gold accent */
-  font-weight: normal;
-  margin-bottom: 8px;
-  border-bottom: 1px solid #9b8300; /* subtle underline */
-  padding-bottom: 2px;
-}
-.contentDivinfo ul {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 10px;
-}
-.contentDivinfo ul li {
-  margin-bottom: 4px;
 }
 
-.contentDivhtml {
-  position: fixed;
-  bottom: 20px; 
-  right: -5px;
-  width: 253px;
-  height: auto;
-  padding: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  overflow-y: auto;
-  border-radius: 8px;
-  font-size: 16px;
-  font-family: 'Courier New', monospace;
-  color: #fff;
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.95);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+/* Header */
+header {
+  font-family: monospace;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 1rem;
   z-index: 1000;
 }
 
-.contentDivhtml.active {
-  opacity: 1;
-  pointer-events: auto;
-  transform: scale(1);
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  text-align: left;
 }
 
-.contentDivhtml h4, .contentDivhtml i {
-  color: #ffd800; /* gold accent */
-  font-weight: normal;
-  margin-bottom: 8px;
-  border-bottom: 1px solid #9b8300; /* subtle underline */
-  padding-bottom: 2px;
-}
-.contentDivhtml ul {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 10px;
-}
-.contentDivhtml ul li {
-  margin-bottom: 4px;
+/* Links below header */
+.links {
+  display: inline-flex; 
+  flex-direction: column; 
+  gap: 0.5rem;
+  padding: 0 1rem;
 }
 
-.contentDivcsharp {
-  position: fixed;
-  bottom: 20px; 
-  right: -5px;
-  width: 253px;
-  height: auto;
-  padding: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  overflow-y: auto;
-  border-radius: 8px;
+.links a {
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 10px;
+  font-weight: bold;
+  font-family: Courier, monospace;
+  transition: all 0.2s ease;
+  padding: 5px 10px;
+  border-radius: 0;
   font-size: 16px;
-  font-family: 'Courier New', monospace;
+}
+
+.links a:hover {
+  text-decoration: underline; 
   color: #fff;
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.95);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1000;
+  background: none;
 }
 
-.contentDivcsharp.active {
-  opacity: 1;
-  pointer-events: auto;
-  transform: scale(1);
+.links a.active {
+  text-decoration: underline;
+  color: #fff;
+  background: none;
+  border: none;
+  padding: 5px 0;
 }
 
-.contentDivcsharp h4, .contentDivcsharp i {
-  color: #ffd800; /* gold accent */
-  font-weight: normal;
-  margin-bottom: 8px;
-  border-bottom: 1px solid #9b8300; /* subtle underline */
-  padding-bottom: 2px;
-}
-.contentDivcsharp ul {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 10px;
-}
-.contentDivcsharp ul li {
-  margin-bottom: 4px;
-}
-
+/* Base content div styles */
+.contentDiv,
+.contentDivinfo,
+.contentDivhtml,
+.contentDivcsharp,
 .contentDivsql {
   position: fixed;
   bottom: 20px;
-  right: -5px;
-  width: 253px;
+  right: 5px;
+  width: 260px;
   height: auto;
   padding: 15px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -261,30 +103,68 @@
   z-index: 1000;
 }
 
+.contentDiv {
+  bottom: 15px;
+  right: 5px;
+  width: 360px;
+  height: 250px;
+  padding: 10px;
+  overflow: hidden;
+  font-family: Courier, monospace;
+  align-content: flex-end;
+}
+
+.contentDiv.active,
+.contentDivinfo.active,
+.contentDivhtml.active,
+.contentDivcsharp.active,
 .contentDivsql.active {
   opacity: 1;
   pointer-events: auto;
   transform: scale(1);
 }
 
-.contentDivsql h4, .contentDivsql i {
-  color: #ffd800; /* gold accent */
+/* Text and inner elements */
+.contentDiv h4,
+.contentDivinfo h4,
+.contentDivhtml h4,
+.contentDivcsharp h4,
+.contentDivsql h4,
+.contentDivhtml i,
+.contentDivcsharp i,
+.contentDivsql i {
+  color: #ffd800;
   font-weight: normal;
   margin-bottom: 8px;
-  border-bottom: 1px solid #9b8300; /* subtle underline */
+  border-bottom: 1px solid #9b8300;
   padding-bottom: 2px;
 }
+
+.contentDiv p {
+  margin: 0;
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.contentDivinfo ul,
+.contentDivhtml ul,
+.contentDivcsharp ul,
 .contentDivsql ul {
   list-style: none;
   padding-left: 0;
   margin-bottom: 10px;
 }
+
+.contentDivinfo ul li,
+.contentDivhtml ul li,
+.contentDivcsharp ul li,
 .contentDivsql ul li {
   margin-bottom: 4px;
 }
 
+/* Fullscreen overlay for images */
 #fullscreenOverlay {
-  display: none; /* keep it hidden initially */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -305,46 +185,72 @@
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
   cursor: pointer;
 }
-html {
-  scroll-behavior: smooth;
-}
+
+/* Hide scrollbars for contentDivinfo */
 .contentDivinfo {
-  overflow-y: auto;        /* enable vertical scrolling */
-  scrollbar-width: none;   /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-/* Hide scrollbar for Webkit browsers (Chrome, Safari, Opera) */
 .contentDivinfo::-webkit-scrollbar {
   display: none;
 }
 
-.minimalist-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  max-width: 400px;
-  margin: 2rem auto;
-  font-family: Courier, monospace;
-  font-size: 1rem;
-  color: #fff; /* subtle dark text */
+/* ============================= */
+/* Bigger Screens (Desktop) */
+/* ============================= */
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 28px;
+  }
+
+  header h1 {
+    font-size: 3rem;
+    letter-spacing: 0.4rem;
+  }
+
+  .links {
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  .links a {
+    font-size: 22px;
+    padding: 10px 20px;
+  }
+
+  /* Make all content boxes bigger and more readable */
+  .contentDiv,
+  .contentDivinfo,
+  .contentDivhtml,
+  .contentDivcsharp,
+  .contentDivsql {
+    width: 480px;
+    font-size: 20px;
+    padding: 25px;
+    border-radius: 10px;
+  }
+
+  .contentDiv {
+    width: 520px;
+    height: 350px;
+  }
+
+  .contentDiv h4,
+  .contentDivinfo h4,
+  .contentDivhtml h4,
+  .contentDivcsharp h4,
+  .contentDivsql h4 {
+    font-size: 1.5rem;
+  }
+
+  .contentDiv p,
+  .contentDivinfo ul li,
+  .contentDivhtml ul li,
+  .contentDivcsharp ul li,
+  .contentDivsql ul li {
+    font-size: 1.2rem;
+  }
 }
-
-.minimalist-contact h4 {
-  font-weight: 600;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.minimalist-contact a {
-  color: #FFD700; /* gold/yellow links */
-  text-decoration: underline; /* always underline to indicate link */
-  transition: color 0.2s ease;
-}
-
-.minimalist-contact a:hover {
-  color: #FFC107; /* slightly brighter gold on hover */
-}
-
-
-
