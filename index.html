@@ -78,7 +78,7 @@
         'assets/images/html/cv4.png'
       ],
       'Vanha Portfolio',                       
-      'Tämä oli ensimmäinen tekemäni HTML-projekti, jossa esittelin omaa osaamistani. <p> Paina kuvia jotta ne suurenee!</p>',
+      'Tämä oli ensimmäinen tekemäni HTML-projekti, jossa esittelin omaa osaamistani. <p>Paina kuvia jotta ne suurenee!</p>',
       'htmlIntro'
     ); return false;">
       Vanha Portfolio
@@ -239,7 +239,7 @@ function showProject(category, mainImg, thumbs, title, description, introId) {
   // Set main image, title, and description
   mainImage.src = mainImg;
   titleElement.textContent = title;
-  descElement.textContent = description;
+  descElement.innerHTML = description;
 
   // Clear old thumbnails and add new ones
   thumbsContainer.innerHTML = "";
