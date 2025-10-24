@@ -269,7 +269,10 @@ function showDiv(idToShow) {
   const divs = document.querySelectorAll('.contentDiv, .contentDivinfo, .contentDivhtml, .contentDivcsharp, .contentDivsql');
   const links = document.querySelectorAll('.links a');
 
+  // Show the selected div
   divs.forEach(div => div.classList.toggle('active', div.id === idToShow));
+
+  // Update link highlight
   links.forEach(link => {
     const onclickAttr = link.getAttribute('onclick') || '';
     link.classList.toggle('active', onclickAttr.includes(idToShow));
@@ -289,13 +292,16 @@ function closeFullscreen() {
 
 // Initialize on page load
 window.addEventListener('DOMContentLoaded', () => {
+  // Add fade-in effect
   document.body.classList.add('fade-in');
 
+  // Hide all project galleries
   ['html', 'csharp', 'sql'].forEach(type => {
     const container = document.getElementById(`mainImageContainer_${type}`);
     if (container) container.style.display = 'none';
   });
 
+  // Enable smooth scrolling for info section
   const scrollDiv = document.querySelector('.contentDivinfo');
   if (scrollDiv) {
     scrollDiv.addEventListener('wheel', e => {
@@ -303,8 +309,13 @@ window.addEventListener('DOMContentLoaded', () => {
       scrollDiv.scrollBy({ top: e.deltaY, left: 0, behavior: 'smooth' });
     });
   }
+
+  // ✅ Make Etusivu (home) link active on load
+  const homeLink = document.querySelector('.links a[onclick*="homeDIV"]');
+  if (homeLink) homeLink.classList.add('active');
 });
 </script>
+
 
 
   <div id="fullscreenOverlay" onclick="closeFullscreen()">
