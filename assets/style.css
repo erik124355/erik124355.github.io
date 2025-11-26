@@ -189,10 +189,10 @@ header h1 {
 
 /* Scrollbar hidden for contentDivinfo */
 .contentDivinfo {
-  bottom: -5px; /* restored position to make it scrollable */
+  bottom: 50px; /* restored position to make it scrollable */
   right: 0;
   width: 240px;
-  height: 300px;
+  height: 800px;
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
