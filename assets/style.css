@@ -282,9 +282,8 @@ header h1 {
 
   /* Keep info box scrollable and slightly bigger */
   .contentDivinfo {
-    width: 300px;
-    height: 380px;
-    bottom: -10px;
+    width: 300px;;
+    bottom: 50px;
     right: 0;
     padding: 20px;
     font-size: 18px;
