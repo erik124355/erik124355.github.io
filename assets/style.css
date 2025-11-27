@@ -83,7 +83,8 @@ header h1 {
 .contentDivinfo,
 .contentDivhtml,
 .contentDivcsharp,
-.contentDivsql {
+.contentDivsql,
+.contentDivprojekti {
   position: fixed;
   bottom: 20px;
   right: 5px;
@@ -119,7 +120,8 @@ header h1 {
 .contentDivinfo.active,
 .contentDivhtml.active,
 .contentDivcsharp.active,
-.contentDivsql.active {
+.contentDivsql.active,
+.contentDivprojekti.active {
   opacity: 1;
   pointer-events: auto;
   transform: scale(1);
@@ -131,6 +133,7 @@ header h1 {
 .contentDivhtml h4,
 .contentDivcsharp h4,
 .contentDivsql h4,
+.contentDivprojekti h4,
 .contentDivhtml i,
 .contentDivcsharp i,
 .contentDivsql i {
@@ -141,7 +144,8 @@ header h1 {
   padding-bottom: 2px;
 }
 
-.contentDiv p {
+.contentDiv p,
+.contentDivprojekti p {
   margin: 0;
   overflow-y: auto;
   max-height: 100%;
@@ -150,7 +154,8 @@ header h1 {
 .contentDivinfo ul,
 .contentDivhtml ul,
 .contentDivcsharp ul,
-.contentDivsql ul {
+.contentDivsql ul,
+.contentDivprojekti ul {
   list-style: none;
   padding-left: 0;
   margin-bottom: 10px;
@@ -159,7 +164,8 @@ header h1 {
 .contentDivinfo ul li,
 .contentDivhtml ul li,
 .contentDivcsharp ul li,
-.contentDivsql ul li {
+.contentDivsql ul li,
+.contentDivprojekti ul li {
   margin-bottom: 4px;
 }
 
@@ -189,7 +195,7 @@ header h1 {
 
 /* Scrollbar hidden for contentDivinfo */
 .contentDivinfo {
-  bottom: 50px; /* restored position to make it scrollable */
+  bottom: 50px;
   right: 0;
   width: 240px;
   height: 800px;
@@ -221,7 +227,6 @@ header h1 {
 
 #contactDIV a:hover {
   color: #fff;
-  text-decoration: underline;
 }
 
 #contactDIV h4 {
@@ -232,85 +237,105 @@ header h1 {
   margin-bottom: 8px;
 }
 
-/* Paragraph styling for project descriptions - applied globally */
+/* Paragraph styling for project descriptions */
 #projectDesc_html p,
 #projectDesc_csharp p,
-#projectDesc_sql p {
+#projectDesc_sql p,
+#projectDesc_project p {
   color: #ffd800;
   font-weight: 500;
   margin-top: 8px;
 }
 
 /* ============================= */
-/* Bigger Screens (Desktop) */
+/* Projects section styling */
+/* ============================= */
+.contentDivprojekti {
+  bottom: 15px;
+  right: 0px;
+  width: 395px;
+  height: 400px;
+  padding: 15px;
+  overflow-y: auto;
+  font-family: 'Courier New', monospace;
+}
+
+.contentDivprojekti ul.project-links li a {
+  color: #ffd800;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.contentDivprojekti ul.project-links li a:hover {
+  text-decoration: underline;
+}
+
+.main-image {
+  display: none;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.main-image h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #ffd800;
+}
+
+.main-image img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.main-image .thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.main-image .thumbs img {
+  width: 80px;
+  height: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.main-image .thumbs img:hover {
+  transform: scale(1.05);
+}
+
+.main-image .back {
+  display: inline-block;
+  color: #ffd800;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+/* ============================= */
+/* Bigger Screens */
 /* ============================= */
 @media (min-width: 1024px) {
-  body {
-    font-size: 28px;
-  }
-
-  header h1 {
-    font-size: 3rem;
-    letter-spacing: 0.4rem;
-  }
-
-  .links {
-    gap: 1rem;
-    padding: 1rem 2rem;
-  }
-
-  .links a {
-    font-size: 22px;
-    padding: 10px 20px;
-  }
-
-  /* Make content boxes larger on desktop */
-  .contentDiv,
-  .contentDivhtml,
-  .contentDivcsharp,
-  .contentDivsql {
+  body { font-size: 28px; }
+  header h1 { font-size: 3rem; letter-spacing: 0.4rem; }
+  .links { gap: 1rem; padding: 1rem 2rem; }
+  .links a { font-size: 22px; padding: 10px 20px; }
+  .contentDiv, .contentDivhtml, .contentDivcsharp, .contentDivsql, .contentDivprojekti {
     width: 480px;
     font-size: 20px;
     padding: 25px;
     border-radius: 10px;
   }
-
-  .contentDiv {
-    width: 520px;
-    height: 350px;
-  }
-
-  /* Keep info box scrollable and slightly bigger */
-  .contentDivinfo {
-    width: 300px;;
-    bottom: 50px;
-    right: 0;
-    padding: 20px;
-    font-size: 18px;
-    overflow-y: auto;
-  }
-
-  .contentDiv h4,
-  .contentDivinfo h4,
-  .contentDivhtml h4,
-  .contentDivcsharp h4,
-  .contentDivsql h4 {
-    font-size: 1.5rem;
-  }
-
-  .contentDiv p,
-  .contentDivinfo ul li,
-  .contentDivhtml ul li,
-  .contentDivcsharp ul li,
-  .contentDivsql ul li {
-    font-size: 1.2rem;
-  }
-
-  #contactDIV {
-    font-size: 14px; /* slightly larger on big screens */
-  }
-
-  #contactDIV a {
-    color: #ffd800;
-  }
+  .contentDiv { width: 520px; height: 350px; }
+  .contentDivinfo { width: 300px; bottom: 50px; right: 0; padding: 20px; font-size: 18px; overflow-y: auto; }
+  .contentDiv h4, .contentDivinfo h4, .contentDivhtml h4, .contentDivcsharp h4, .contentDivsql h4, .contentDivprojekti h4 { font-size: 1.5rem; }
+  .contentDiv p, .contentDivinfo ul li, .contentDivhtml ul li, .contentDivcsharp ul li, .contentDivsql ul li, .contentDivprojekti ul li { font-size: 1.2rem; }
 }
