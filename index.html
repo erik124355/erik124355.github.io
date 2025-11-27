@@ -301,7 +301,18 @@ function showProject(category, mediaList, title, description, introId) {
 
   // Show container
   container.style.display = "block";
-
+  
+  if (category === 'project' && (mediaList[0].endsWith('.mp4') || mediaList[0].endsWith('.webm'))) {
+    mainMediaContainer.innerHTML = `
+      <video id="mainVideo" src="${mediaList[0]}" controls style="width:100%; border-radius:8px;"></video>
+    `;
+  } else {
+    if (mainMediaContainer.tagName.toLowerCase() === 'img') {
+      mainMediaContainer.src = mediaList[0];
+    } else {
+      mainMediaContainer.innerHTML = `<img src="${mediaList[0]}" alt="${title}" style="width:100%; border-radius:8px;">`;
+    }
+  }
   // Clear thumbs
   thumbsContainer.innerHTML = "";
   mediaList.forEach(src => {
