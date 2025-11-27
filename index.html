@@ -392,15 +392,23 @@ function showDiv(idToShow) {
   });
 }
 
-function openFullscreen(src) {
+function openFullscreen(src, isVideo = false) {
   const overlay = document.getElementById('fullscreenOverlay');
   const fullscreenImg = document.getElementById('fullscreenImg');
-  fullscreenImg.src = src;
+
+  if (isVideo) {
+    overlay.innerHTML = `<video src="${src}" controls autoplay style="max-width:90%; max-height:90%; border-radius:12px; box-shadow:0 0 40px rgba(0,0,0,0.7);"></video>`;
+  } else {
+    overlay.innerHTML = `<img src="${src}" alt="" style="max-width:90%; max-height:90%; border-radius:12px; box-shadow:0 0 40px rgba(0,0,0,0.7);">`;
+  }
+  
   overlay.style.display = 'flex';
 }
 
 function closeFullscreen() {
-  document.getElementById('fullscreenOverlay').style.display = 'none';
+  const overlay = document.getElementById('fullscreenOverlay');
+  overlay.style.display = 'none';
+  overlay.innerHTML = `<img id="fullscreenImg" src="" alt="">`; // reset
 }
 
 window.addEventListener('DOMContentLoaded', () => {
