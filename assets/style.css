@@ -425,16 +425,20 @@ header h1 {
   cursor: auto; /* let user click outside to close, not the media itself */
 }
 
-#thumbsContainer_project,
-#thumbsContainer_sql,
-#thumbsContainer_html,
-#thumbsContainer_csharp,
-#thumbsContainer_sql,
-#thumbsContainer_projekti {
-    display: flex;
-    justify-content: center;      /* center horizontally */
-    align-items: center;          /* center vertically */
-    flex-wrap: wrap;              /* allows wrapping, but stays centered */
-    gap: 10px;                    /* space between thumbnails */
-    margin-top: 10px;
+.thumbs {
+  display: flex;           /* Flex layout */
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  flex-wrap: wrap;         /* Wrap to next line if needed */
+  gap: 10px;               /* Space between thumbnails */
+  margin-top: 10px;        /* Optional spacing above */
+}
+
+.thumbs img,
+.thumbs video {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
 }
