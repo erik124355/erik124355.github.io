@@ -264,7 +264,7 @@
 
   <div class="main-image" id="mainImageContainer_project">
     <h3 id="projectTitle_project"></h3>
-    <img id="mainHTMLImg_project" src="" alt="">
+    <img id="mainHTMLImg_project">
     <div class="thumbs" id="thumbsContainer_project"></div>
     <p id="projectDesc_project"></p>
     <a class="back" onclick="hideProject('project', 'projectIntro')">Takaisin</a>
@@ -298,9 +298,9 @@ function showProject(category, mainMedia, mediaList, title, description, introId
     mainMediaContainer.innerHTML = `
       <video id="mainVideo" src="${mainMedia}" controls autoplay style="width:100%; border-radius:8px;"></video>
     `;
-  } else {
+} else {
     mainMediaContainer.innerHTML = `<img src="${mainMedia}" alt="${title}" style="width:100%; border-radius:8px;">`;
-  }
+}
 
   titleElement.textContent = title;
   descElement.innerHTML = description;
