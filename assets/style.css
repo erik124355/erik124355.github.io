@@ -400,3 +400,27 @@ header h1 {
     color: #ffd800;
   }
 }
+
+#fullscreenOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95); /* shadowy dark overlay */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000; /* on top of everything */
+  cursor: pointer;
+  overflow: auto;
+}
+
+#fullscreenOverlay img,
+#fullscreenOverlay video {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.7); /* shadow around media */
+  cursor: auto; /* let user click outside to close, not the media itself */
+}
