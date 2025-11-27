@@ -437,3 +437,12 @@ header h1 {
     color: #ffd800;
   }
 }
+
+#projectDesc_sql a {
+  color: #ffd800; /* yellow */
+  text-decoration: underline;
+}
+
+#projectDesc_sql a:hover {
+  color: #fff; /* optional hover effect */
+}
