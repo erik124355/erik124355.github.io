@@ -337,10 +337,10 @@ function showProject(category, mediaList, title, description, introId) {
       thumb.alt = `${title} thumbnail`;
       thumb.style.cursor = 'pointer';
       thumb.onclick = () => {
-        if (mainMediaContainer.tagName.toLowerCase() === 'img') {
-          mainMediaContainer.src = src; // set src of the <img>
+        if(src.endsWith('.mp4') || src.endsWith('.webm')) {
+          openFullscreen(src, 'video');
         } else {
-          mainMediaContainer.innerHTML = `<img src="${src}" alt="${title}" style="width:100%; border-radius:8px;">`;
+          openFullscreen(src, 'img');
         }
       };
     }
@@ -370,16 +370,35 @@ function showDiv(idToShow) {
   });
 }
 
-function openFullscreen(src) {
+function openFullscreen(src, type='img') {
   const overlay = document.getElementById('fullscreenOverlay');
-  const fullscreenImg = document.getElementById('fullscreenImg');
-  fullscreenImg.src = src;
+  const fullscreenOverlay = overlay;
+
+  overlay.innerHTML = ''; // clear previous content
+
+  let media;
+  if(type === 'video') {
+    media = document.createElement('video');
+    media.src = src;
+    media.controls = true;
+    media.autoplay = true;
+  } else {
+    media = document.createElement('img');
+    media.src = src;
+  }
+
+  overlay.appendChild(media);
   overlay.style.display = 'flex';
 }
 
 function closeFullscreen() {
-  document.getElementById('fullscreenOverlay').style.display = 'none';
+  const overlay = document.getElementById('fullscreenOverlay');
+  overlay.style.display = 'none';
+  overlay.innerHTML = ''; // remove media
 }
+
+// Close overlay when clicked
+document.getElementById('fullscreenOverlay').addEventListener('click', closeFullscreen);
 
 window.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('fade-in');
@@ -402,9 +421,6 @@ window.addEventListener('DOMContentLoaded', () => {
   if (homeLink) homeLink.classList.add('active');
 });
 </script>
-
-
-
   <div id="fullscreenOverlay" onclick="closeFullscreen()">
     <img id="fullscreenImg" src="" alt="">
   </div>
