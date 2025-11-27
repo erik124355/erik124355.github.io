@@ -88,45 +88,20 @@ header h1 {
   position: fixed;
   bottom: 20px;
   right: 5px;
-  width: 90%;
-  max-width: 480px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
-  border-radius: 10px;
-  font-size: clamp(14px, 1vw, 20px);
-  background-color: rgba(0,0,0,0.9);
+  width: 260px;
+  height: 495px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  overflow-y: auto;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Courier New', monospace;
+  color: #fff;
   opacity: 0;
   pointer-events: none;
   transform: scale(0.95);
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 1000;
-  overflow-y: auto;
-}
-
-/* Info box adjustment for small screens */
-.contentDivinfo {
-  top: 20px;          /* ensures it doesn't go above viewport */
-  bottom: 20px;       /* ensures space from bottom */
-  max-height: calc(100vh - 40px); /* always fits screen */
-  right: 5px;
-  width: 90%;
-  max-width: 400px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  -ms-overflow-style: auto;
-}
-
-.contentDivinfo::-webkit-scrollbar {
-  width: 6px;
-}
-
-.contentDivinfo::-webkit-scrollbar-thumb {
-  background: rgba(255, 216, 0, 0.6);
-  border-radius: 3px;
-}
-
-.contentDivinfo::-webkit-scrollbar-track {
-  background: transparent;
 }
 
 .contentDiv {
