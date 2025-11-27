@@ -283,18 +283,6 @@
 </div>
   
 <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('fade-in');
-  });
-  
-function showDiv(divId) {
-  const allDivs = document.querySelectorAll('.contentDiv, .contentDivinfo, .contentDivhtml, .contentDivcsharp, .contentDivsql, .contentDivprojekti, .minimalist-contact');
-  allDivs.forEach(div => div.style.display = 'none');
-
-  const selectedDiv = document.getElementById(divId);
-  if (selectedDiv) selectedDiv.style.display = 'block';
-}
-  
 function showProject(category, mediaList, title, description, introId) {
   const container = document.getElementById(`mainImageContainer_${category}`);
   const mainMediaContainer = document.getElementById(`mainHTMLImg_${category}`);
@@ -304,26 +292,32 @@ function showProject(category, mediaList, title, description, introId) {
   const linksList = document.getElementById(`projectLinks_${category}`);
   const introText = introId ? document.getElementById(introId) : null;
 
+  // Hide links and intro text
   linksList.style.display = "none";
   if (introText) introText.style.display = "none";
 
   titleElement.textContent = title;
   descElement.innerHTML = description;
+
+  // Show container
   container.style.display = "block";
-
-  // Set main media
-  const firstMedia = mediaList[0];
-  if (firstMedia.endsWith('.mp4') || firstMedia.endsWith('.webm')) {
-    mainMediaContainer.innerHTML = `<video id="mainVideo" src="${firstMedia}" controls style="width:100%; border-radius:8px;" onclick="openFullscreen(this.src)"></video>`;
+  
+  if (category === 'project' && (mediaList[0].endsWith('.mp4') || mediaList[0].endsWith('.webm'))) {
+    mainMediaContainer.innerHTML = `
+      <video id="mainVideo" src="${mediaList[0]}" controls style="width:100%; border-radius:8px;"></video>
+    `;
   } else {
-    mainMediaContainer.innerHTML = `<img src="${firstMedia}" alt="${title}" style="width:100%; border-radius:8px;" onclick="openFullscreen(this.src)">`;
+    if (mainMediaContainer.tagName.toLowerCase() === 'img') {
+      mainMediaContainer.src = mediaList[0];
+    } else {
+      mainMediaContainer.innerHTML = `<img src="${mediaList[0]}" alt="${title}" style="width:100%; border-radius:8px;">`;
+    }
   }
-
-  // Thumbnails
+  // Clear thumbs
   thumbsContainer.innerHTML = "";
   mediaList.forEach(src => {
     let thumb;
-    if (src.endsWith('.mp4') || src.endsWith('.webm')) {
+    if (category === 'project' && (src.endsWith('.mp4') || src.endsWith('.webm'))) {
       thumb = document.createElement('video');
       thumb.src = src;
       thumb.width = 100;
@@ -332,51 +326,87 @@ function showProject(category, mediaList, title, description, introId) {
       thumb.autoplay = true;
       thumb.style.cursor = 'pointer';
       thumb.onclick = () => {
-        mainMediaContainer.innerHTML = `<video id="mainVideo" src="${src}" controls style="width:100%; border-radius:8px;" onclick="openFullscreen(this.src)"></video>`;
+        mainMediaContainer.innerHTML = `
+          <video id="mainVideo" src="${src}" controls style="width:100%; border-radius:8px;"></video>
+        `;
       };
     } else {
+      // IMAGE case: set src of existing <img>
       thumb = document.createElement('img');
       thumb.src = src;
       thumb.alt = `${title} thumbnail`;
       thumb.style.cursor = 'pointer';
       thumb.onclick = () => {
-        mainMediaContainer.innerHTML = `<img src="${src}" alt="${title}" style="width:100%; border-radius:8px;" onclick="openFullscreen(this.src)">`;
+        if (mainMediaContainer.tagName.toLowerCase() === 'img') {
+          mainMediaContainer.src = src; // set src of the <img>
+        } else {
+          mainMediaContainer.innerHTML = `<img src="${src}" alt="${title}" style="width:100%; border-radius:8px;">`;
+        }
       };
     }
     thumbsContainer.appendChild(thumb);
   });
 }
-
+  
 function hideProject(category, introId) {
   const container = document.getElementById(`mainImageContainer_${category}`);
   const linksList = document.getElementById(`projectLinks_${category}`);
   const introText = introId ? document.getElementById(introId) : null;
+
   container.style.display = "none";
   linksList.style.display = "block";
   if (introText) introText.style.display = "block";
 }
 
+function showDiv(idToShow) {
+  const divs = document.querySelectorAll('.contentDiv, .contentDivinfo, .contentDivhtml, .contentDivcsharp, .contentDivsql, .contentDivprojekti');
+  const links = document.querySelectorAll('.links a');
+
+  divs.forEach(div => div.classList.toggle('active', div.id === idToShow));
+
+  links.forEach(link => {
+    const onclickAttr = link.getAttribute('onclick') || '';
+    link.classList.toggle('active', onclickAttr.includes(idToShow));
+  });
+}
+
 function openFullscreen(src) {
   const overlay = document.getElementById('fullscreenOverlay');
-
-  if (src.endsWith('.mp4') || src.endsWith('.webm')) {
-    overlay.innerHTML = `<video src="${src}" controls autoplay style="max-width:95%; max-height:95%; border-radius:8px;"></video>`;
-  } else {
-    overlay.innerHTML = `<img src="${src}" style="max-width:95%; max-height:95%; border-radius:8px;">`;
-  }
-
+  const fullscreenImg = document.getElementById('fullscreenImg');
+  fullscreenImg.src = src;
   overlay.style.display = 'flex';
 }
 
 function closeFullscreen() {
-  const overlay = document.getElementById('fullscreenOverlay');
-  overlay.style.display = 'none';
-  overlay.innerHTML = ''; // Clear the video/image
+  document.getElementById('fullscreenOverlay').style.display = 'none';
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('fade-in');
+
+
+  ['html', 'csharp', 'sql'].forEach(type => {
+    const container = document.getElementById(`mainImageContainer_${type}`);
+    if (container) container.style.display = 'none';
+  });
+
+  const scrollDiv = document.querySelector('.contentDivinfo');
+  if (scrollDiv) {
+    scrollDiv.addEventListener('wheel', e => {
+      e.preventDefault();
+      scrollDiv.scrollBy({ top: e.deltaY, left: 0, behavior: 'smooth' });
+    });
+  }
+
+  const homeLink = document.querySelector('.links a[onclick*="homeDIV"]');
+  if (homeLink) homeLink.classList.add('active');
+});
 </script>
 
 
+
   <div id="fullscreenOverlay" onclick="closeFullscreen()">
+    <img id="fullscreenImg" src="" alt="">
   </div>
 </body>
 </html>
