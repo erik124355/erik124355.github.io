@@ -83,7 +83,7 @@ header h1 {
 .contentDivinfo,
 .contentDivhtml,
 .contentDivcsharp,
-.contentDivsql
+.contentDivsql,
 .contentDivprojekti {
   position: fixed;
   bottom: 20px;
@@ -115,27 +115,28 @@ header h1 {
   align-content: flex-end;
 }
 
+/* Active state */
 .contentDiv.active,
 .contentDivinfo.active,
 .contentDivhtml.active,
 .contentDivcsharp.active,
-.contentDivsql.active
+.contentDivsql.active,
 .contentDivprojekti.active {
   opacity: 1;
   pointer-events: auto;
   transform: scale(1);
 }
 
+/* Text and inner elements */
 .contentDiv h4,
 .contentDivinfo h4,
 .contentDivhtml h4,
 .contentDivcsharp h4,
-.contentDivsql h4
-.contentDivsprojekti h4,
+.contentDivsql h4,
+.contentDivprojekti h4,
 .contentDivhtml i,
 .contentDivcsharp i,
-.contentDivsql i
-.contentDivprojekti i{
+.contentDivsql i {
   color: #ffd800;
   font-weight: normal;
   margin-bottom: 8px;
@@ -143,7 +144,8 @@ header h1 {
   padding-bottom: 2px;
 }
 
-.contentDiv p {
+.contentDiv p,
+.contentDivprojekti p {
   margin: 0;
   overflow-y: auto;
   max-height: 100%;
@@ -152,8 +154,8 @@ header h1 {
 .contentDivinfo ul,
 .contentDivhtml ul,
 .contentDivcsharp ul,
-.contentDivsql ul
-.contentDivprojekti ul{
+.contentDivsql ul,
+.contentDivprojekti ul {
   list-style: none;
   padding-left: 0;
   margin-bottom: 10px;
@@ -162,11 +164,12 @@ header h1 {
 .contentDivinfo ul li,
 .contentDivhtml ul li,
 .contentDivcsharp ul li,
-.contentDivsql ul li
-.contentDivprojekti ul li{
+.contentDivsql ul li,
+.contentDivprojekti ul li {
   margin-bottom: 4px;
 }
 
+/* Fullscreen overlay */
 #fullscreenOverlay {
   display: none;
   position: fixed;
@@ -190,6 +193,7 @@ header h1 {
   cursor: pointer;
 }
 
+/* Scrollbar hidden for contentDivinfo */
 .contentDivinfo {
   bottom: 50px;
   right: 0;
@@ -234,13 +238,51 @@ header h1 {
   margin-bottom: 8px;
 }
 
+/* Paragraph styling for project descriptions */
 #projectDesc_html p,
 #projectDesc_csharp p,
-#projectDesc_sql p
-#projectDesc_project p{
+#projectDesc_sql p,
+#projectDesc_project p {
   color: #ffd800;
   font-weight: 500;
   margin-top: 8px;
+}
+
+/* Main image + thumbnails for projects */
+.main-image {
+  display: none;
+  margin-top: 10px;
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.thumbs img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Back link */
+.main-image .back {
+  display: inline-block;
+  margin-top: 8px;
+  color: #ffd800;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /* ============================= */
@@ -270,7 +312,7 @@ header h1 {
   .contentDiv,
   .contentDivhtml,
   .contentDivcsharp,
-  .contentDivsql
+  .contentDivsql,
   .contentDivprojekti {
     width: 480px;
     font-size: 20px;
@@ -285,7 +327,7 @@ header h1 {
 
   /* Keep info box scrollable and slightly bigger */
   .contentDivinfo {
-    width: 300px;;
+    width: 300px;
     bottom: 50px;
     right: 0;
     padding: 20px;
@@ -297,8 +339,8 @@ header h1 {
   .contentDivinfo h4,
   .contentDivhtml h4,
   .contentDivcsharp h4,
-  .contentDivsql h4
-  .contentDivproject h4{
+  .contentDivsql h4,
+  .contentDivprojekti h4 {
     font-size: 1.5rem;
   }
 
@@ -306,13 +348,13 @@ header h1 {
   .contentDivinfo ul li,
   .contentDivhtml ul li,
   .contentDivcsharp ul li,
-  .contentDivsql ul li
-  .contentDivproject ul li{
+  .contentDivsql ul li,
+  .contentDivprojekti ul li {
     font-size: 1.2rem;
   }
 
   #contactDIV {
-    font-size: 14px; /* slightly larger on big screens */
+    font-size: 14px;
   }
 
   #contactDIV a {
