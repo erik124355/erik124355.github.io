@@ -424,3 +424,17 @@ header h1 {
   box-shadow: 0 0 40px rgba(0,0,0,0.7); /* shadow around media */
   cursor: auto; /* let user click outside to close, not the media itself */
 }
+
+#thumbsContainer_project,
+#thumbsContainer_sql,
+#thumbsContainer_html,
+#thumbsContainer_csharp,
+#thumbsContainer_sql,
+#thumbsContainer_projekti {
+    display: flex;
+    justify-content: center;      /* center horizontally */
+    align-items: center;          /* center vertically */
+    flex-wrap: wrap;              /* allows wrapping, but stays centered */
+    gap: 10px;                    /* space between thumbnails */
+    margin-top: 10px;
+}
