@@ -20,6 +20,7 @@
     <a onclick="showDiv('htmlDIV'); event.preventDefault();">HTML</a>
     <a onclick="showDiv('csharpDIV'); event.preventDefault();">C#</a>
     <a onclick="showDiv('sqlDIV'); event.preventDefault();">SQL</a>
+    <a onclick="showDiv('projektiDIV'); event.preventDefault();">Projektit</a>
     <a onclick="showDiv('contactDIV'); event.preventDefault();">Yhteystiedot</a>
   </div>
 
@@ -307,7 +308,7 @@ function hideProject(category, introId) {
 }
 
 function showDiv(idToShow) {
-  const divs = document.querySelectorAll('.contentDiv, .contentDivinfo, .contentDivhtml, .contentDivcsharp, .contentDivsql');
+  const divs = document.querySelectorAll('.contentDiv, .contentDivinfo, .contentDivhtml, .contentDivcsharp, .contentDivsql, .contentDivprojekti');
   const links = document.querySelectorAll('.links a');
 
   divs.forEach(div => div.classList.toggle('active', div.id === idToShow));
