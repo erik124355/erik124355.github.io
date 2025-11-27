@@ -244,10 +244,13 @@
     </a>
   </li>
   <li>
-    <a href="#" onclick="showProject(
-      'project',                                
-      'assets/images/sql/sql1.1.png',      
-      [],                                
+  <a href="#" onclick="showProject(
+    'project',
+    'assets/videos/Rekisteroityminen..mp4',
+    [
+      'assets/videos/Varaus.mp4',
+      'assets/videos/Virheet_tila.mp4'
+    ],                             
       'Varausjärjestelmä',                       
       `Ohjelmistolla voidaan varata luokkia sekä oppilaina että opettajina, nähdä kaikkien luokkien varaustilanne reaaliaikaisesti ja saada virheilmoitus sekä ratkaisuehdotus, jos luokka on varattu pyydettynä aikana. Lisäksi järjestelmä sisältää admin-paneelin, josta voidaan hallita käyttäjien salasanoja sekä lisätä ja muokata luokkia.<br>
       <p>Paina videota, jotta se suurenee.</p>
@@ -277,9 +280,9 @@
 </div>
   
 <script>
-function showProject(category, mainImg, thumbs, title, description, introId) {
+function showProject(category, mainMedia, mediaList, title, description, introId) {
   const container = document.getElementById(`mainImageContainer_${category}`);
-  const mainImage = document.getElementById(`mainHTMLImg_${category}`);
+  const mainMediaContainer = document.getElementById(`mainHTMLImg_${category}`);
   const thumbsContainer = document.getElementById(`thumbsContainer_${category}`);
   const titleElement = document.getElementById(`projectTitle_${category}`);
   const descElement = document.getElementById(`projectDesc_${category}`);
@@ -290,20 +293,44 @@ function showProject(category, mainImg, thumbs, title, description, introId) {
   linksList.style.display = "none";
   if (introText) introText.style.display = "none";
 
-  mainImage.src = mainImg;
+  // Detect if mainMedia is video
+  if (mainMedia.endsWith('.mp4') || mainMedia.endsWith('.webm')) {
+    mainMediaContainer.innerHTML = `
+      <video id="mainVideo" src="${mainMedia}" controls autoplay style="width:100%; border-radius:8px;"></video>
+    `;
+  } else {
+    mainMediaContainer.innerHTML = `<img src="${mainMedia}" alt="${title}" style="width:100%; border-radius:8px;">`;
+  }
+
   titleElement.textContent = title;
   descElement.innerHTML = description;
 
+  // Clear thumbs
   thumbsContainer.innerHTML = "";
-  thumbs.forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = `${title} thumbnail`;
-    img.onclick = () => openFullscreen(src);
-    thumbsContainer.appendChild(img);
+  mediaList.forEach(src => {
+    const thumb = document.createElement(src.endsWith('.mp4') || src.endsWith('.webm') ? 'video' : 'img');
+    if (thumb.tagName === 'VIDEO') {
+      thumb.src = src;
+      thumb.width = 100;
+      thumb.muted = true;
+      thumb.loop = true;
+      thumb.autoplay = true;
+      thumb.style.cursor = 'pointer';
+      thumb.onclick = () => {
+        const mainVid = document.getElementById('mainVideo');
+        if (mainVid) {
+          mainVid.src = src;
+          mainVid.play();
+        }
+      };
+    } else {
+      thumb.src = src;
+      thumb.alt = `${title} thumbnail`;
+      thumb.style.cursor = 'pointer';
+      thumb.onclick = () => openFullscreen(src);
+    }
+    thumbsContainer.appendChild(thumb);
   });
-
-  mainImage.onclick = () => openFullscreen(mainImg);
 }
 
 function hideProject(category, introId) {
