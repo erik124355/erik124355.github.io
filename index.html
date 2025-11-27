@@ -77,9 +77,8 @@
   <li>
     <a href="#" onclick="showProject(
       'html',                                
-          
-      [
-        'assets/images/html/cv1.png',  
+        'assets/images/html/cv1.png', 
+      [ 
         'assets/images/html/cv2.png',
         'assets/images/html/cv3.png',
         'assets/images/html/cv4.png'
@@ -94,9 +93,8 @@
   <li>
     <a href="#" onclick="showProject(
       'html',                                
-            
+      'assets/images/html/kahvila1.png',
       [    
-        'assets/images/html/kahvila1.png',
         'assets/images/html/kahvila2.png',
         'assets/images/html/kahvila3.png'
       ],
@@ -109,9 +107,9 @@
   </li>
     <li>
     <a href="#" onclick="showProject(
-      'html',                                      
+      'html',  
+      'assets/images/html/koira1.png',
       [    
-        'assets/images/html/koira1.png',
         'assets/images/html/koira2.png',
         'assets/images/html/koira3.png'
       ],
@@ -139,9 +137,9 @@
   <ul class="project-links" id="projectLinks_csharp">
     <li>
       <a href="#" onclick="showProject(
-        'csharp',                                    
-        [  
-          'assets/images/csharp/pitsakuva1.png',  
+        'csharp',       
+        'assets/images/csharp/pitsakuva1.png', 
+        [   
           'assets/images/csharp/pizza2.png',
           'assets/images/csharp/pizza3.png',
           'assets/images/csharp/pizza4.png'
@@ -154,9 +152,9 @@
     </li>
     <li>
       <a href="#" onclick="showProject(
-        'csharp',                                     
+        'csharp',       
+        'assets/images/csharp/matikka1.png', 
         [   
-          'assets/images/csharp/matikka1.png', 
           'assets/images/csharp/maths2.png',
           'assets/images/csharp/other1.png'
         ],
@@ -184,9 +182,9 @@
   <ul class="project-links" id="projectLinks_sql">
     <li>
       <a href="#" onclick="showProject(
-        'sql',                                
+        'sql', 
+        'assets/images/sql/sql1.png', 
         [ 
-          'assets/images/sql/sql1.png',  
           'assets/images/sql/sql2.png',
           'assets/images/sql/sql3.png',
           'assets/images/sql/sql4.png'
@@ -283,6 +281,9 @@
 </div>
   
 <script>
+/* ===========================
+   Show Project with Thumbnails
+=========================== */
 function showProject(category, mediaList, title, description, introId) {
   const container = document.getElementById(`mainImageContainer_${category}`);
   const mainMediaContainer = document.getElementById(`mainHTMLImg_${category}`);
@@ -292,84 +293,70 @@ function showProject(category, mediaList, title, description, introId) {
   const linksList = document.getElementById(`projectLinks_${category}`);
   const introText = introId ? document.getElementById(introId) : null;
 
-  // Hide links and intro text
+  // Hide links and intro
   linksList.style.display = "none";
   if (introText) introText.style.display = "none";
 
+  // Set title and description
   titleElement.textContent = title;
   descElement.innerHTML = description;
 
-  // Show container
+  // Show project container
   container.style.display = "block";
-  
-  if (category === 'project' && (mediaList[0].endsWith('.mp4') || mediaList[0].endsWith('.webm'))) {
-    mainMediaContainer.innerHTML = `
-      <video id="mainVideo" src="${mediaList[0]}" controls style="width:100%; border-radius:8px;"></video>
-    `;
-  } else {
-    if (mainMediaContainer.tagName.toLowerCase() === 'img') {
-      mainMediaContainer.src = mediaList[0];
-    } else {
-      mainMediaContainer.innerHTML = `<img src="${mediaList[0]}" alt="${title}" style="width:100%; border-radius:8px;">`;
-    }
-  }
 
-  if (!mediaList[0].endsWith('.mp4') && !mediaList[0].endsWith('.webm')) {
-  const img = mainMediaContainer.tagName.toLowerCase() === 'img' 
-      ? mainMediaContainer 
-      : mainMediaContainer.querySelector('img');
-  if (img) {
-    img.style.cursor = 'pointer';
-    img.onclick = () => openFullscreen(img.src);
-  }
-}
-  // Clear thumbs
+  // Set first media as main
+  setMainMedia(mediaList[0], mainMediaContainer);
+
+  // Clear and add thumbnails
   thumbsContainer.innerHTML = "";
-  mediaList.forEach(src => {
+  mediaList.forEach((src, index) => {
+    if (index === 0) return; // skip main media
+
     let thumb;
-    if (category === 'project' && (src.endsWith('.mp4') || src.endsWith('.webm'))) {
+    if (src.endsWith('.mp4') || src.endsWith('.webm')) {
       thumb = document.createElement('video');
       thumb.src = src;
-      thumb.width = 100;
       thumb.muted = true;
       thumb.loop = true;
       thumb.autoplay = true;
-      thumb.style.cursor = 'pointer';
-      thumb.onclick = () => {
-        mainMediaContainer.innerHTML = `
-          <video id="mainVideo" src="${src}" controls style="width:100%; border-radius:8px;"></video>
-        `;
-      };
     } else {
-      // IMAGE case: set src of existing <img>
       thumb = document.createElement('img');
       thumb.src = src;
-      thumb.alt = `${title} thumbnail`;
-      thumb.style.cursor = 'pointer';
-      thumb.onclick = () => {
-      if (src.endsWith('.mp4') || src.endsWith('.webm')) {
-        mainMediaContainer.innerHTML = `<video id="mainVideo" src="${src}" controls style="width:100%; border-radius:8px;"></video>`;
-      } else {
-        if (mainMediaContainer.tagName.toLowerCase() === 'img') {
-          mainMediaContainer.src = src;
-        } else {
-          mainMediaContainer.innerHTML = `<img src="${src}" alt="${title}" style="width:100%; border-radius:8px;">`;
-        }
-        // Add fullscreen functionality for images
-        const img = mainMediaContainer.tagName.toLowerCase() === 'img'
-          ? mainMediaContainer
-          : mainMediaContainer.querySelector('img');
-        if (img) {
-          img.style.cursor = 'pointer';
-          img.onclick = () => openFullscreen(src);
-        }
-      }
-    };
+      thumb.alt = `Thumbnail ${index}`;
     }
+
+    thumb.style.width = '80px';
+    thumb.style.height = '60px';
+    thumb.style.objectFit = 'cover';
+    thumb.style.borderRadius = '6px';
+    thumb.style.cursor = 'pointer';
+    thumb.style.marginRight = '5px';
+
+    thumb.onclick = () => setMainMedia(src, mainMediaContainer);
+
     thumbsContainer.appendChild(thumb);
   });
 }
-  
+
+/* ===========================
+   Set Main Media (Image or Video)
+=========================== */
+function setMainMedia(src, container) {
+  const isVideo = src.endsWith('.mp4') || src.endsWith('.webm');
+
+  if (isVideo) {
+    container.innerHTML = `<video src="${src}" controls style="width:100%; border-radius:8px;"></video>`;
+    const video = container.querySelector('video');
+    video.onclick = () => openFullscreen(src, true);
+  } else {
+    container.innerHTML = `<img src="${src}" alt="" style="width:100%; border-radius:8px;">`;
+    container.querySelector('img').onclick = () => openFullscreen(src);
+  }
+}
+
+/* ===========================
+   Hide Project
+=========================== */
 function hideProject(category, introId) {
   const container = document.getElementById(`mainImageContainer_${category}`);
   const linksList = document.getElementById(`projectLinks_${category}`);
@@ -380,6 +367,9 @@ function hideProject(category, introId) {
   if (introText) introText.style.display = "block";
 }
 
+/* ===========================
+   Show Specific ContentDiv
+=========================== */
 function showDiv(idToShow) {
   const divs = document.querySelectorAll('.contentDiv, .contentDivinfo, .contentDivhtml, .contentDivcsharp, .contentDivsql, .contentDivprojekti');
   const links = document.querySelectorAll('.links a');
@@ -392,34 +382,38 @@ function showDiv(idToShow) {
   });
 }
 
+/* ===========================
+   Fullscreen Overlay
+=========================== */
 function openFullscreen(src, isVideo = false) {
   const overlay = document.getElementById('fullscreenOverlay');
-  const fullscreenImg = document.getElementById('fullscreenImg');
-
   if (isVideo) {
     overlay.innerHTML = `<video src="${src}" controls autoplay style="max-width:90%; max-height:90%; border-radius:12px; box-shadow:0 0 40px rgba(0,0,0,0.7);"></video>`;
   } else {
     overlay.innerHTML = `<img src="${src}" alt="" style="max-width:90%; max-height:90%; border-radius:12px; box-shadow:0 0 40px rgba(0,0,0,0.7);">`;
   }
-  
   overlay.style.display = 'flex';
 }
 
 function closeFullscreen() {
   const overlay = document.getElementById('fullscreenOverlay');
   overlay.style.display = 'none';
-  overlay.innerHTML = `<img id="fullscreenImg" src="" alt="">`; // reset
+  overlay.innerHTML = ''; // reset content
 }
 
+/* ===========================
+   Initialize Page
+=========================== */
 window.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('fade-in');
 
-
-  ['html', 'csharp', 'sql'].forEach(type => {
+  // Hide project containers initially
+  ['html', 'csharp', 'sql', 'project'].forEach(type => {
     const container = document.getElementById(`mainImageContainer_${type}`);
     if (container) container.style.display = 'none';
   });
 
+  // Smooth scroll for contentDivinfo
   const scrollDiv = document.querySelector('.contentDivinfo');
   if (scrollDiv) {
     scrollDiv.addEventListener('wheel', e => {
@@ -428,12 +422,11 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Set home link active
   const homeLink = document.querySelector('.links a[onclick*="homeDIV"]');
   if (homeLink) homeLink.classList.add('active');
 });
 </script>
-
-
 
   <div id="fullscreenOverlay" onclick="closeFullscreen()">
     <img id="fullscreenImg" src="" alt="">
