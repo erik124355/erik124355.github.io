@@ -106,8 +106,7 @@ header h1 {
 
 .contentDiv {
   bottom: 15px;
-  left: 50%;           /* center horizontally */
-  transform: translateX(-50%); /* offset by half width */
+  right: 0px;
   width: 395px;
   height: 250px;
   padding: 10px;
