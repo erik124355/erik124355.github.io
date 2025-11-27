@@ -283,6 +283,18 @@
 </div>
   
 <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('fade-in');
+  });
+  
+function showDiv(divId) {
+  const allDivs = document.querySelectorAll('.contentDiv, .contentDivinfo, .contentDivhtml, .contentDivcsharp, .contentDivsql, .contentDivprojekti, .minimalist-contact');
+  allDivs.forEach(div => div.style.display = 'none');
+
+  const selectedDiv = document.getElementById(divId);
+  if (selectedDiv) selectedDiv.style.display = 'block';
+}
+  
 function showProject(category, mediaList, title, description, introId) {
   const container = document.getElementById(`mainImageContainer_${category}`);
   const mainMediaContainer = document.getElementById(`mainHTMLImg_${category}`);
@@ -346,27 +358,25 @@ function hideProject(category, introId) {
 
 function openFullscreen(src) {
   const overlay = document.getElementById('fullscreenOverlay');
-  const fullscreenImg = document.getElementById('fullscreenImg');
-  // Detect video or image
+
   if (src.endsWith('.mp4') || src.endsWith('.webm')) {
-    fullscreenImg.outerHTML = `<video id="fullscreenImg" src="${src}" controls autoplay style="max-width:95%; max-height:95%;"></video>`;
+    overlay.innerHTML = `<video src="${src}" controls autoplay style="max-width:95%; max-height:95%; border-radius:8px;"></video>`;
   } else {
-    fullscreenImg.outerHTML = `<img id="fullscreenImg" src="${src}" style="max-width:95%; max-height:95%;">`;
+    overlay.innerHTML = `<img src="${src}" style="max-width:95%; max-height:95%; border-radius:8px;">`;
   }
+
   overlay.style.display = 'flex';
 }
 
 function closeFullscreen() {
   const overlay = document.getElementById('fullscreenOverlay');
   overlay.style.display = 'none';
-  // Reset to image for next open
-  overlay.innerHTML = '<img id="fullscreenImg" src="" alt="">';
+  overlay.innerHTML = ''; // Clear the video/image
 }
 </script>
 
 
   <div id="fullscreenOverlay" onclick="closeFullscreen()">
-    <img id="fullscreenImg" src="" alt="">
   </div>
 </body>
 </html>
