@@ -313,6 +313,16 @@ function showProject(category, mediaList, title, description, introId) {
       mainMediaContainer.innerHTML = `<img src="${mediaList[0]}" alt="${title}" style="width:100%; border-radius:8px;">`;
     }
   }
+
+  if (!mediaList[0].endsWith('.mp4') && !mediaList[0].endsWith('.webm')) {
+  const img = mainMediaContainer.tagName.toLowerCase() === 'img' 
+      ? mainMediaContainer 
+      : mainMediaContainer.querySelector('img');
+  if (img) {
+    img.style.cursor = 'pointer';
+    img.onclick = () => openFullscreen(img.src);
+  }
+}
   // Clear thumbs
   thumbsContainer.innerHTML = "";
   mediaList.forEach(src => {
@@ -337,12 +347,24 @@ function showProject(category, mediaList, title, description, introId) {
       thumb.alt = `${title} thumbnail`;
       thumb.style.cursor = 'pointer';
       thumb.onclick = () => {
+      if (src.endsWith('.mp4') || src.endsWith('.webm')) {
+        mainMediaContainer.innerHTML = `<video id="mainVideo" src="${src}" controls style="width:100%; border-radius:8px;"></video>`;
+      } else {
         if (mainMediaContainer.tagName.toLowerCase() === 'img') {
-          mainMediaContainer.src = src; // set src of the <img>
+          mainMediaContainer.src = src;
         } else {
           mainMediaContainer.innerHTML = `<img src="${src}" alt="${title}" style="width:100%; border-radius:8px;">`;
         }
-      };
+        // Add fullscreen functionality for images
+        const img = mainMediaContainer.tagName.toLowerCase() === 'img'
+          ? mainMediaContainer
+          : mainMediaContainer.querySelector('img');
+        if (img) {
+          img.style.cursor = 'pointer';
+          img.onclick = () => openFullscreen(src);
+        }
+      }
+    };
     }
     thumbsContainer.appendChild(thumb);
   });
