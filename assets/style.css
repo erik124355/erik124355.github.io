@@ -163,14 +163,6 @@ header h1 {
   margin-bottom: 4px;
 }
 
-const img = mainMediaContainer.tagName.toLowerCase() === 'img'
-  ? mainMediaContainer
-  : mainMediaContainer.querySelector('img');
-if (img) {
-  img.style.cursor = 'pointer';
-  img.onclick = () => openFullscreen(src);
-}
-
 .contentDivinfo {
   bottom: 50px;
   right: 0;
