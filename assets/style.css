@@ -423,3 +423,17 @@ header h1 {
     color: #ffd800;
   }
 }
+
+/* Project links default style */
+.project-links a {
+  color: #ffd800; /* yellow */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: bold;
+}
+
+/* Hover effect */
+.project-links a:hover {
+  color: #ffffff; /* white */
+  text-decoration: underline;
+}
