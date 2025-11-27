@@ -429,15 +429,15 @@ header h1 {
 #thumbsContainer_csharp,
 #thumbsContainer_sql,
 #thumbsContainer_project {
-    display: flex;           /* use flexbox */
-    justify-content: center; /* center horizontally */
-    align-items: center;     /* center vertically if needed */
-    flex-wrap: wrap;         /* wrap to new line if needed */
-    gap: 10px;               /* space between thumbnails */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-top: 10px;
 }
 
-/* Style individual thumbnails (both img and video) */
+/* Style individual thumbnails (images and videos) */
 #thumbsContainer_html img,
 #thumbsContainer_html video,
 #thumbsContainer_csharp img,
@@ -451,5 +451,19 @@ header h1 {
     object-fit: cover;
     border-radius: 6px;
     cursor: pointer;
-}sor: pointer;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    #thumbsContainer_html img,
+    #thumbsContainer_html video,
+    #thumbsContainer_csharp img,
+    #thumbsContainer_csharp video,
+    #thumbsContainer_sql img,
+    #thumbsContainer_sql video,
+    #thumbsContainer_project img,
+    #thumbsContainer_project video {
+        width: 50px;
+        height: 38px; /* maintain aspect ratio */
+    }
 }
