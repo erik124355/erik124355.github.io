@@ -248,7 +248,7 @@
     'project',
     [
       'assets/Luokkavaraus/Rekisteroityminen.mp4',
-      'asset/Luokkavaraus/Varaus.mp4',
+      'assets/Luokkavaraus/Varaus.mp4',
       'assets/Luokkavaraus/Virheet_tila.mp4'
     ],                             
       'Varausjärjestelmä',                       
@@ -298,7 +298,7 @@ function showProject(category, mediaList, title, description, introId) {
 
   if (firstMedia.endsWith('.mp4') || firstMedia.endsWith('.webm')) {
     mainMediaContainer.innerHTML = `
-      <video id="mainVideo" src="${firstMedia}" controls autoplay style="width:100%; border-radius:8px;"></video>
+      <video id="mainVideo" src="${firstMedia}" controls style="width:100%; border-radius:8px;"></video>
     `;
   } else {
     mainMediaContainer.innerHTML = `<img src="${firstMedia}" alt="${title}" style="width:100%; border-radius:8px;">`;
@@ -317,13 +317,14 @@ function showProject(category, mediaList, title, description, introId) {
       thumb.width = 100;
       thumb.muted = true;
       thumb.loop = true;
-      thumb.autoplay = true;
+      thumb.autoplay = true; // Thumbnails can autoplay silently
       thumb.style.cursor = 'pointer';
       thumb.onclick = () => {
         const mainVid = document.getElementById('mainVideo');
         if (mainVid) {
           mainVid.src = src;
-          mainVid.play();
+          mainVid.pause(); // Make sure it is paused first
+          mainVid.load();  // Reload video
         }
       };
     } else {
