@@ -213,6 +213,51 @@
   </div>
 </div>
 
+  <div id="projektiDIV" class="contentDivprojekti">
+  <h4>Projekteja</h4>
+  <p id="projektIntro">
+    Työskennellyt parityöskentelynä: vastasin kokonaisuudessaan suunnittelusta ja backend-kehityksestä sekä osallistuin frontend-toteutukseen. Yksi projekteista on verkkokauppasovellus, joka on vielä kesken. Projektit hyödyntävät HTML:ää, PHP:tä ja CSS:ää.
+  </p>
+  <ul class="project-links" id="projectLinks_project">
+    <li>
+      <a href="#" onclick="showProject(
+        'projektityö',                                
+        'assets/images/sql/sql1.png',      
+        [    
+          'assets/images/sql/sql2.png',
+          'assets/images/sql/sql3.png',
+          'assets/images/sql/sql4.png'
+        ],
+        'Verkkokauppa',                       
+        'Verkkokauppasivusto sisältää erilliset näkymät asiakkaille ja työntekijöille; työntekijöillä on rooleihin perustuvat oikeudet ja sivut, ja admin voi hallita kaikkia käyttäjiä, tuotteita sekä työntekijöitä.',
+        'projectIntro'
+      ); return false;">
+         Verkkokauppa
+      </a>
+    </li>
+    <li>
+      <a href="#" onclick="showProject(
+        'sql',                                
+        'assets/images/sql/sql1.1.png',      
+        [],                                
+        'Luokka varausjärjestelmä',                       
+        'Ohjelmistolla voidaan varata luokkia sekä oppilaina että opettajina, nähdä kaikkien luokkien varaustilanne reaaliaikaisesti ja saada virheilmoitus sekä ratkaisuehdotus, jos luokka on varattu pyydettynä aikana. Lisäksi järjestelmä sisältää admin-paneelin, josta voidaan hallita käyttäjien salasanoja sekä lisätä ja muokata luokkia.',
+        'projectIntro'
+      ); return false;">
+        Luokka varausjärjestelmä
+      </a>
+    </li>
+  </ul>
+
+  <div class="main-image" id="mainImageContainer_project">
+    <h3 id="projectTitle_project"></h3>
+    <img id="mainHTMLImg_project" src="" alt="">
+    <div class="thumbs" id="thumbsContainer_project"></div>
+    <p id="projectDesc_project"></p>
+    <a class="back" onclick="hideProject('project', 'projectIntro')">Takaisin</a>
+  </div>
+</div>
+
 
   <div id="contactDIV" class="contentDiv minimalist-contact">
   <h4>Yhteystiedot</h4>
@@ -231,17 +276,14 @@ function showProject(category, mainImg, thumbs, title, description, introId) {
   const linksList = document.getElementById(`projectLinks_${category}`);
   const introText = introId ? document.getElementById(introId) : null;
 
-  // Show gallery, hide links and intro
   container.style.display = "block";
   linksList.style.display = "none";
   if (introText) introText.style.display = "none";
 
-  // Set main image, title, and description
   mainImage.src = mainImg;
   titleElement.textContent = title;
   descElement.innerHTML = description;
 
-  // Clear old thumbnails and add new ones
   thumbsContainer.innerHTML = "";
   thumbs.forEach(src => {
     const img = document.createElement("img");
@@ -251,7 +293,6 @@ function showProject(category, mainImg, thumbs, title, description, introId) {
     thumbsContainer.appendChild(img);
   });
 
-  // Click main image to fullscreen
   mainImage.onclick = () => openFullscreen(mainImg);
 }
 
@@ -269,10 +310,8 @@ function showDiv(idToShow) {
   const divs = document.querySelectorAll('.contentDiv, .contentDivinfo, .contentDivhtml, .contentDivcsharp, .contentDivsql');
   const links = document.querySelectorAll('.links a');
 
-  // Show the selected div
   divs.forEach(div => div.classList.toggle('active', div.id === idToShow));
 
-  // Update link highlight
   links.forEach(link => {
     const onclickAttr = link.getAttribute('onclick') || '';
     link.classList.toggle('active', onclickAttr.includes(idToShow));
@@ -290,18 +329,15 @@ function closeFullscreen() {
   document.getElementById('fullscreenOverlay').style.display = 'none';
 }
 
-// Initialize on page load
 window.addEventListener('DOMContentLoaded', () => {
-  // Add fade-in effect
   document.body.classList.add('fade-in');
 
-  // Hide all project galleries
+
   ['html', 'csharp', 'sql'].forEach(type => {
     const container = document.getElementById(`mainImageContainer_${type}`);
     if (container) container.style.display = 'none';
   });
 
-  // Enable smooth scrolling for info section
   const scrollDiv = document.querySelector('.contentDivinfo');
   if (scrollDiv) {
     scrollDiv.addEventListener('wheel', e => {
@@ -310,7 +346,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ✅ Make Etusivu (home) link active on load
   const homeLink = document.querySelector('.links a[onclick*="homeDIV"]');
   if (homeLink) homeLink.classList.add('active');
 });
