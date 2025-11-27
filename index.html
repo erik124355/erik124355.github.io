@@ -307,32 +307,33 @@ function showProject(category, mainMediaSrc, mediaList, title, description, intr
   // Clear thumbnails and add small media (from array)
   thumbsContainer.innerHTML = "";
   mediaList.forEach((src, index) => {
-    let thumb;
-    if (src.endsWith('.mp4') || src.endsWith('.webm')) {
-      thumb = document.createElement('video');
-      thumb.src = src;
-      thumb.muted = true;
-      thumb.loop = true;
-      thumb.autoplay = true;
-    } else {
-      thumb = document.createElement('img');
-      thumb.src = src;
-      thumb.alt = `Thumbnail ${index+1}`;
-    }
-
-    // Style thumbnail
-    thumb.style.width = '80px';
-    thumb.style.height = '60px';
+  let thumb;
+  if (src.endsWith('.mp4') || src.endsWith('.webm')) {
+    thumb = document.createElement('video');
+    thumb.src = src;
+    thumb.muted = true;
+    thumb.loop = true;
+    thumb.autoplay = false; // <-- make sure it's paused initially
+    thumb.controls = false; // optional: hide controls for thumbnails
     thumb.style.objectFit = 'cover';
-    thumb.style.borderRadius = '6px';
-    thumb.style.cursor = 'pointer';
-    thumb.style.marginRight = '5px';
+  } else {
+    thumb = document.createElement('img');
+    thumb.src = src;
+    thumb.alt = `Thumbnail ${index+1}`;
+  }
 
-    // Click: always open fullscreen
-    thumb.onclick = () => openFullscreen(src, src.endsWith('.mp4') || src.endsWith('.webm'));
+  // Style thumbnail (shared for images and videos)
+  thumb.style.width = '80px';
+  thumb.style.height = '60px';
+  thumb.style.borderRadius = '6px';
+  thumb.style.cursor = 'pointer';
+  thumb.style.marginRight = '5px';
 
-    thumbsContainer.appendChild(thumb);
-  });
+  // Click: open fullscreen
+  thumb.onclick = () => openFullscreen(src, src.endsWith('.mp4') || src.endsWith('.webm'));
+
+  thumbsContainer.appendChild(thumb);
+});
 }
 
 /* ===========================
