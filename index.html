@@ -293,19 +293,16 @@ function showProject(category, mediaList, title, description, introId) {
   linksList.style.display = "none";
   if (introText) introText.style.display = "none";
 
-  // Clear the main container first
-  mainMediaContainer.innerHTML = "";
   titleElement.textContent = title;
   descElement.innerHTML = description;
 
-  // Show container only AFTER clicking a thumbnail
+  // Show container
   container.style.display = "block";
 
   // Clear thumbs
   thumbsContainer.innerHTML = "";
   mediaList.forEach(src => {
     let thumb;
-    // Only project section uses video thumbs
     if (category === 'project' && (src.endsWith('.mp4') || src.endsWith('.webm'))) {
       thumb = document.createElement('video');
       thumb.src = src;
@@ -320,12 +317,17 @@ function showProject(category, mediaList, title, description, introId) {
         `;
       };
     } else {
+      // IMAGE case: set src of existing <img>
       thumb = document.createElement('img');
       thumb.src = src;
       thumb.alt = `${title} thumbnail`;
       thumb.style.cursor = 'pointer';
       thumb.onclick = () => {
-        mainMediaContainer.innerHTML = `<img src="${src}" alt="${title}" style="width:100%; border-radius:8px;">`;
+        if (mainMediaContainer.tagName.toLowerCase() === 'img') {
+          mainMediaContainer.src = src; // set src of the <img>
+        } else {
+          mainMediaContainer.innerHTML = `<img src="${src}" alt="${title}" style="width:100%; border-radius:8px;">`;
+        }
       };
     }
     thumbsContainer.appendChild(thumb);
