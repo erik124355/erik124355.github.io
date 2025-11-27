@@ -163,27 +163,12 @@ header h1 {
   margin-bottom: 4px;
 }
 
-#fullscreenOverlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  overflow: hidden;
-}
-
-#fullscreenOverlay img {
-  max-width: 95vw;
-  max-height: 95vh;
-  object-fit: contain;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  cursor: pointer;
+const img = mainMediaContainer.tagName.toLowerCase() === 'img'
+  ? mainMediaContainer
+  : mainMediaContainer.querySelector('img');
+if (img) {
+  img.style.cursor = 'pointer';
+  img.onclick = () => openFullscreen(src);
 }
 
 .contentDivinfo {
