@@ -361,3 +361,79 @@ header h1 {
     color: #ffd800;
   }
 }
+
+/* ============================= */
+/* Extra Large Screens (1600px+) */
+/* ============================= */
+@media (min-width: 1600px) {
+  body {
+    font-size: 32px;
+  }
+
+  header h1 {
+    font-size: 4rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .links {
+    gap: 1.5rem;
+    padding: 1.5rem 3rem;
+  }
+
+  .links a {
+    font-size: 26px;
+    padding: 12px 25px;
+  }
+
+  /* Keep the same classes, just scale up */
+  .contentDiv,
+  .contentDivhtml,
+  .contentDivcsharp,
+  .contentDivsql,
+  .contentDivprojekti {
+    width: 600px; /* scaled up but same layout */
+    font-size: 24px;
+    padding: 30px;
+    border-radius: 12px;
+  }
+
+  .contentDiv {
+    width: 650px; /* scale the default contentDiv */
+    height: 400px;
+  }
+
+  /* Info div scaling while keeping it readable */
+  .contentDivinfo {
+    width: 360px; /* slightly larger than before */
+    bottom: 20px; /* keep it lower on small screens */
+    height: 800px;
+    padding: 25px;
+    font-size: 20px;
+  }
+
+  .contentDiv h4,
+  .contentDivinfo h4,
+  .contentDivhtml h4,
+  .contentDivcsharp h4,
+  .contentDivsql h4,
+  .contentDivprojekti h4 {
+    font-size: 2rem;
+  }
+
+  .contentDiv p,
+  .contentDivinfo ul li,
+  .contentDivhtml ul li,
+  .contentDivcsharp ul li,
+  .contentDivsql ul li,
+  .contentDivprojekti ul li {
+    font-size: 1.4rem;
+  }
+
+  #contactDIV {
+    font-size: 16px;
+  }
+
+  #contactDIV a {
+    color: #ffd800;
+  }
+}
