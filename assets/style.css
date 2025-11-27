@@ -89,7 +89,7 @@ header h1 {
   bottom: 20px;
   right: 5px;
   width: 260px;
-  height: 495px;
+  height: auto;
   padding: 15px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   overflow-y: auto;
@@ -198,7 +198,7 @@ header h1 {
   bottom: 50px;
   right: 0;
   width: 240px;
-  height: 800px;
+  height: 495px;
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
