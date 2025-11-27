@@ -3,7 +3,6 @@
   src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/moderne_sans.woff2');
 }
 
-/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -27,7 +26,6 @@ body.fade-in {
   opacity: 1;
 }
 
-/* Header */
 header {
   font-family: monospace;
   position: sticky;
@@ -44,7 +42,6 @@ header h1 {
   text-align: left;
 }
 
-/* Links below header */
 .links {
   display: inline-flex;
   flex-direction: column;
@@ -78,7 +75,6 @@ header h1 {
   padding: 5px 0;
 }
 
-/* Base content div styles */
 .contentDiv,
 .contentDivinfo,
 .contentDivhtml,
@@ -115,7 +111,6 @@ header h1 {
   align-content: flex-end;
 }
 
-/* Active state */
 .contentDiv.active,
 .contentDivinfo.active,
 .contentDivhtml.active,
@@ -127,7 +122,6 @@ header h1 {
   transform: scale(1);
 }
 
-/* Text and inner elements */
 .contentDiv h4,
 .contentDivinfo h4,
 .contentDivhtml h4,
@@ -169,7 +163,6 @@ header h1 {
   margin-bottom: 4px;
 }
 
-/* Fullscreen overlay */
 #fullscreenOverlay {
   display: none;
   position: fixed;
@@ -193,7 +186,6 @@ header h1 {
   cursor: pointer;
 }
 
-/* Scrollbar hidden for contentDivinfo */
 .contentDivinfo {
   bottom: 50px;
   right: 0;
@@ -238,7 +230,6 @@ header h1 {
   margin-bottom: 8px;
 }
 
-/* Paragraph styling for project descriptions */
 #projectDesc_html p,
 #projectDesc_csharp p,
 #projectDesc_sql p,
@@ -248,7 +239,6 @@ header h1 {
   margin-top: 8px;
 }
 
-/* Main image + thumbnails for projects */
 .main-image {
   display: none;
   margin-top: 10px;
@@ -276,7 +266,6 @@ header h1 {
   border-radius: 4px;
 }
 
-/* Back link */
 .main-image .back {
   display: inline-block;
   margin-top: 8px;
@@ -308,7 +297,6 @@ header h1 {
     padding: 10px 20px;
   }
 
-  /* Make content boxes larger on desktop */
   .contentDiv,
   .contentDivhtml,
   .contentDivcsharp,
@@ -325,7 +313,6 @@ header h1 {
     height: 350px;
   }
 
-  /* Keep info box scrollable and slightly bigger */
   .contentDivinfo {
     width: 300px;
     bottom: 50px;
@@ -385,27 +372,26 @@ header h1 {
     padding: 12px 25px;
   }
 
-  /* Keep the same classes, just scale up */
   .contentDiv,
   .contentDivhtml,
   .contentDivcsharp,
   .contentDivsql,
   .contentDivprojekti {
-    width: 600px; /* scaled up but same layout */
+    width: 600px;
     font-size: 24px;
     padding: 30px;
     border-radius: 12px;
   }
 
   .contentDiv {
-    width: 650px; /* scale the default contentDiv */
+    width: 650px;
     height: 400px;
   }
 
-  /* Info div scaling while keeping it readable */
+
   .contentDivinfo {
-    width: 360px; /* slightly larger than before */
-    bottom: 20px; /* keep it lower on small screens */
+    width: 360px;
+    bottom: 20px;
     height: 800px;
     padding: 25px;
     font-size: 20px;
@@ -436,13 +422,4 @@ header h1 {
   #contactDIV a {
     color: #ffd800;
   }
-}
-
-#projectDesc_sql a {
-  color: #ffd800; /* yellow */
-  text-decoration: underline;
-}
-
-#projectDesc_sql a:hover {
-  color: #fff; /* optional hover effect */
 }
