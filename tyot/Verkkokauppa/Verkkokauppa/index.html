@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etusivu</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="glass-card">
+            <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarLinks">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <p class="navbar-brand" style="font-size: 40px; margin-left: 0px;">Makupolku</p>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarLinks">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="etusivu.php">Intro</a></li>
+                    <li><a href="verkkokauppa.php">Etusivu</a></li>
+                </ul>
+                </div>
+            </div>
+            </nav>
+
+        <div class="content">
+            <div class="header-row-2">
+                <div class="width">
+                    <h1 class="georgia-regular text-color-1">
+                        Tervetuloa Makupolkuun
+                    </h1>
+                    <p class="georgia-regular text-color-1">
+                        Makupolku sai alkunsa yksinkertaisesta ajatuksesta: tuoda tuoreet,  
+                        luotettavilta kotimaisilta toimittajilta hankitut tuotteet suoraan asiakkaiden ulottuville.
+                    </p>
+                    <a class="georgia-regular button-2" style="text-decoration:none;" href="verkkokauppa.php">Selaa tuotteita</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myCarousel" class="carousel slide bg-carousel" data-ride="carousel" data-interval="5000" data-pause="false">
+        <div class="carousel-inner">
+
+            <div class="item active"><img src="../images/bg-1.jpeg" alt="liikkuva kuva 1"></div>
+            <div class="item"><img src="../images/bg-2.jpeg" alt="liikkuva kuva 2"></div>
+            <div class="item"><img src="../images/bg-3.jpeg" alt="liikkuva kuva 3"></div>
+            <div class="item"><img src="../images/bg-4.jpeg" alt="liikkuva kuva 4"></div>
+            <div class="item"><img src="../images/bg-5.jpeg" alt="liikkuva kuva 5"></div>
+            <div class="item"><img src="../images/bg-6.jpeg" alt="liikkuva kuva 6"></div>
+            <div class="item"><img src="../images/bg-7.jpeg" alt="liikkuva kuva 7"></div>
+            <div class="item"><img src="../images/bg-8.jpeg" alt="liikkuva kuva 8"></div>
+            <div class="item"><img src="../images/bg-9.jpeg" alt="liikkuva kuva 9"></div>
+            <div class="item"><img src="../images/bg-10.jpeg" alt="liikkuva kuva 10"></div>
+            <div class="item"><img src="../images/bg-11.jpeg" alt="liikkuva kuva 11"></div>
+            <div class="item"><img src="../images/bg-12.jpeg" alt="liikkuva kuva 12"></div>
+            <div class="item"><img src="../images/bg-13.jpeg" alt="liikkuva kuva 13"></div>
+            <div class="item"><img src="../images/bg-14.jpeg" alt="liikkuva kuva 14"></div>
+            <div class="item"><img src="../images/bg-15.jpeg" alt="liikkuva kuva 15"></div>
+            <div class="item"><img src="../images/bg-16.jpeg" alt="liikkuva kuva 16"></div>
+            <div class="item"><img src="../images/bg-17.jpeg" alt="liikkuva kuva 17"></div>
+            <div class="item"><img src="../images/bg-18.jpeg" alt="liikkuva kuva 18"></div>
+            <div class="item"><img src="../images/bg-19.jpeg" alt="liikkuva kuva 19"></div>
+            <div class="item"><img src="../images/bg-20.jpeg" alt="liikkuva kuva 20"></div>
+            <div class="item"><img src="../images/bg-21.jpeg" alt="liikkuva kuva 21"></div>
+        </div>
+    </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var $carousel = $('#myCarousel');
+    var total = $('.carousel-inner .item').length;
+    var lastIndex = 0;
+
+    function showRandom() {
+        var nextIndex;
+        do {
+            nextIndex = Math.floor(Math.random() * total);
+        } while (nextIndex === lastIndex);
+
+        lastIndex = nextIndex;
+        $carousel.carousel(nextIndex);
+    }
+    setInterval(showRandom, 5000);
+    showRandom();
+});
+</script>
+
+</body>
+</html>
