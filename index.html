@@ -343,8 +343,6 @@ function setMainMedia(src, container) {
 
   if (isVideo) {
     container.innerHTML = `<video src="${src}" controls style="width:100%; border-radius:8px;"></video>`;
-    const video = container.querySelector('video');
-    video.onclick = () => openFullscreen(src, true);
   } else {
     container.innerHTML = `<img src="${src}" alt="" style="width:100%; border-radius:8px;">`;
     container.querySelector('img').onclick = () => openFullscreen(src);
